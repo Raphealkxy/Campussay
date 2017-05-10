@@ -1,0 +1,171 @@
+@charset "UTF-8";
+.main-nav {
+  padding: 10px 0; }
+
+.nav-list {
+  overflow: hidden;
+  float: right; }
+  .nav-list li {
+    float: left; }
+  .nav-list a {
+    display: block;
+    height: 58px;
+    line-height: 58px;
+    text-align: center;
+    padding: 0 30px;
+    font-size: 16px;
+    color: #5c5c5c; }
+    .nav-list a:hover {
+      color: #00caab; }
+  .nav-list .nav-active {
+    color: #00caab; }
+
+.common-search-bar {
+  padding-top: 25px;
+  padding-bottom: 63px; }
+
+.search {
+  width: 980px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.link-index img {
+  width: 149px;
+  height: 58px; }
+
+/*.address{
+  margin-left: 12px;
+  margin-top: 6px;
+  padding-left: 12px;
+  @extend .search-item;
+  height: 46px;
+  width: 136px;
+  border-left: 1px solid #dddddd;
+  //当前选中学校名称
+  h1{
+    font-size: 16px;
+    height: 19px;
+    line-height: 19px;
+  }
+  //切换学校按钮
+  button{
+    margin-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: #fff;
+    border: 1px solid #dddddd;
+    font-size: 12px;
+    color: #777777;
+    height: 22px;
+    line-height: 20px;
+  }
+}*/
+.search-wrap {
+  position: relative;
+  margin-top: 8px;
+  width: 360px;
+  height: 38px;
+  border: 2px solid #00caab;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px; }
+
+.search-item, .link-index, .search-wrap, .search-select, .search-content {
+  float: left; }
+
+.search-select {
+  position: relative;
+  height: 38px;
+  line-height: 38px;
+  width: 75px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 0;
+  border-right: 1px solid #dddddd; }
+  .search-select span, .search-select .flag {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    font-size: 14px;
+    vertical-align: middle; }
+  .flag {
+    margin-left: 5px;
+    width: 6px;
+    height: 4px; }
+  .close-flag {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAEtJREFUeNpiXLVq1YKzZ8/GMyABIyOjRUwBAQFZYmJi12CCQPb1wMDATCZWVtZvMTExoSAayg4B0Yz///8Hq4Qax2hsbLwAxAcIMAAE1BlsfebyWAAAAABJRU5ErkJggg==");
+    background-repeat: no-repeat; }
+  .open-flag {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFhJREFUeNpi/PnzJwMIXLhwIQ5IMRoYGCwE8VlAxOvXrzU3b948HcSWlpY+LSoqeo3p9+/fXCtWrFgDoqHs1SCaWU9Pb9bdu3ddGaDg27dvop8+fZIBCDAAX6wp3Z6qsJoAAAAASUVORK5CYII=");
+    background-repeat: no-repeat; }
+  .select-option-wrap {
+    position: absolute;
+    z-index: 1;
+    left: -2px;
+    top: 0;
+    width: 76px;
+    border: 1px solid #dddddd;
+    display: none; }
+  .selecting {
+    display: block; }
+  .select-option-item {
+    background-color: #fff;
+    font-size: 14px; }
+  .selected {
+    background-color: #f9f9f9; }
+
+.search-content {
+  height: 38px; }
+  .search-content input {
+    width: 230px;
+    height: 38px;
+    line-height: 38px;
+    padding-left: 10px;
+    color: #909090;
+    font-size: 14px;
+    border: none;
+    outline: none; }
+
+.search-btn {
+  width: 44px;
+  height: 38px;
+  background-color: #00caab;
+  float: right;
+  text-align: center;
+  cursor: pointer; }
+
+.search-btn-flag {
+  margin-top: 11px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 16px;
+  height: 16px;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAmhJREFUeNpiZDi1mgEGGIEoWFAmOE5EPs6UW9BUgpVD4uPf3x8vf/94ec27p2tmvb436/u/v98ZkAAjzAAFdm6FlcrmK824hcxgkl///fnKzcTCDeM///3jecy9UzH7Pr3ahzACaIDKxe0qL3/9ePkfCK5++3g1+u7JaIGzGwRAchxn1nG43Tzktuvji10g+d///v32u3XUD2wxEDMyn17DfEbL+YwBl4DBqndPVsXfPx3/49/fHwxYQLmkenmHjG4HyGWal3dpPv717TFzbGVJbKaYcub5bx/Oe9864v3z/7+fDDjA0S9vj0qzcUpb8Ahb8LOw8m/68GwTU5ywfBxIsuHptYZf///9YiAA6p9erf/7///fMCGZMHZGJnYmIy4BI5DAzo8vdjIQAUABee7bh3M8TCw88uzc8kyCLGyCoKjC53R08Or3j1cgWpiFTZjp2e/vzwRYWAU4mJg5iDVAnJVDHGLQz1dMJ768O8HEwMjkyS/hSYxmKVZOKSNuASOQV+79/HKPafqru9NBEs3S2s3EuKJVRrsVZOHc1/fn/mdg+M+059OrPRveP9ugzcmnvVTJbCkXEzMXNo2gZF4vpVWfIKKQ8ODn1wc9L271gMSZQETC/dMJoHQQJCgddFHH9SJIkSQrhyRIjp+Zld+LX8LrgIbDgQZprQaQ2Ld/f78hXAtNkrxn1/POeHV3Biip/scBDn56fRAUAyD29e+frkud3yLFiJwbQUCFnUclSlguyoRb0ATkird/fr0F5cZ175+uO/7l7XFNTj7Nvep2e0FyoEyFYQAxQI2DV222gvFsUL4BCDAAZfw6i11azNMAAAAASUVORK5CYII=");
+  background-repeat: no-repeat; }
+
+.hot-search {
+  position: absolute;
+  left: 0;
+  bottom: -22px;
+  height: 22px;
+  width: 360px;
+  line-height: 22px;
+  font-size: 12px; }
+
+.hot-search-list {
+  margin-left: 8px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  font-size: 0; }
+
+.hot-search-item {
+  margin-right: 14px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  font-size: 14px;
+  cursor: pointer; }
+  .hot-search-item:hover {
+    color: #00caab; }

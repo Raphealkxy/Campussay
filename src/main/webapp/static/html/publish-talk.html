@@ -1,0 +1,149 @@
+<script src='/static/html/common/header.js' data-css='publish-talk' data-title="发布talking">
+</script>
+<div class="publish-talk-content global-center clearfix">
+    <div class="publish-list-wrap">
+        <h2 class="what-say">今天你想说什么?</h2>
+        <ul class="publish-list">
+            <li class="publish-item">
+                <ul class="publish-input-list">
+                    <li class="publish-input-item">
+                        <label for="class-title">
+                            <span class="input-title must-title">标题&nbsp;&nbsp;:</span>
+                            <input type="text" id="class-title" class="input-big"/>
+                            <span class="input-tip">还可以输入20字</span>
+                        </label>
+                    </li>
+                    <li class="publish-input-item">
+                        <label for="class-calssify">
+                            <span class="input-title must-title class-classify">分类&nbsp;&nbsp;:</span>
+                        </label>
+                        <div class="inline-block input-middle mn-select" id="class-calssify">
+                            <span class="inline-block">请选择择</span>
+                            <ul class="inline-block">
+                                <li>请选择1</li>
+                                <li>请选择2</li>
+                                <li>请选择3</li>
+                            </ul>
+                        </div>
+                        <div class="inline-block input-middle mn-select">
+                            <span class="inline-block">请选择择</span>
+                            <ul class="inline-block">
+                                <li>请选择1</li>
+                                <li>请选择2</li>
+                                <li>请选择3</li>
+                            </ul>
+                        </div>
+                        <div class="inline-block input-middle mn-select">
+                            <span class="inline-block">请选择择</span>
+                            <ul class="inline-block">
+                                <li>请选择1</li>
+                                <li>请选择2</li>
+                                <li>请选择3</li>
+                            </ul>
+                        </div>
+                        <p class="input-tip warm-tip">如果没有找到你的分类，请选择“其他”，我们后续将创建对应的分类</p>
+                    </li>
+                    <li class="publish-input-item">
+                        <label for="student-num">
+                            <span class="input-title must-title">人数&nbsp;&nbsp;:</span>
+                            <input type="text" id="student-num" class="input-middle" placeholder="最多参与人数"/>
+                            <span class="input-tip">&nbsp;&nbsp;人</span>
+                        </label>
+                    </li>
+                    <li class="publish-input-item">
+                        <label for="class-price">
+                            <span class="input-title must-title">价格&nbsp;&nbsp;:</span>
+                            <input type="text" id="class-price" class="input-middle"/>
+                            <span class="input-tip">&nbsp;&nbsp;元/人</span>
+                        </label>
+                    </li>
+                </ul>
+            </li>
+            <li class="publish-item">
+                <ul class="publish-input-list">
+                    <li class="publish-input-item">
+                        <label for="class-way">
+                            <span class="input-title must-title">地点&nbsp;&nbsp;:</span>
+                            <input type="checkbox" id="class-way"/>
+                            <span class="inline-block class-way"></span>
+                            <span class="input-tip">&nbsp;&nbsp;当面</span>
+                        </label>
+                        <div class="input-address-wrap">
+                            <input type="text" class="input-big" placeholder="请填写具体地址\可商议地址"/>
+                        </div>
+                    </li>
+                    <li class="publish-input-item clearfix">
+                        <span class="input-title contact-information">联系方式&nbsp;&nbsp;:</span>
+                        <ul class="class-info inline-block">
+                            <li>abcdef@163.com</li>
+                            <li>18883862825</li>
+                        </ul>
+                        <p class="input-tip warm-tip">交流开始前半小时，系统将您联系方式发送给对方</p>
+                    </li>
+                </ul>
+            </li>
+            <li class="publish-item">
+                <ul class="publish-input-list">
+                    <li class="publish-input-item">
+                        <span class="input-title">上传图片&nbsp;&nbsp;:</span>
+                        <div class="upload-img">
+                            <label for="input-img" class="inline-block">
+                                <input type="file" id="input-img"/>
+                            </label>
+                        </div>
+                        <p class="input-tip warm-tip">上传一张图片</p>
+                    </li>
+                </ul>
+            </li>
+            <li class="publish-item">
+                <ul class="publish-input-list">
+                    <li class="publish-input-item">
+                        <span class="input-title must-title">交流产品介绍&nbsp;&nbsp;:</span>
+                    </li>
+                    <li class="publish-input-item">
+                        <span class="input-title">交流安排&nbsp;&nbsp;:</span>
+                        <label for="class-time" class="class-time">
+                            &nbsp;&nbsp;
+                            <span class="input-title must-title">交流时间&nbsp;&nbsp;:</span>
+                            <input type="text" class="input-middle" id="class-time" placeholder="YY-MM-DD"/>
+                        </label>
+                        <input type="text" class="input-time-up" placeholder="上课时间"/>
+                        <span class="input-tip to inline-block">至</span>
+                        <input type="text" class="input-time-down" placeholder="下课时间"/>
+                        <div class="talk-content">
+                            <span class="input-title">交流内容&nbsp;&nbsp;:</span>
+                            <input type="text" class="input-content"/>
+                        </div>
+                    </li>
+                    <li class="publish-input-item clearfix">
+                        <span class="input-title talk-detail">交流详情&nbsp;&nbsp;:</span>
+                        <div  class="editor-wrap clearfix">
+                            <div id="myEditor" style="width: 590px; height: 200px;"></div>
+                            <button class="publish-talk">发布</button>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!--侧边步骤-->
+    <ul class="publish-tip">
+        <li class="publish-process process1">
+        <span class="publish-process-txt">
+            让大家知道你想讲什么吧
+        </span>
+        </li>
+        <li class="publish-process process2">
+        <span class="publish-process-txt">
+            用几张图表达你的想法吧
+        </span>
+        </li>
+        <li class="publish-process process3">
+        <span class="publish-process-txt">
+            详细说说吧
+        </span>
+        </li>
+    </ul>
+</div>
+<!--data-path是当前页面需要引入的js-->
+<script src='/static/html/common/footer.js' data-js='publish-talk'></script>

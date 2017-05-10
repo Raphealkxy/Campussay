@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.campussay.dao.TalkingCommentDao">
+
+    <!-- 获取用户所有获得的评价,分页 -->
+    <select id="getAllCommentByUser" resultType="java.util.Map">
+        SELECT co.talking_comment_content,co.talking_comment_grade,co.talking_comment_time,
+        u.user_id,u.user_name,u.user_photo,t.talking_id,t.talking_title
+        FROM t_talking_comment co
+        INNER JOIN t_user u ON co.talking_comment_user=u.user_id
+        INNER JOIN t_talking t ON co.talking_comment_talking = t.talking_id
+        WHERE talking_comment_talking IN (SELECT talking_id FROM t_talking WHERE talking_user=#{0} AND talking_state=100)
+        AND talking_comment_state=10 limit #{1},#{2}
+    </select>
+
+    <select id="getAllCommentCountByUser" resultType="int">
+      SELECT count(*)
+        FROM t_talking_comment 
+        WHERE talking_comment_talking IN (SELECT talking_id FROM t_talking WHERE talking_user=105 AND talking_state=100)
+        AND talking_comment_state=10 
+    </select>
+    
+    <insert id="saveTalkingComment" parameterType="com.campussay.model.TalkingComment">
+    	insert into t_talking_comment (talking_comment_talking,talking_comment_user,talking_comment_content,talking_comment_time,talking_comment_grade,talking_comment_state)
+    	values(#{talkingCommenttalking},#{talkingCommentUser},#{talkingCommentContent},current_timestamp(),#{talkingCommentGrade},10)
+    </insert>
+</mapper>

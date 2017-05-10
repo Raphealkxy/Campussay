@@ -1,0 +1,11 @@
+@charset "UTF-8";
+@import "publish-talk/publish-tip";
+@import '../modules/editor';
+@import "publish-talk/publish-list-wrap";
+@import "/static/sass/modules/themes/default/css/umeditor.css";
+
+
+.publish-talk-content{
+    margin-top: 43px;
+    margin-bottom: 108px;
+}

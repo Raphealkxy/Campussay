@@ -1,0 +1,96 @@
+@import "global-set";
+$width:140px 29px 25px 8px 14px;
+$family:Arial Regular;
+$font:12px 14px;
+body{
+  padding-bottom: 140px;
+}
+.footer{
+  background-color: $bg-color;
+  width:100%;
+  min-width: 1180px;
+  overflow: hidden;
+  position: absolute;
+  bottom:0;
+}
+.footer-wrap{
+}
+.link-wrap-list{
+  margin-left: nth($width,4);
+  height: nth($width,1);
+  line-height: nth($width,1);
+}
+.link-wrap-item{
+  vertical-align: middle;
+  img{
+    vertical-align: middle;
+  }
+  @at-root {
+    .footer-logo{
+      margin-right: nth($width,2);
+      width: 119px;
+      height: 46px;
+    }
+    .third-party{
+      margin-right: nth($width,5);
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+}
+/*wulunyi 2016-2-27*/
+.weibo-icon{
+  background: url("/static/img/common/web.png") no-repeat;
+  vertical-align: middle;
+}
+.weibo-icon:hover{
+  background: url("/static/img/common/wbhover.png") no-repeat;
+}
+.weixin-icon{
+  background: url("/static/img/common/weixin.png") no-repeat;
+  vertical-align: middle;
+}
+.weixin-icon:hover{
+  background: url("/static/img/common/wxhover1.png") no-repeat;
+}
+.wexin{
+  position: relative;
+}
+.weixin-icon:hover+.ercode{
+  display: block;
+}
+.ercode{
+  position: absolute;
+  top: 29px;
+  left: 56px;
+  display: none;
+  background: url("/static/img/common/ercode.png") no-repeat;
+  width: 98px;
+  height: 98px;
+}
+/*end*/
+.footer-aside{
+  float: right;
+  padding-top: 49px;
+  padding-bottom: 44px;
+  p{
+    height: 22px;
+    line-height: 22px;
+    font-size: nth($font,1);
+    font-family: $family;
+    a{
+      color: #fff;
+    }
+  }
+}
+.about-us-list{
+  text-align: right;
+  height: 25px;
+  line-height: 25px;
+  a{
+    margin-left: nth($width,2);
+    font-size: nth($font,2);
+    color: #fff;
+  }
+}

@@ -1,0 +1,287 @@
+.personal-menu-bar {
+  margin: 19px auto 0 auto;
+  height: 40px;
+  width: 1178px;
+  border-bottom: 1px solid #e6e6e6;
+  font-size: 16px; }
+  .personal-menu-item {
+    position: relative;
+    padding-top: 13px;
+    top: 1px;
+    float: left;
+    width: 136px;
+    height: 25px;
+    text-align: center;
+    border-bottom: 2px solid transparent;
+    cursor: pointer; }
+    .personal-menu-item:hover {
+      color: #00caab;
+      border-bottom-color: #00caab; }
+  .current-menu-item {
+    border-bottom-color: #00caab;
+    color: #00caab; }
+    .current-menu-item:after {
+      position: absolute;
+      bottom: -1px;
+      left: 63px;
+      display: block;
+      content: " ";
+      width: 11px;
+      height: 5px;
+      background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAFCAYAAACTphZWAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIJJREFUeNpi+P//PwMy/vPvH3P385slt75/VkWXQ+G8+v1D1O3moZ0Mp1b/5zu74eOqt49DkeUZwTqA4PDnN7aR904uf/rruzQDEsgRU5nSK6dXzMbI9Ivx3///jL0vbhVXPrnc/uf/fxYGLMCCR+jESmWLcEaglWxAvgwDYfAFIMAAVc5fPbo2MSUAAAAASUVORK5CYII=") no-repeat; }
+
+.comment-star {
+  font-size: 18px;
+  width: 1126px;
+  background: #f8f8f8;
+  margin: 46px auto 30px auto;
+  overflow: hidden;
+  padding-left: 54px;
+  height: 70px; }
+  .comment-star .score {
+    width: 100px;
+    margin-right: 10px;
+    float: left;
+    line-height: 70px; }
+    .comment-star .score span {
+      color: #ffb137;
+      font-size: 36px; }
+  .comment-star ul {
+    float: left;
+    margin-top: 26px; }
+    .comment-star ul li {
+      float: left;
+      margin-right: 2px; }
+
+.talking-bar {
+  width: 1178px;
+  margin: 0 auto;
+  background: #f8f8f8;
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid #dddddd; }
+  .talking-bar li {
+    width: 140px;
+    float: left;
+    text-align: center;
+    cursor: pointer;
+    background: #FFFFFF;
+    border-top: 1px solid #dddddd;
+    border-right: 1px solid #dddddd;
+    border-bottom: hidden;
+    border-left: 1px solid #dddddd; }
+
+.talking-container {
+  width: 1110px;
+  margin: 0 auto;
+  padding: 0 40px 0px 0; }
+  .talking-container .talking-list {
+    overflow: hidden;
+    border-bottom: 1px solid #dddddd;
+    margin-top: 30px; }
+    .talking-container .talking-list i {
+      display: block;
+      float: left;
+      width: 80px;
+      height: 80px; }
+    .talking-container .talking-list span.personal-name {
+      position: relative;
+      left: -62px;
+      bottom: -76px; }
+    .talking-container .talking-list .talking-menu {
+      margin-left: 100px;
+      position: relative;
+      top: -26px; }
+      .talking-container .talking-list .talking-menu h1 {
+        line-height: 38px;
+        font-size: 18px; }
+      .talking-container .talking-list .talking-menu p {
+        margin-top: 10px;
+        line-height: 18px; }
+      .talking-container .talking-list .talking-menu div.dd {
+        float: right;
+        margin-top: 20px; }
+      .talking-container .talking-list .talking-menu .data {
+        margin-top: 20px;
+        float: right; }
+        .talking-container .talking-list .talking-menu .data li {
+          float: left;
+          width: 80px;
+          text-align: center; }
+          .talking-container .talking-list .talking-menu .data li.dd:after {
+            content: '';
+            background: #dddddd;
+            width: 1px;
+            height: 18px;
+            display: block;
+            position: relative;
+            left: 94px;
+            top: -16px; }
+
+.line-award, .line, .line-work {
+  position: absolute;
+  width: 1px;
+  background-color: #00caab;
+  left: 3px; }
+
+.list-title {
+  margin-top: 16px; }
+
+.list-title img {
+  vertical-align: middle; }
+
+.list-title img.set-pos {
+  position: absolute;
+  left: -25px;
+  top: 4px;
+  width: 18px;
+  height: 18px; }
+
+.container {
+  width: 1160px;
+  margin: 30px auto 290px auto;
+  overflow: hidden; }
+
+.container .resume {
+  width: 650px;
+  float: left;
+  background-color: #fafafa;
+  padding: 20px 120px 70px 60px;
+  margin-right: 30px; }
+
+.container .resume .nav-content .nav-title {
+  position: relative;
+  font-size: 18px; }
+
+.container .resume .nav-content .nav-title .school-warp {
+  overflow: hidden; }
+
+.container .resume .nav-content .nav-title .school-warp .colls {
+  margin-top: 16px;
+  font-size: 16px; }
+
+.container .resume .nav-content .nav-title .school-warp .colls .show-list {
+  overflow: hidden;
+  margin-top: 6px; }
+
+.container .resume .nav-content .nav-title .school-warp .colls .show-list li {
+  float: left;
+  margin-right: 60px;
+  font-size: 14px;
+  color: #969696; }
+
+.container .resume .nav-content .nav-title .awardz-warp {
+  margin-top: 10px;
+  position: relative; }
+
+.container .resume .nav-content .nav-title .awardz-warp li {
+  font-size: 14px;
+  color: #555555;
+  line-height: 36px;
+  padding-left: 25px;
+  background: url("/static/img/page/personal-page/dot.png") no-repeat left center; }
+
+.container .resume .nav-content .nav-title .awardz-warp li span {
+  margin-right: 20px; }
+
+.container .resume .nav-content .nav-title .social-exp, .container .resume .nav-content .nav-title .work-exp {
+  margin-top: 15px;
+  position: relative; }
+
+.container .resume .nav-content .nav-title .social-exp .social-exp-wrap, .container .resume .nav-content .nav-title .work-exp .work-exp-wrap {
+  overflow: hidden;
+  font-size: 14px; }
+
+.container .resume .nav-content .nav-title .social-exp .social-exp-wrap .social-exp-wrap-list, .container .resume .nav-content .nav-title .work-exp .work-exp-wrap .work-exp-wrap-list {
+  margin-bottom: 22px; }
+
+.container .resume .nav-content .nav-title .social-exp .social-exp-wrap .social-exp-wrap-list ul, .container .resume .nav-content .nav-title .work-exp .work-exp-wrap .work-exp-wrap-list ul {
+  overflow: hidden;
+  background: url("/static/img/page/personal-page/dot.png") no-repeat left center; }
+
+.container .resume .nav-content .nav-title .social-exp .social-exp-wrap .social-exp-wrap-list ul li, .container .resume .nav-content .nav-title .work-exp .work-exp-wrap .work-exp-wrap-list ul li {
+  float: left;
+  margin-right: 40px;
+  line-height: 30px;
+  padding-left: 25px; }
+
+.container .resume .nav-content .nav-title .social-exp .social-exp-wrap .social-exp-wrap-list ul li.wid, .container .resume .nav-content .nav-title .work-exp .work-exp-wrap .work-exp-wrap-list ul li.wid {
+  width: 122px; }
+
+.container .resume .nav-content .nav-title .social-exp .social-exp-wrap .social-exp-wrap-list p, .container .resume .nav-content .nav-title .work-exp .work-exp-wrap .work-exp-wrap-list p {
+  margin-left: 212px;
+  color: #969696; }
+
+.container #navi {
+  width: 294px;
+  background-color: #fafafa;
+  float: right; }
+
+.container #navi li {
+  position: relative;
+  line-height: 54px;
+  font-size: 14px;
+  text-align: center; }
+
+.container #navi li a {
+  color: #5c5c5c; }
+
+.container #navi li:hover {
+  background-color: #f0f0f0;
+  cursor: pointer; }
+  .container #navi li:hover a {
+    color: #00caab; }
+
+.container #navi li img {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  position: relative;
+  top: 4px; }
+
+.experience {
+  width: 770px;
+  position: relative; }
+
+.experience .line {
+  position: absolute;
+  width: 1px;
+  background-color: #00caab;
+  left: 25px; }
+
+.experience .list-info {
+  width: 650px;
+  margin-top: 18px; }
+
+.experience .list-info .item-list .detail-info {
+  margin-top: 0;
+  overflow: hidden;
+  font-size: 14px;
+  background: url("/static/img/page/personal-page/dot.png") no-repeat left center; }
+
+.experience .list-info .item-list .detail-info .time-data {
+  float: left;
+  margin-right: 26px;
+  position: relative; }
+
+.experience .list-info .item-list .detail-info .time-data span {
+  width: 60px; }
+
+.experience .list-info .item-list .detail-info .company {
+  float: left;
+  margin-right: 40px; }
+
+.experience .list-info .item-list .detail-info .order {
+  float: left; }
+
+.experience .list-info .item-list p {
+  margin-left: 160px;
+  text-indent: 0;
+  margin-top: 10px;
+  margin-bottom: 20px; }
+
+.experience .last-para {
+  margin-left: 160px;
+  text-indent: 0;
+  margin-top: 10px;
+  margin-bottom: 20px; }

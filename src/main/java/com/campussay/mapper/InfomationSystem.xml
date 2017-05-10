@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.campussay.dao.InformationSystemDao">
+
+<!-- 录入系统消息  消息类型必须定义为 －1 int类型 -->
+<insert id="insertInformationSystem" parameterType="com.campussay.model.Information">
+     INSERT INTO t_information_system
+      (information_id,information_content,information_type,information_isread,information_crate_time)
+     values
+      (#{informationId},#{informationContent},-1,#{informationIsread},#{informationCrateTime}) 
+</insert>
+</mapper>

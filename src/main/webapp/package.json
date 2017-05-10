@@ -1,0 +1,29 @@
+{
+  "name": "webapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "nobone-sync.config.js",
+  "dependencies": {
+    "iconv-lite": "^0.4.13",
+    "nobone-sync": "^0.5.12",
+    "nokit": "^0.16.12",
+    "send": "^0.13.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-dev": "^0.3.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-rev": "^7.0.0",
+    "gulp-rev-collector": "^1.0.2",
+    "gulp-sass": "^2.1.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp.spritesmith": "^6.0.0",
+    "vane-client": "0.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

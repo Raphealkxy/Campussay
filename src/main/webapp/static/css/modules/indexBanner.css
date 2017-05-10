@@ -1,0 +1,69 @@
+.global-center {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1180px; }
+
+.inline-block {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1; }
+
+body {
+  min-width: 1180px; }
+
+.banner {
+  width: 100%;
+  height: 310px;
+  background: #a5e7f3; }
+
+.main-banner {
+  width: 1180px; }
+  .main-banner .main-nav {
+    overflow: hidden;
+    background: #f8f8f8; }
+    .nav-item {
+      float: left;
+      width: 236;
+      font-size: 16px;
+      text-align: center; }
+      .nav-item a {
+        color: #5c5c5c;
+        display: block;
+        height: 37px;
+        line-height: 37px;
+        border-top: 3px solid #f8f8f8; }
+        .nav-item a:hover {
+          border-top: 3px solid #00caab; }
+      .nav-item .item-active {
+        border-top: 3px solid #00caab; }
+  .main-banner .common-banner {
+    width: 100%;
+    height: 310px;
+    overflow: hidden;
+    position: relative; }
+    .main-banner .common-banner .common-blist {
+      height: 100%;
+      overflow: hidden;
+      position: absolute; }
+      .main-banner .common-banner .common-blist img {
+        float: left;
+        height: 310px;
+        width: 1180px; }
+    .main-banner .common-banner .common-slist {
+      position: absolute;
+      overflow: hidden;
+      height: 10px;
+      bottom: 15px;
+      left: 50%; }
+      .main-banner .common-banner .common-slist a {
+        display: block;
+        width: 10px;
+        height: 10px;
+        float: left;
+        background: #fff;
+        margin: 0 5px;
+        border-radius: 5px; }
+        .main-banner .common-banner .common-slist a:hover {
+          background: #ccc; }
+      .main-banner .common-banner .common-slist .active {
+        background: #ccc; }

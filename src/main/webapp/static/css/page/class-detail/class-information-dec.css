@@ -1,0 +1,212 @@
+.class-information-dec {
+  float: left;
+  width: 880px; }
+
+.class-info-detail-item {
+  margin-top: 28px;
+  font-size: 16px; }
+  .class-detail dl {
+    margin-top: 8px;
+    line-height: 26px; }
+  .class-detail dt {
+    float: left; }
+  .class-detail dd {
+    margin-left: 85px; }
+
+.class-info-detail-title {
+  font-size: 0;
+  line-height: 20px; }
+  .class-info-detail-title span {
+    font-size: 18px;
+    vertical-align: middle; }
+  .class-info-detail-title i {
+    margin-right: 7px;
+    width: 6px;
+    height: 20px;
+    background-color: #00caab;
+    vertical-align: middle; }
+
+.class-plan p {
+  margin-top: 10px;
+  line-height: 27px;
+  font-size: 14px; }
+
+.class-plan-list {
+  margin-top: 16px;
+  border: 1px solid #ddd; }
+  .class-plan-title {
+    float: left;
+    width: 70px;
+    height: 58px;
+    line-height: 58px;
+    text-align: center;
+    background-color: #eeeeee;
+    font-size: 14px; }
+  .class-plan-item + .class-plan-item {
+    border-top: 1px solid #ddd; }
+  .class-plan-item ul {
+    margin-left: 87px;
+    font-size: 12px;
+    line-height: 58px; }
+    .class-plan-item ul li {
+      float: left;
+      /*width: 255px;*/
+      margin-right: 30px; }
+
+.commit-total {
+  margin-top: 16px;
+  margin-bottom: 16px; }
+  .commit-total dd, .commit-total dt {
+    background-color: #f8f8f8;
+    height: 148px; }
+  .commit-total dt {
+    float: left;
+    width: 189px;
+    line-height: 148px;
+    text-align: center; }
+    .commit-total dt strong {
+      font-size: 50px;
+      color: #ffb137; }
+    .commit-total dt span {
+      font-size: 22px; }
+  .commit-total dd {
+    margin-left: 197px;
+    padding-left: 18px; }
+    .commit-total dd span {
+      margin-right: 48px;
+      margin-left: 48px;
+      float: left;
+      line-height: 148px;
+      font-size: 20px; }
+    .commit-total dd ul {
+      float: left;
+      font-size: 18px;
+      padding-top: 9px; }
+    .commit-total dd li {
+      margin-top: 20px;
+      font-size: 0; }
+    .commit-total dd .commit-item {
+      margin-right: 14px;
+      margin-left: 0;
+      font-size: 18px;
+      line-height: 18px;
+      vertical-align: middle; }
+    .commit-total dd .teacher-star {
+      width: 18px;
+      height: 18px;
+      margin-top: 1px;
+      vertical-align: middle; }
+    .commit-total dd .teacher-star.star1 {
+      background: url(/static/img/page/class-detail/star-b1.png) no-repeat; }
+    .commit-total dd .teacher-star.star2 {
+      background: url(/static/img/page/class-detail/star-b2.png) no-repeat; }
+
+.personal-care-tab {
+  margin-top: 32px;
+  width: 100%;
+  height: 36px;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #dddddd; }
+
+.personal-care-tab-item {
+  padding-top: 10px;
+  float: left;
+  cursor: pointer;
+  width: 162px;
+  height: 25px;
+  text-align: center;
+  border: 1px solid transparent; }
+
+.current-care-item {
+  border-color: #dddddd;
+  border-bottom-color: #fff;
+  background-color: #fff; }
+
+.commit-detail-list {
+  padding-left: 24px;
+  padding-right: 22px; }
+
+.commit-detail-item + .commit-detail-item {
+  border-top: 1px solid #ddd; }
+
+.commit-detail-item {
+  padding-top: 28px;
+  padding-bottom: 18px;
+  font-size: 14px; }
+  .teacher-name {
+    float: left;
+    text-align: center;
+    font-size: 12px;
+    color: #555; }
+    .teacher-name img {
+      width: 75px;
+      height: 76px; }
+    .teacher-name dd {
+      margin-top: 8px; }
+  .commit-status, .commit-dec {
+    margin-left: 100px; }
+  .commit-status {
+    line-height: 14px;
+    height: 14px; }
+    .commit-status dt, .commit-status dd {
+      float: left; }
+    .commit-status dd {
+      font-size: 14px; }
+  .commit-dec {
+    padding-right: 20px;
+    margin-top: 13px;
+    line-height: 18px; }
+  .commit-time {
+    padding-right: 13px;
+    margin-top: 24px;
+    text-align: right;
+    font-size: 12px;
+    color: #777777; }
+
+.leave-msg-item + .leave-msg-item {
+  border-top: 1px solid #ddd; }
+
+.leave-msg-item {
+  padding-top: 28px;
+  padding-bottom: 38px; }
+  .leave-msg-item img {
+    float: left;
+    width: 36px;
+    height: 37px; }
+  .leave-msg-item div {
+    margin-left: 51px; }
+  .leave-msg-item dt {
+    font-size: 12px;
+    line-height: 12px; }
+  .leave-msg-item dd {
+    margin-top: 12px;
+    font-size: 14px;
+    line-height: 14px; }
+  .back-msg {
+    padding: 15px 20px 13px 8px;
+    margin-top: 17px;
+    background-color: #fafafa; }
+    .back-msg dt {
+      color: #00caab; }
+    .back-msg dd {
+      line-height: 18px; }
+
+.ask-question {
+  margin-left: 51px; }
+  .ask-question label {
+    display: none; }
+  .ask-question textarea {
+    padding: 7px;
+    width: 100%;
+    height: 94px;
+    border: 1px solid #dddddd; }
+  .ask-question button {
+    margin-top: 22px;
+    float: right;
+    width: 100px;
+    height: 39px;
+    line-height: 39px;
+    text-align: center;
+    background-color: #00caab;
+    color: #fff;
+    font-size: 16px; }

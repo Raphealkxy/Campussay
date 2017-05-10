@@ -1,0 +1,319 @@
+@charset "UTF-8";
+$picPath: "/static/img/page/publish-talk/";
+.publish-list-wrap {
+  padding-left: 16px;
+  float: left;
+  width: 846px;
+}
+
+.what-say {
+  position: relative;
+  left: -16px;
+  border-left: 3px solid #00caab;
+  padding-left: 16px;
+  line-height: 26px;
+  font-size: 20px;
+}
+//input框样式  lbj
+.publish-talk-content input{
+  border:1px solid #aaa;
+  box-shadow: 0px 0px 3px #efefef, 0 10px 15px #fafafa inset;
+  border-radius:2px;
+}
+.publish-talk-content input:focus{
+  background: #fff;
+  border:1px solid #00caab;
+  box-shadow: 0 0 3px #00f3d3;
+}
+//分块
+.publish-list {
+}
+
+.publish-item {
+  padding-bottom: 13px;
+  padding-left: 13px;
+}
+
+.publish-item + .publish-item {
+  border-top: 1px dashed #c9c9c9;
+}
+
+.publish-input-item {
+  margin-top: 24px;
+  font-size: 0;
+}
+
+.input-title {
+  position: relative;
+  margin-right: 11px;
+  font-size: 16px;
+}
+
+.must-title {
+  &:before {
+    position: absolute;
+    top: 3px;
+    left: -13px;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    content: "*";
+    color: #f06060;
+  }
+}
+
+//提示文本
+.input-tip {
+  color: #777777;
+  font-size: 14px;
+}
+
+.input-big {
+  margin-right: 9px;
+  width: 362px;
+}
+
+.input-middle {
+  width: 100px;
+}
+
+.input-big, .input-middle, .input-small, .input-time-down, .input-time-up, .input-content {
+  padding-left: 7px;
+  padding-right: 7px;
+  height: 32px;
+  line-height: 30px;
+  font-size: 14px;
+  border: 1px solid #bababa;
+  color: #969696;
+}
+
+//分类
+.class-classify {
+  vertical-align: middle;
+}
+
+.mn-select {
+  position: relative;
+  margin-right: 10px;
+  box-sizing: border-box;
+  vertical-align: middle;
+  cursor: pointer;
+  span {
+    //padding-left: 12px;
+  }
+  &:after {
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    content: " ";
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAGCAYAAAD68A/GAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAH5JREFUeNpi/P//PwMyePXqVSaIFhMTm44szoLM+fTpk9PDhw8nAZmMHBwcN/n4+PbB5JhgjB8/fqjcvn17LdAGFiBmBrLXgcRQFP79+5f/1q1b24C0AEwCKrYdRIMVQnWvBepWZUADUFvWgdQw3r9/fyrQA1kMeADIYwABBgCofE4yu0R4pQAAAABJRU5ErkJggg==") no-repeat;
+    width: 10px;
+    height: 6px;
+  }
+  ul {
+    position: absolute;
+    top: 30px;
+    left: -1px;
+    width: 100px;
+    background-color: #FFFFFF;
+    z-index: 100;
+    box-sizing: border-box;
+    border: 1px solid #bababa;
+    display: none;
+    li {
+      padding-left: 8px;
+      height: 26px;
+      background-color: #f7f7f7;
+      &:hover {
+        background-color: #f0f0f0;
+        border-right: 2px solid #07edcc;
+      }
+    }
+  }
+  .show-select {
+    display: block;
+  }
+}
+
+//警告栏
+.warm-tip {
+  margin-top: 14px;
+  margin-left: 55px;
+  line-height: 1em;
+  &:before {
+    position: relative;
+    margin-right: 6px;
+    top: -1px;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    content: " ";
+    width: 16px;
+    height: 16px;
+    background: url(#{$picPath}tip.png) no-repeat;
+    vertical-align: middle;
+  }
+}
+
+#class-way, #class-online {
+  display: none;
+  &:checked + span {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAGCAYAAAD+Bd/7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFZJREFUeNpi/P//PwM20PviVj2IZsIlCcQNQCYjQ8/zm/UgDDIJhEFsyfOb/wPpBhCfBaQKZhxUd0OxhFojEDeABaC6GkC6kHXCMMgEBrhqNDYIAAQYALo2Q1ZUuSuFAAAAAElFTkSuQmCC") no-repeat;
+    background-position: center center;
+  }
+}
+
+.class-online {
+  margin-left: 35px;
+}
+
+#online-num {
+  margin-left: 35px;
+}
+
+.class-way-checked {
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAGCAYAAAD+Bd/7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFZJREFUeNpi/P//PwM20PviVj2IZsIlCcQNQCYjQ8/zm/UgDDIJhEFsyfOb/wPpBhCfBaQKZhxUd0OxhFojEDeABaC6GkC6kHXCMMgEBrhqNDYIAAQYALo2Q1ZUuSuFAAAAAElFTkSuQmCC") no-repeat;
+  background-position: center center;
+}
+
+.class-way {
+  width: 14px;
+  height: 14px;
+  border: 1px solid #9c9c9c;
+  vertical-align: -3px;
+}
+
+.input-address-wrap {
+  margin-top: 12px;
+  margin-left: 55px;
+}
+
+.contact-information {
+  float: left;
+}
+
+.class-info {
+  float: left;
+  li {
+    line-height: 21px;
+    margin-bottom: 17px;
+    font-size: 14px;
+  }
+}
+
+.class-info + .input-tip {
+  clear: left;
+}
+
+.upload-img {
+  position: relative;
+  margin-top: 20px;
+  margin-left: 55px;
+  width: 108px;
+  height: 72px;
+  background: url(#{$picPath}bg-img.png) no-repeat;
+  label {
+    width: 108px;
+    height: 72px;
+    cursor: pointer;
+  }
+}
+
+#input-img {
+  display: none;
+}
+
+.input-time-down, .input-time-up {
+  width: 74px;
+}
+
+.talk-content {
+  margin-top: 12px;
+  margin-left: 106px;
+}
+
+.input-content {
+  width: 320px;
+}
+
+.class-time {
+  margin-left: 17px;
+  margin-right: 10px;
+}
+
+.to {
+  width: 30px;
+  text-align: center;
+}
+
+.talk-detail, .editor-wrap {
+  float: left;
+}
+
+.publish-talk {
+  float: right;
+  margin-top: 32px;
+  width: 102px;
+  height: 40px;
+  color: #fff;
+  background-color: #00caab;
+  font-size: 16px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+
+.publish-talk:hover {
+  background-color: #54d5bd;
+}
+
+//图片预览
+#view {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 108px;
+  height: 72px;
+}
+
+#input-wrap {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+.talkingBox{
+  position:fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  img{
+    max-height: 600px;
+  }
+  button{
+    left: 50%;
+    margin-left: -52px;
+  }
+}
+.stepBtn{
+    position: absolute;
+    left: 230px;
+    bottom: 30px;
+    width: 106px;
+    height: 40px;
+    background-color: #00caab;
+    color: #ffffff;
+    font-size: 12px;
+    text-align: center;
+    line-height: 40px;
+    -moz-border-radius: 6px;      /* Gecko browsers */
+    -webkit-border-radius: 6px;   /* Webkit browsers */
+    border-radius:6px;
+    &:hover{
+      background-color: #2ce6c9;
+    }
+  }

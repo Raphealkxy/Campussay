@@ -1,0 +1,152 @@
+@import '../common/global-set';
+
+$re-head-width: 234px; 
+$re-head-height: 46px;
+$re-head-border: #00caab;
+$re-cont-imgheight: 148px;//热门课程的图片高度
+$re-cont-desheight: 101px;
+
+//类目推荐courseitem
+$md-it-width:220px;
+$md-it-imgheight:130px;
+
+//颜色
+$ligtht-grey: #777;// 浅灰色
+$orange:#fca825;//橙色
+$green:#00caab;//
+
+$moudle-bottom:28px;//每行类目推荐的行距
+
+//公共
+//最外层容器
+.warpper{
+	width:1180px;
+	margin:0 auto;
+}
+.clearfix:after{
+	display:block;
+    clear:both;
+}
+.class-recommend-panel{
+	margin-bottom:70px-28px;
+}
+
+//可复用的课程item
+//course-item-img 设置宽高
+@mixin course-img ($width,$height){
+	display:inline-block;
+	width:$width;
+	height:$height;
+	img{
+		width:100%;
+        height:100%;
+	}
+}
+//course-item-des 设置宽高 padding
+@mixin course-itemdes ($width,$padding:8px,$des-font:12px,$p-bottom:8px,
+                       $des-title-font:16px,$row-bottom-top:10px){  
+	width:$width;
+	padding:$padding;
+	font-size:$des-font;
+	color:$ligtht-grey;//内部也可以使用变量
+    p{
+		margin-bottom:$p-bottom;
+		text-overflow: ellipsis ;
+		width: 198px;
+		height: 14px;
+		overflow: hidden;
+	}
+	.course-itemdes-title{
+		font-size:$des-title-font;
+		font-weight: bold;
+		line-height: 1;
+	}
+	.row-bottom{
+		overflow: hidden;
+		margin-top: $row-bottom-top;
+	}
+	.pirce{
+		font-size: 19px;
+        color: $orange;
+        float: left;
+        height: 20px;
+        line-height: 20px;
+        span{
+        	font-size: 14px;
+        }
+    }
+    .part{
+		height: 20px;
+		line-height: 20px;
+		float: right;
+	}
+}
+//类目推荐开始
+@mixin moudle-item ($width) {
+    display:inline-block;
+    height: 210px;
+    width:$width;
+    margin-right:20px;
+    color:#000;
+    vertical-align:top;
+    letter-spacing:normal;
+	word-spacing:normal;
+	float:left;
+}
+.class-head{
+	height:28px;
+	padding:20px 0 10px 0;
+	position:relative;
+	.more{
+		float: right;
+		margin-bottom: 0px;
+		color: $green;
+		text-decoration:underline;
+		font-size: 12px;	
+	}
+}
+.class-title{
+	height:28px;
+	line-height:28px;
+	padding-left:12px;
+	border-left:4px solid $green;
+	font-size:20px;
+}
+.moudle{
+   margin-right: -20px;
+   position:relative;
+}
+.moudle-img{
+	@include moudle-item($md-it-width);
+	img{
+		width:100%;
+		height: 100%;
+	}
+}
+
+.moudle-item{
+	@include moudle-item($md-it-width);
+}
+.moudle-item-img{
+	@include course-img($md-it-width,$md-it-imgheight);
+}
+.moudle-item-des{
+	//width:($re-head-width)-2px-16px;//减去默认boder,padding的宽度
+    @include course-itemdes(($md-it-width)-22px,10px,12px,6px,14px,7px);
+    background: #fafafa;
+    border:1px solid #ddd;
+    border-top:none;
+    margin-top:-2px;
+    //height: 84px;
+}
+.course-itemdes-title{
+	margin-bottom:10px;
+}
+.moudle-more{
+	position:absolute;
+	bottom: 7px;
+	right:0px;
+	font-size:14px;
+	color:$green;
+	z-index:999;
+}

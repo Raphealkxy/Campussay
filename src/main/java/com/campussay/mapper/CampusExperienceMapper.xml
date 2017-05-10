@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.campussay.dao.CampusExperienceDao">
+    <insert id="setCampusExperience" parameterType="com.campussay.model.CampusExperience">
+        insert into t_campus_experience(campus_experience_user,campus_experience_time,campus_experience_title,campus_experience_descript,campus_experience_role,campus_experience_state)
+        values(#{campusExperienceUser},#{campusExperienceTime},#{campusExperienceTitle},#{campusExperienceDescript},#{campusExperienceRole},10);
+    </insert>
+
+    <select id="getCampusExperience" resultType="java.util.HashMap">
+        SELECT campus_experience_id,campus_experience_time,campus_experience_title,campus_experience_role,campus_experience_descript
+        FROM t_campus_experience WHERE campus_experience_user=#{0} AND campus_experience_state=#{1}
+    </select>
+
+    <update id="updateCampusExperience">
+        UPDATE t_campus_experience SET campus_experience_time=#{campus_experience_time},campus_experience_title=#{campus_experience_title},
+        campus_experience_role=#{campus_experience_role},campus_experience_descript=#{campus_experience_descript} WHERE campus_experience_id=#{campus_experience_id} AND campus_experience_user=#{user_id}
+    </update>
+
+    <insert id="addCampusExperience">
+        INSERT INTO t_campus_experience VALUES (null,#{user_id},#{campus_experience_time},#{campus_experience_title},#{campus_experience_role},#{campus_experience_descript},10)
+    </insert>
+
+    <delete id="delCampusExperience">
+        DELETE FROM t_campus_experience WHERE campus_experience_user=#{1} AND campus_experience_id IN 
+        <foreach collection="del" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

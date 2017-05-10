@@ -1,0 +1,147 @@
+.class-info {
+  padding-top: 27px;
+  height: 204px; }
+
+.class-pic-show {
+  float: left;
+  width: 320px; }
+
+.current-show-pic {
+  width: 320px;
+  height: 200px; }
+
+.class-pic-show-wrap {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-top: 16px;
+  border: 1px solid #e5e5e5; }
+  .show-btn {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    float: left;
+    width: 23px;
+    text-align: center;
+    height: 18px;
+    font-size: 0; }
+    .show-btn i {
+      width: 9px;
+      height: 18px;
+      vertical-align: middle; }
+  .show-left-btn {
+    background: url(/static/img/page/class-detail/lbtn.png) no-repeat; }
+  .show-right-btn {
+    background: url(/static/img/page/class-detail/rbtn.png) no-repeat; }
+
+.class-pic-show-list {
+  float: left;
+  margin-left: -14px;
+  font-size: 0; }
+  .class-pic-show-item {
+    margin-left: 14px;
+    position: relative;
+    vertical-align: middle;
+    width: 81px;
+    height: 50px; }
+    .class-pic-show-item img {
+      cursor: pointer;
+      width: 81px;
+      height: 50px; }
+    .class-pic-show-item .current-show-item, .class-pic-show-item img:hover {
+      position: absolute;
+      left: -5px;
+      top: -3px;
+      right: 0;
+      width: 90px;
+      height: 55px; }
+
+.class-info-context {
+  float: left;
+  margin-left: 27px; }
+  .class-info-context h2 {
+    font-size: 24px;
+    line-height: 30px; }
+  .class-info-list {
+    margin-top: 12px;
+    width: 542px;
+    border: 1px dashed #dddddd; }
+  .class-info-item + .class-info-item + .class-info-item {
+    border-top: 1px dashed #DDDDDD; }
+  .class-info-item {
+    float: left;
+    padding-left: 20px;
+    width: 251px;
+    height: 32px;
+    line-height: 32px; }
+  .last-info-item {
+    padding-right: 20px;
+    width: 502px; }
+  .info-item-title {
+    color: #969696;
+    display: block;
+    float: left; }
+  .class-price {
+    font-size: 22px;
+    color: #fca825; }
+  .has-join {
+    color: #fca825; }
+  .class-option {
+    margin-top: 20px; }
+    .class-option div {
+      display: inline-block;
+      -webkit-border-radius: 2px;
+      -moz-border-radius: 2px;
+      border-radius: 2px;
+      height: 39px;
+      width: 113px;
+      background-color: #00caab;
+      color: #fff;
+      font-size: 16px;
+      text-align: center; }
+      .class-option div:hover {
+        background-color: #3aead0; }
+    .class-option a {
+      color: #5c5c5c; }
+    .class-option i {
+      margin-left: 28px;
+      margin-right: 7px;
+      vertical-align: middle; }
+    .class-option .share-to {
+      width: 16px;
+      height: 13px;
+      background: url(/static/img/page/class-detail/share.png) no-repeat; }
+    .class-option .has-share, .class-option .share:hover > i {
+      background: url(/static/img/page/class-detail/has-share.png) no-repeat; }
+
+.class-author {
+  padding-top: 4px;
+  float: right;
+  width: 270px;
+  text-align: center; }
+  .class-author img {
+    margin-top: 10px;
+    width: 64px;
+    height: 64px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%; }
+  .class-author dt {
+    padding-top: 7px;
+    line-height: 100%;
+    color: #777; }
+  .class-author dd {
+    font-size: 0; }
+  .class-author span {
+    margin-left: 5px;
+    color: #ffb137;
+    font-size: 14px; }
+
+.teacher-star {
+  margin-top: 11px;
+  width: 12px;
+  height: 11px; }
+
+.star1 {
+  background: url(/static/img/page/class-detail/star1.png) no-repeat; }
+
+.star2 {
+  background: url(/static/img/page/class-detail/star2.png) no-repeat; }

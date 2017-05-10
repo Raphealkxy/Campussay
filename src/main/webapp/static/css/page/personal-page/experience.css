@@ -1,0 +1,37 @@
+.experience {
+  width: 770px;
+  position: relative; }
+  .experience .line {
+    position: absolute;
+    width: 1px;
+    background-color: #00caab;
+    left: 25px; }
+  .experience .list-info {
+    width: 650px;
+    margin-top: 18px; }
+    .experience .list-info .item-list .detail-info {
+      margin-top: 0;
+      overflow: hidden;
+      font-size: 14px;
+      background: url("/static/img/page/personal-page/dot.png") no-repeat left center; }
+      .experience .list-info .item-list .detail-info .time-data {
+        float: left;
+        margin-right: 26px;
+        position: relative; }
+        .experience .list-info .item-list .detail-info .time-data span {
+          width: 60px; }
+      .experience .list-info .item-list .detail-info .company {
+        float: left;
+        margin-right: 40px; }
+      .experience .list-info .item-list .detail-info .order {
+        float: left; }
+    .experience .list-info .item-list p {
+      margin-left: 160px;
+      text-indent: 0;
+      margin-top: 10px;
+      margin-bottom: 20px; }
+  .experience .last-para {
+    margin-left: 160px;
+    text-indent: 0;
+    margin-top: 10px;
+    margin-bottom: 20px; }

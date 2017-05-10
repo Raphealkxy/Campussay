@@ -1,0 +1,71 @@
+@charset "UTF-8";
+.listen-aside-content-item {
+  float: right;
+  margin-top: 82px;
+  margin-bottom: 50px;
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-top: 6px;
+  border: 1px solid #f0f0f0;
+  color: #5c5c5c; }
+
+.recommend-title {
+  height: 36px;
+  line-height: 36px;
+  font-size: 14px; }
+
+.recommend-list {
+  width: 240px; }
+
+.recommend-item {
+  padding-bottom: 14px; }
+
+.recommend-item-pic {
+  width: 240px;
+  height: 142px; }
+
+.recommend-item-title {
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+  color: #777777; }
+
+.recommend-item-dec li {
+  float: left;
+  width: 50%;
+  font-size: 12px; }
+
+.recommend-item-dec-att {
+  padding-top: 7px; }
+
+.recommend-item-dec-in,
+.recommend-item-dec-price {
+  color: #fca825; }
+
+.recommend-item-dec-price {
+  text-align: right; }
+
+.recommend-item-dec-price-big {
+  margin-right: 11px;
+  font-size: 19px; }
+
+.row-line {
+  margin-bottom: 14px;
+  border-top: 1px dashed #ececec;
+  border-bottom: 1px dashed #ececec; }
+
+.some-problem {
+  padding-bottom: 18px;
+  line-height: 19px;
+  font-size: 12px; }
+  .some-problem li {
+    color: #00caab;
+    counter-increment: testname; }
+    .some-problem li:before {
+      content: counter(testname) "、"; }
+    .some-problem li a {
+      color: #00caab; }
+  .some-problem li + li {
+    color: #5c5c5c; }
+    .some-problem li + li a {
+      color: #5c5c5c; }

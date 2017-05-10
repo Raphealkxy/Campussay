@@ -1,0 +1,108 @@
+$font-color: #c3c3c3;
+$font-size: 12px;
+.wrap{
+  margin-top: 30px;
+  overflow: hidden;
+  margin-bottom: 400px;
+  .container{
+    margin-right: 38px;
+    width: 860px;
+    float: left;
+    line-height: 22px;
+    .top{
+      overflow: hidden;
+      #chuangye{
+        width: 50px;
+        height: 50px;
+        display: block;
+        float: left;
+      }
+      .chuang{
+        display: block;
+        font-size: 16px;
+        color: #e2e2e2;
+        float: left;
+        line-height: 46px;
+      }
+      .care{
+        float: right;
+        position: relative;
+        top: 14px;
+      }
+    }
+    .content{
+      .wrap-list{
+        margin-top: 20px;
+        width: 844px;
+        padding-right: 16px;
+        padding-bottom: 20px;
+        border-bottom: 1px dashed #DDDDDD;
+        .list-item{
+          overflow: hidden;
+          h1{
+            font-size: 16px;
+            float: left;
+          }
+          .minite{
+            display: block;
+            float: right;
+            color: $font-color;
+            font-size: $font-size;
+          }
+        }
+        .name-info{
+            overflow: hidden;
+            font-size: $font-size;
+          .name-list{
+            float: left;
+            padding: 2px 14px 2px 0;
+            //border-right: 1px solid #ababab;
+          }
+          .school-list{
+            float: left;
+            padding: 2px 14px;
+            &:before{
+              content: '';
+              width: 1px;
+              height: 12px;
+              background: #dddddd;
+              display: inline-block;
+              position: relative;
+              left: -10px;
+            }
+          }
+        }
+        .count{
+          color: $font-color;
+          font-size: $font-size;
+          overflow: hidden;
+          .answer-count{
+            float: left;
+            margin-right: 20px;
+          }
+          .review-count{
+            float: left;
+          }
+          .jubao{
+            margin-left: 14px;
+            float: right;
+            color: $font-color;
+            font-size: $font-size;
+            img{
+              margin-right: 8px;
+            }
+          }
+          .share{
+            float: right;color: $font-color;
+            font-size: $font-size;
+            img{
+              margin-right: 8px;
+            }
+          }
+        }
+      }
+    }
+
+
+  }
+}

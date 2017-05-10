@@ -1,0 +1,49 @@
+.talking-container {
+  width: 870px;
+  margin: 0 auto;
+  padding: 0 40px 30px 0; }
+  .talking-container .talking-list {
+    overflow: hidden;
+    border-bottom: 1px solid #dddddd;
+    margin-top: 30px; }
+    .talking-container .talking-list i {
+      display: block;
+      float: left;
+      width: 80px;
+      height: 80px; }
+    .talking-container .talking-list .talking-menu {
+      margin-left: 100px; }
+      .talking-container .talking-list .talking-menu h1 {
+        line-height: 38px;
+        font-size: 18px; }
+        .talking-container .talking-list .talking-menu h1 span {
+          display: block;
+          float: right;
+          color: #ffc67c; }
+      .talking-container .talking-list .talking-menu .zhishu {
+        overflow: hidden; }
+        .talking-container .talking-list .talking-menu .zhishu li {
+          float: left;
+          width: 140px;
+          font-size: 12px; }
+      .talking-container .talking-list .talking-menu p {
+        margin-top: 10px;
+        line-height: 18px; }
+      .talking-container .talking-list .talking-menu .data {
+        margin-top: 20px;
+        float: right; }
+        .talking-container .talking-list .talking-menu .data li {
+          float: left;
+          width: 80px;
+          text-align: center; }
+          .talking-container .talking-list .talking-menu .data li.dd:after {
+            content: '';
+            background: #dddddd;
+            width: 1px;
+            height: 18px;
+            display: block;
+            position: relative;
+            left: 94px;
+            top: -16px; }
+
+/*# sourceMappingURL=comment-talking-topic.css.map */

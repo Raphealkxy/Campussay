@@ -1,0 +1,64 @@
+.personal-menu-bar {
+  margin-top: 19px;
+  height: 40px;
+  border-bottom: 1px solid #e6e6e6;
+  font-size: 16px; }
+  .personal-menu-item {
+    position: relative;
+    padding-top: 13px;
+    top: 1px;
+    float: left;
+    width: 136px;
+    height: 25px;
+    text-align: center;
+    border-bottom: 2px solid transparent; }
+    .personal-menu-item:hover {
+      color: #00caab;
+      border-bottom-color: #00caab; }
+    .personal-menu-item a {
+      display: block;
+      color: #5c5c5c; }
+  .current-menu-item {
+    border-bottom-color: #00caab;
+    color: #00caab; }
+    .current-menu-item:after {
+      position: absolute;
+      bottom: -1px;
+      left: 63px;
+      display: block;
+      content: " ";
+      width: 11px;
+      height: 5px;
+      background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAFCAYAAACTphZWAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIJJREFUeNpi+P//PwMy/vPvH3P385slt75/VkWXQ+G8+v1D1O3moZ0Mp1b/5zu74eOqt49DkeUZwTqA4PDnN7aR904uf/rruzQDEsgRU5nSK6dXzMbI9Ivx3///jL0vbhVXPrnc/uf/fxYGLMCCR+jESmWLcEaglWxAvgwDYfAFIMAAVc5fPbo2MSUAAAAASUVORK5CYII=") no-repeat; }
+
+.class-dec-tab {
+  margin-top: 42px;
+  background-color: #f8f8f8;
+  border: none; }
+
+.personal-menu-item.current-menu-item a {
+  color: #00caab; }
+
+.personal-menu-item {
+  top: 0; }
+  .personal-menu-item a {
+    color: #5c5c5c; }
+  .personal-menu-item:hover a {
+    color: #00caab; }
+
+.personal-menu-item.class-tab-bar-btn {
+  float: right;
+  padding: 0;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background-color: #00caab;
+  border: none;
+  color: #fff; }
+
+.personal-menu-item.class-price-btn {
+  width: 84px; }
+
+.personal-menu-item.add-now-btn {
+  margin-left: 1px;
+  width: 110px; }

@@ -1,0 +1,49 @@
+.main-nav {
+  padding-top: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #f0f0f0; }
+  .main-nav label {
+    margin-left: 40px;
+    margin-right: 40px;
+    font-size: 20px;
+    color: #67d8c2;
+    position: relative;
+    top: -20px; }
+    .main-nav label:before {
+      background: #dddddd;
+      width: 1px;
+      content: '';
+      display: inline-block;
+      height: 40px;
+      position: relative;
+      left: -20px;
+      top: 10px; }
+  .main-nav .nav-list {
+    overflow: hidden;
+    display: inline-block;
+    position: relative;
+    top: -18px; }
+    .main-nav .nav-list li {
+      float: left;
+      width: 150px;
+      font-size: 16px;
+      text-align: center; }
+  .main-nav .my-answer {
+    position: relative;
+    top: 10px;
+    float: right;
+    width: 58px;
+    padding: 6px 18px;
+    background: #00caab;
+    font-size: 14px;
+    color: #dff6f1; }
+  .main-nav .my-huati {
+    position: relative;
+    top: 10px;
+    margin-left: 20px;
+    float: right;
+    width: 70px;
+    padding: 5px 18px;
+    border: 1px solid #00caab;
+    color: #00caab;
+    font-size: 14px; }

@@ -1,0 +1,192 @@
+@charset "UTF-8";
+@import '../../common/global-set';
+@import 'layout';
+
+$font-color: #2ce6c9;
+$label-w: 162px;
+
+// account main
+.account {
+  overflow: hidden;
+  zoom: 1;
+  margin-bottom: 340px;
+}
+
+.account-content {
+
+  .item-content {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 36px;
+    .item {
+      display: block;
+      margin: 16px 0px;
+      label {
+        width: $label-w;
+        display: inline-block;
+        text-align: right;
+        font-size: 16px;
+        span {
+          color: #ff5c3a;
+        }
+      }
+    }
+  }
+  // 提现模块
+  .item-money-out {
+    height: 40px;
+    .item-breadcrumb, .item-operation {
+      display:inline;
+    }
+    .item-breadcrumb {
+      border-left: none;
+      span {
+        font-size: 24px;
+        color:#fca825;
+        line-height: 32px;
+        vertical-align: middle;
+      }
+    }
+    .item-operation>.operation {
+      margin-left: 10px;
+    }
+  }
+  // 支付宝账号模块
+  .item-money-account {
+    position: relative;
+    height: 185px;
+    .account-info {
+      display: inline-block;
+      margin-left: 4px;
+      a {
+        color: $font-color;
+        text-decoration: underline;
+      }
+      span {
+        font-size: 12px;
+        color: #969696;
+        line-height: 16px;
+        vertical-align: top;
+      }
+    }
+  }
+  // 交易记录模块
+  .item-trade-record {
+    position: relative;
+    table {
+      width: 100%;
+      color: #7c7c7c;
+      font-size: 14px;
+      text-align: center;
+      /*border-collapse: separate;
+      border-spacing: 4px 0px;*/
+      td {
+        width: 20%;
+        height: 86px;
+        padding: 2px;
+      }
+      thead {
+        td {
+          height: 36px;
+          border-bottom: 1px solid $global-bg;
+          border-right: 4px solid #fff;
+        }
+      }
+      tbody {
+        tr:nth-child(odd) {
+          background-color: #fafafa;
+        }
+        td:nth-child(4) {
+          color: #fca825;
+        }
+        td:nth-child(3){
+          a{
+            display: block;
+            color: #00caab;
+          }
+        }
+      }
+    }
+  }
+}
+.item-breadcrumb {
+  display: block;
+  border-left: 6px solid $global-bg;
+  padding-left: 8px;
+  margin-bottom: 34px;
+}
+.item-input {
+  height: 30px;
+  border: 1px solid #bababa;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  color: #777;
+  text-indent: 8px;
+  &:focus {
+    border: 1px solid $global-bg;
+  }
+  &:disabled {
+    border: 1px solid #fff;
+    background-color: #fff;
+  }
+}
+.item-text-input {
+  width: 252px;
+  & + span {
+    display: inline-block;
+    margin-left: 14px;
+    color: #909090;
+  }
+}
+.item-operation {
+  a {
+    display: inline-block;
+    line-height: 28px;
+    vertical-align: middle;
+    padding: 2px 34px;
+    font-size: 16px;
+  }
+  .operation {
+    margin-left: $label-w + 2px;
+    background-color: $global-bg;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    color: #fff;
+    &:hover {
+      background-color: #12b59c;
+    }
+  }
+  .cancel-binding {
+    color: $font-color;
+  }
+}
+.icon {
+  margin-right: 4px;
+}
+.icon-info {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin: 0px 2px 0px 14px;
+  background: url('/static/img/page/personal-center/info.png') no-repeat;
+}
+#account-pop {
+  label {
+    width: 102px;
+  }
+  .account-info{
+    margin-top: 10px;
+    i {
+      margin-left: 0;
+    }
+  }
+  .operation {
+    margin-left: 130px;
+  }
+}
+#money-now, #money-take {
+  font-size: 18px;
+  color: #fca825;
+}

@@ -1,0 +1,67 @@
+.aside {
+  margin-top: 30px;
+  width: 216px; }
+  .aside h2 {
+    font-size: 18px;
+    line-height: 22px; }
+    .aside h2:before {
+      margin-right: 12px;
+      content: " ";
+      display: inline-block;
+      width: 4px;
+      height: 22px;
+      background-color: #00caab;
+      vertical-align: middle; }
+    .aside h2 span {
+      display: inline-block;
+      vertical-align: middle; }
+  .my-talking-list {
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 12px;
+    margin-top: 13px;
+    border: 1px solid #DDDDDD;
+    background-color: #fafafa; }
+  .my-talking-item {
+    padding-bottom: 26px; }
+    .my-talking-item a {
+      display: inline-block; }
+    .my-talking-item img {
+      width: 190px;
+      height: 120px; }
+    .talking-info {
+      float: left; }
+      .talking-info h3 {
+        height: 30px;
+        line-height: 30px;
+        font-size: 14px; }
+      .talking-info p {
+        font-size: 12px;
+        line-height: 1em; }
+        .talking-info p i {
+          margin-left: 10px;
+          margin-right: 10px;
+          display: inline-block;
+          width: 2px;
+          height: 12px;
+          background-color: #5c5c5c;
+          vertical-align: middle; }
+    .look-talking {
+      float: right; }
+      .look-talking p {
+        height: 30px;
+        line-height: 30px;
+        font-size: 14px;
+        color: #fca825; }
+      .look-talking a {
+        display: inline-block;
+        width: 46px;
+        height: 18px;
+        line-height: 18px;
+        background-color: #fca825;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 12px; }
+  .my-talking-item + .my-talking-item {
+    padding-top: 26px;
+    border-top: 1px dashed #e6e6e6; }

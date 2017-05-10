@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.campussay.dao.ApplayRefundOrderDao">
+
+	<insert id="addRecode" parameterType="com.campussay.model.ApplayRefundOrder">
+	    insert into t_applay_refund_order (applay_refund_id,applay_refund_order_user,applay_refund_order_time,applay_refund_order_state,applay_refund_order_reason,applay_refund_order_id)
+	    values (#{applay_refund_id},#{applay_refund_order_user},#{applay_refund_order_time},#{applay_refund_order_state},#{applay_refund_order_reason},#{apply_refund_order_id})
+	</insert>
+
+
+	<select id="getOneApplyRefundRecord" parameterType="int" resultType="Map">
+	SELECT
+	applay_refund_order_id AS id,
+	applay_refund_order_time AS time,
+	applay_refund_order_state AS STATUS,
+	t_order.order_price AS cash
+FROM
+	`t_applay_refund_order`
+LEFT JOIN t_order ON t_order.order_id = applay_refund_order_id
+WHERE
+	applay_refund_order_user = #{0} order by applay_refund_order_time desc; 
+	</select>
+
+
+</mapper>

@@ -1,0 +1,70 @@
+<script src='/static/html/common/header.js' data-css='personal-center/account'></script>
+
+<!-- 个人中心通用头部导航 -->
+<div class="personal-main-nav">
+    <!-- personal-center/common/header.js render here -->
+</div>
+<!-- 个人中心通用头部导航结束 -->
+
+<div class="account global-center clearfix">
+    <!-- 左侧菜单栏 -->
+    <div class="personal-aside">
+        <!-- personal-center/common/aside.js render here -->
+    </div>
+    <!-- 左侧菜单栏结束 -->
+
+    <!-- 个人中心主要内容 -->
+    <div class="personal-content account-content clearfix">
+        <!-- 详细列表 -->
+        <div class="account-content">
+
+            <div class="item-content item-money-account clearfix">
+                <span class="item-breadcrumb f18">如果出现退款情况，将退到您这个账号：</span>
+                <div class="item item-zhifubao">
+                    <label><span> * </span>收款人支付宝：</label>
+                    <input type="text" name="zhifubao" class="item-input item-text-input">
+                    <div class="account-info">
+                        <i class="icon-info"></i>
+                        <span>目前只提供支付宝一种结算方式</span>
+                    </div>
+                </div>
+                <div class="item item-realname">
+                    <label><span> * </span>收款人姓名：</label>
+                    <input type="text" name="realname" class="item-input item-text-input">
+                    <div class="account-info">
+                        <i class="icon-info"></i>
+                        <span>请务必与身份证的姓名一致</span>
+                    </div>
+                </div>
+                <div class="item item-operation">
+                    <a href="javascript:;" class="operation submit">提交</a>
+                </div>
+            </div>
+
+            <div class="item-content item-trade-record clearfix">
+                <span class="item-breadcrumb f18">我的交易记录：</span>
+                <table class="item-trade-table">
+                    <thead>
+                        <td>交易时间</td>
+                        <td>交易类型</td>
+                        <td>交易详情</td>
+                        <td>金额（元）</td>
+                        <td>交易状态</td>
+                    </thead>
+                    <tbody>
+                        <!-- personal-center/account.js render here -->
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <!-- 翻页-->
+        <div style="margin:0 auto;margin-top: 40px; text-align: center;">
+            <div id="kkpager" class="inline-block"></div>
+        </div>
+    </div>
+    <!-- 个人中心主要内容结束 -->
+</div>
+
+<script src='/static/html/common/footer.js' data-js='personal-center/account'></script>

@@ -1,0 +1,80 @@
+.switch-bar {
+    margin-top: 30px;
+    margin-bottom: 4px;
+    background-color: #fafafa;
+    border-bottom: 1px solid #dddddd;
+    height: 36px;
+    li {
+        position: relative;
+        float: left;
+        cursor: pointer;
+        width: 136px;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        border: 1px solid transparent;
+    }
+    .checked {
+        background-color: #FFFFFF;
+        border-color: #DDDDDD;
+        border-bottom-color: #FFFFFF;
+    }
+}
+
+.qa-list {
+    @at-root {
+        .qa-item{
+            padding: 20px 24px 18px 0;
+            a{
+                display: inline-block;
+                float: left;
+            }
+            img{
+                border: none;
+                width: 56px;
+                height: 53px;
+            }
+            div{
+                margin-left: 16px;
+                float: left;
+            }
+            h2{
+                line-height: 16px;
+                font-size: 16px;
+            }
+            p{
+                line-height: 1em;
+                font-size: 12px;
+                color: #969696;
+                margin-top: 20px;
+                span+span{
+                    margin-left: 16px;
+                }
+            }
+            ul{
+                float: right;
+                text-align: right;
+                font-size: 12px;
+                button{
+                    margin-bottom: 10px;
+                    -webkit-border-radius: 3px;
+                    -moz-border-radius: 3px;
+                    border-radius: 3px;
+                    width: 84px;
+                    height: 22px;
+                    background-color: #f8f8f8;
+                    color: #b8b8b8;
+                }
+                .about-num{
+                    color: #00caab;
+                }
+                .about-num+span{
+                    color: #969696;
+                }
+            }
+        }
+        .qa-item+.qa-item{
+            border-top: 1px solid #DDDDDD;
+        }
+    }
+}

@@ -1,0 +1,144 @@
+.sex-input {
+  display: none; }
+
+.talk-friends-list {
+  margin-left: -20px; }
+
+.sex-input-wrap {
+  margin-top: 10px;
+  float: left;
+  margin-left: 45px;
+  color: #969696;
+  font-size: 12px; }
+  .sex-input-wrap span {
+    vertical-align: middle; }
+
+.sex-input:checked + .sex-input-virtual {
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAGCAYAAAD+Bd/7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFZJREFUeNpi/P//PwM20PviVj2IZsIlCcQNQCYjQ8/zm/UgDDIJhEFsyfOb/wPpBhCfBaQKZhxUd0OxhFojEDeABaC6GkC6kHXCMMgEBrhqNDYIAAQYALo2Q1ZUuSuFAAAAAElFTkSuQmCC") no-repeat;
+  background-position: center center; }
+
+.sex-input-virtual {
+  width: 10px;
+  height: 10px;
+  border: 1px solid #DDDDDD; }
+
+.talk-friends-item {
+  margin-top: 30px;
+  margin-left: 20px;
+  padding-top: 25px;
+  padding-bottom: 22px;
+  float: left;
+  width: 378px;
+  height: 120px;
+  border: 1px solid #ececec; }
+
+.talk-friends-msg, .talk-friends-info {
+  float: left; }
+
+.talk-friends-info {
+  width: 240px;
+  overflow: hidden; }
+
+.talk-friends-msg {
+  margin-top: 7px;
+  margin-left: 20px;
+  text-align: center; }
+  .talk-friends-msg img {
+    margin-bottom: 4px;
+    width: 70px;
+    height: 70px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%; }
+  .talk-friends-msg dt {
+    position: relative; }
+  .talk-friends-msg .sex-boy {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    width: 22px;
+    height: 22px;
+    background: url(/static/img/page/talk-friends/sex.png) no-repeat; }
+  .talk-friends-msg .sex-girl {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    width: 22px;
+    height: 22px;
+    background: url(/static/img/page/talk-friends/girl.png) no-repeat; }
+  .talk-friends-msg dd {
+    margin-top: 5px;
+    font-size: 12px;
+    line-height: 1em;
+    width: 70px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
+
+.talk-friends-tip {
+  width: 59px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+  background-color: #59b65b; }
+
+.talk-friends-info {
+  margin-top: -4px;
+  margin-left: 20px;
+  line-height: 1em; }
+  .talk-friends-info li {
+    margin-top: 8px; }
+  .talk-friends-info .talk-friends-info-item {
+    margin-top: 12px; }
+    .talk-friends-info .talk-friends-info-item span {
+      vertical-align: middle; }
+    .talk-friends-info .talk-friends-info-item .talk-num {
+      color: #00caab; }
+  .ids-container {
+    font-size: 0; }
+  .ids {
+    margin-right: 11px;
+    width: 24px;
+    vertical-align: -5px; }
+  .ids-sf {
+    background: url(/static/img/page/talk-friends//shengfen.png) no-repeat;
+    height: 19px; }
+  .ids-xl {
+    background: url(/static/img/page/talk-friends//xueli.png) no-repeat;
+    height: 19px; }
+  .ids-xs {
+    background: url(/static/img/page/talk-friends//xuesheng.png) no-repeat;
+    height: 19px; }
+  .no-ids-xs {
+    background: url(/static/img/page/talk-friends//no_ident.png) no-repeat;
+    height: 19px; }
+
+.star-container {
+  font-size: 0; }
+  .star {
+    width: 12px;
+    height: 11px; }
+  .stary {
+    background: url(/static/img/page/talk-friends/star2.png) no-repeat; }
+  .starn {
+    background: url(/static/img/page/talk-friends/star1.png) no-repeat; }
+
+span.good-at {
+  padding-left: 5px;
+  padding-right: 5px;
+  position: relative;
+  color: #969696;
+  border: 1px solid #b0b0b0;
+  height: 18px;
+  line-height: 18px;
+  vertical-align: top;
+  font-size: 12px; }
+  span.good-at i {
+    position: absolute;
+    top: 0;
+    right: -9px;
+    width: 9px;
+    height: 18px;
+    background: url(/static/img/page/talk-friends/r-btn.png) no-repeat; }

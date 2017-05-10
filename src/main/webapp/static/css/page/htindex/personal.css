@@ -1,0 +1,92 @@
+.personal-panel {
+  margin-top: 30px;
+  padding: 24px 25px 20px 30px;
+  background-color: #fafafa;
+  overflow: hidden; }
+  .personal-url {
+    display: inline-block;
+    float: left; }
+  .personal-head {
+    width: 102px;
+    height: 102px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: none; }
+  .personal-info {
+    margin-left: 30px;
+    float: left; }
+    .good-at, .about-at, .personal-name, .personal-school {
+      height: 30px;
+      line-height: 30px;
+      font-size: 0; }
+    .personal-name span, .personal-name button {
+      display: inline-block;
+      vertical-align: middle; }
+    .personal-name span {
+      font-size: 20px; }
+    .personal-name button {
+      margin-left: 18px;
+      width: 58px;
+      height: 22px;
+      line-height: 22px;
+      background-color: #00caab;
+      font-size: 12.4px;
+      color: #FFFFFF; }
+    .personal-school span, .personal-school i {
+      display: inline-block;
+      font-size: 14px; }
+    .personal-school i {
+      margin-left: 12px;
+      margin-right: 12px;
+      width: 2px;
+      height: 13px;
+      background-color: #555555; }
+    .good-at {
+      margin-top: 5px; }
+    .at-item, .at-name {
+      display: inline-block;
+      vertical-align: middle; }
+    .at-name {
+      font-size: 14px; }
+    .at-item {
+      font-size: 12px;
+      color: #969696;
+      margin-left: 9px; }
+  .look-personal {
+    float: right; }
+    .look-personal li {
+      font-size: 12px; }
+    .look-personal a {
+      height: 20px;
+      line-height: 20px;
+      display: inline-block;
+      color: #5c5c5c; }
+    .look-personal li + li {
+      margin-top: 75px;
+      line-height: 30px;
+      font-size: 0;
+      color: #969696;
+      text-align: right; }
+    .look-personal .read-num, .look-personal .up-num {
+      display: inline-block;
+      font-size: 12px;
+      vertical-align: middle; }
+    .look-personal .read-num:before {
+      margin-right: 6px;
+      content: " ";
+      display: inline-block;
+      width: 16px;
+      height: 9px;
+      background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAJCAYAAAA7KqwyAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAVtJREFUeNpi/PXrFwMM/P//n+XFixchr1+/9v3w4YP1jx8/pEDiHBwczwQEBI6JiopukpCQWMPIyPgHpocRZgBQk/f169enfP/+XYGFheWDmppalZiY2EaQ3KtXr/xv3brV9ufPHwFOTs4HmpqaOUDDtsINuHPnTuPdu3frQAJMTEw/LCwszLi5uW8/efIkBegqZhkZmVnfvn1TOXHixKl///5xgNQpKys3qaio1LM8fPiwAKYZBCQlJZfx8vJevnjx4kqgd8JAYm/evPEwNjb2BMqtePr0aQJIDKSHlZX1PdO9e/cqGJAAyGaoJjeY2Lt37xygcjeR1YL0MikpKXUgC379+lUVRIuIiOyCiQkJCR2EyqkjqwXphYVBE9BJtTjCgAUaBspoYdAMDIM6QrGwHhoLgXhjASkdsILSASjagOnA8ufPn+B0wM7ODkoHx0HRCk0Hv2F6AAIMAAhM0eQ8K8AdAAAAAElFTkSuQmCC") no-repeat;
+      vertical-align: baseline; }
+    .look-personal .up-num {
+      margin-left: 30px; }
+      .look-personal .up-num:before {
+        margin-right: 9px;
+        content: " ";
+        display: inline-block;
+        width: 9px;
+        height: 12px;
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAMCAYAAACwXJejAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAKNJREFUeNpi+vXrFwMMf//+nf/y5cubQTSyOBMDFPz//5/51q1bq96/f+9z+/btlSA+TA6u6NGjRz0fP350A7E/fPjgDuKjKHr16lXS8+fPCxiQAIgPFE8GsRnfvn1rfe3atX1A49kY0AAjI+MvLS0tF8YnT54k/fnzRxRqZQdMgZycXAWIZmFhec0Icj0MnDhx4j+MbWFhwYjhcHxgMCoCCDAAeLZgaPpCveUAAAAASUVORK5CYII=") no-repeat;
+        vertical-align: baseline; }

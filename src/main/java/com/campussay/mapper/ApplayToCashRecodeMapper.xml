@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.campussay.dao.ApplayToCashRecodeDao">
+
+	<insert id="addRecode" parameterType="com.campussay.model.ApplayToCashRecode">
+	    insert into t_applay_to_cash_record (applay_to_cash_recode_id,applay_to_cash_recode_content,applay_to_cash_recode_time,applay_to_cash_recode_user,applay_to_cash_recode_status,applay_to_cash_money_state)
+	    values (#{applayToCashRecodeId},#{applayToCashRecodeContent},#{applayToCashRecodeTime},#{applayToCashRecodeUser},0,0)
+	</insert>
+
+	<select id="selectRecode" resultType="Map">
+	    select   applay_to_cash_recode_id,applay_to_cash_recode_content,applay_to_cash_recode_time,applay_to_cash_recode_status
+	    from t_applay_to_cash_record where applay_to_cash_recode_user = #{userID} order by applay_to_cash_recode_time desc limit #{start},#{pageSize}
+	</select>
+	<select id="selectRecodeCount" resultType="int">
+	
+	    select  count(1)
+	    from t_applay_to_cash_record where applay_to_cash_recode_user = #{userID} order by applay_to_cash_recode_time desc
+	</select>
+	
+	
+	<select id="getOneApplyToCashRecord" resultType="Map">
+		select  applay_to_cash_recode_id as id ,applay_to_cash_recode_content as cash ,applay_to_cash_recode_time as time,applay_to_cash_money_state as status
+	    from t_applay_to_cash_record where applay_to_cash_recode_user = #{userID} order by applay_to_cash_recode_time desc;
+	</select>
+	
+</mapper>

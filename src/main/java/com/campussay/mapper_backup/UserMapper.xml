@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.campussay.dao.UserDao">
+<!--
+    <resultMap type="User" id="userMapper">
+  			<id property="userId" column="user_id"></id>
+  			<result property="userName" column="user_name"/>
+  	</resultMap>
+    <select id="getUser" resultMap="userMapper">
+    	SELECT * FROM t_user where user_id=#{userId}
+    </select>
+    <delete id="delete"  >
+    	DELETE FROM t_user WHERE user_id=#{userId}
+    </delete>
+
+    <insert id="save">
+    		insert into t_user values (null,#{userName})
+    </insert>
+
+    <update id="update">
+		update t_user set user_name = #{userName} where user_id=#{user_id}
+	</update>
+ -->
+    <resultMap id="toUser" type="com.campussay.model.User">
+        <id property="userId" column="user_id" />
+        <result property="userName" column="user_name"/>
+        <result property="userSex" column="user_sex"/>
+        <result property="userPassword" column="user_password"/>
+        <result property="userPhoto" column="user_photo"/>
+        <result property="userQQ" column="user_qq"/>
+        <result property="userPhone" column="user_phone"/>
+        <result property="userMail" column="user_mail"/>
+        <result property="userWechat" column="user_wechat"/>
+        <result property="userRegisterTime" column="user_register_time"/>
+        <result property="userBirthday" column="user_birthday"/>
+        <result property="userStudentCheckResult" column="user_student_check_result"/>
+        <result property="userCampusName" column="user_campus_name"/>
+        <result property="userAcademe" column="user_academe"></result>
+        <result property="userMajor" column="user_major"></result>
+        <result property="userPayAccount" column="user_pay_account"/>
+        <result property="userPayName" column="user_pay_name"/>
+        <result property="userIsStar" column="user_is_star"/>
+        <result property="userTalkingCount" column="user_talking_count"/>
+        <result property="userDescription" column="user_description"/>
+        <result property="userState" column="user_state"/>
+        
+        <result property="userBalance" column="user_balance"/>
+        <result property="userNeedCash" column="user_need_cash"/>
+        <result property="userGetcashStatus" column="user_getcash_status"/>
+    </resultMap>
+
+
+    <sql id="UserItems">
+      user_id,user_name,user_sex,user_password,user_photo,user_qq,user_phone,user_mail,user_wechat,
+      user_register_time,user_birthday,user_student_check_result,user_campus_name,user_academe,user_major,
+      user_pay_account,user_pay_name,user_credits,user_is_star,user_talking_count,user_description,user_state
+    </sql>
+
+    <sql id="UserValues">
+      #{user_id},#{user_name},#{user_sex},#{user_password},#{user_photo},#{user_qq},#{user_phone},
+      #{user_mail},#{user_wechat},#{user_register_time},#{user_birthday},#{user_student_check_result},
+      #{user_campus_name},#{user_academe},#{user_major}},#{user_pay_account},#{user_pay_name},#{user_credits},#{user_is_star},#{user_talking_count},#{user_description},#{user_state}
+    </sql>
+
+    <!-- 通过邮箱获取用户 -->
+    <select id="getUserByMail" resultMap="toUser">
+        SELECT * FROM t_user WHERE user_mail = #{0};
+    </select>
+
+    <!-- 通过手机获取用户 -->
+    <select id="getUserByPhone" resultMap="toUser">
+        SELECT * FROM t_user WHERE user_phone = #{0};
+    </select>
+
+    <!-- 根据邮箱查找用户数量 -->
+    <select id="checkMail" resultType="int">
+        select count(1) from t_user where user_mail=#{0};
+    </select>
+
+    <!-- 根据电话查找用户数量 -->
+    <select id="checkPhone" resultType="int">
+        select count(1) from t_user where user_phone=#{0}
+    </select>
+
+    <!-- 根据邮箱添加用户 -->
+    <insert id="addUserByMail">
+        insert into t_user (user_id,user_name,user_password,user_mail,user_register_time,user_student_check_result,user_is_star,user_talking_count,user_state) values
+			(null,#{userName},#{userPassword},#{userMail},#{userRegisterTime},0,0,0,10);
+    </insert>
+
+    <!-- 根据电话添加用户 -->
+    <insert id="addUserByphone">
+        insert into t_user (user_id,user_name,user_password,user_phone,user_register_time,user_student_check_result,user_is_star,user_talking_count,user_state) values
+			(null,#{userName},#{userPassword},#{userPhone},#{userRegisterTime},0,0,0,10);
+    </insert>
+
+    <!-- 根据邮箱修改密码 -->
+    <update id="updatePasswordByMail">
+        UPDATE t_user set user_password=#{1} WHERE user_mail=#{0};
+    </update>
+
+    <!-- 根据电话修改密码 -->
+    <update id="updatePasswordByPhone">
+        UPDATE t_user set user_password=#{1} WHERE user_phone=#{0};
+    </update>
+
+    <!-- 根据userId和原密码修改密码 -->
+    <update id="updatePasswordByUserId">
+        UPDATE t_user set user_password=#{2} WHERE user_id=#{0} AND user_password=#{1};
+    </update>
+
+    <!-- 根据userId获取用户的基本信息 -->
+    <select id="getBasicInfoByUserId" resultType="java.util.HashMap">
+        SELECT u.user_id,u.user_name,u.user_sex,u.user_photo,u.user_register_time,u.user_birthday,u.user_student_check_result,u.user_campus_name,u.user_academe,u.user_major,u.user_title,
+        u.user_is_star,u.user_description FROM t_user u WHERE user_id=#{0};
+    </select>
+
+    <!--根据userId获取用户的所有基本信息-->
+    <select id="getAllUserInfoByUserId" resultType="java.util.HashMap">
+        select user_id,user_name,user_sex,user_photo,user_campus_name,user_academe,user_major,user_description,user_title
+         from t_user where user_id=#{0};
+    </select>
+
+    <!-- 获取用户认证状态-->
+    <select id="getUserCheckResult" parameterType="int" resultType="Map">
+        select user_student_check_result,student_check_picture
+        FROM t_user,t_student_check
+        where user_id=#{0} and user_id=student_check_user
+    </select>
+    <!--获取用户的关注领域-->
+    <select id="getUserFollowArea" resultType="java.util.HashMap">
+        select talking_type_name ,talking_type_id FROM t_follow fl,t_talking_type tp where fl.uid=#{0} and fl.taking_type_id=tp.talking_type_id;
+    </select>
+    <!--获取用户的擅长领域-->
+    <select id="getUserSkillArea" resultType="java.util.HashMap">
+        select talking_type_name ,talking_type_id FROM t_skill sk,t_talking_type tp where sk.skill_user=#{0} AND sk.skill_talking_type=tp.talking_type_id;
+    </select>
+
+    <!--保存用户所填写的关注领域-->
+    <insert id="setUserFollowArea" parameterType="java.util.List">
+        insert into
+        t_follow (uid,taking_type_id)
+        values
+        <foreach collection="list"  item="item" index="index" separator=",">
+            (#{item.uid},#{item.takingTypeId})
+        </foreach>
+
+    </insert>
+
+    <!--保存用户所填写的擅长领域-->
+    <insert id="setUserSkillArea" parameterType="java.util.List">
+        insert into t_skill(skill_user,skill_talking_type)
+        values
+        <foreach collection="list"  item="item" index="index" separator=",">
+            (#{item.skillUser},#{item.skillTalkingType})
+        </foreach>
+    </insert>
+
+    <!--删除用户所要删除的擅长领域-->
+    <delete id="deleUserSkillArea">
+        delete  from t_skill
+        where skill_user=#{0} and skill_talking_type IN
+        <foreach collection="del"  item="id" index="index" open="(" separator="," close=")">
+              #{id}
+        </foreach>
+    </delete>
+
+    <!--删除用户所要删除的关注领域-->
+    <delete id="deleUserFollowArea">
+        DELETE  from t_follow where uid=#{0} and taking_type_id IN
+        <foreach collection="del"  item="item" index="index" open="(" separator="," close=")">
+             #{item}
+        </foreach>
+    </delete>
+
+    <!-- 根据userId获取用户的关注数量 -->
+    <select id="getAttentionCount" resultType="int">
+        SELECT COUNT(*) FROM t_attention WHERE attention_owner=#{0};
+    </select>
+
+    <!-- 根据userId获取用户的粉丝数量 -->
+    <select id="getFansCount" resultType="int">
+        SELECT COUNT(*) FROM t_attention WHERE attention_user=#{0};
+    </select>
+
+    <!-- 获取用户的粉丝详情列或者关注详情列 -->
+    <select id="getAttentionList" resultType="java.util.HashMap">
+        SELECT user_id,user_name,user_sex,user_photo,user_student_check_result,user_campus_name,user_is_star
+         FROM t_user WHERE user_id IN (
+         <if test="listType == 0">
+             SELECT attention_owner FROM (
+             SELECT attention_owner FROM t_attention WHERE attention_user=#{0} limit #{2},#{3}
+             ) AS t
+         </if>
+        <if test="listType == 1">
+            SELECT attention_user FROM (
+            SELECT attention_user FROM t_attention WHERE attention_owner=#{0} limit #{2},#{3}
+            ) AS t
+        </if>
+        );
+    </select>
+
+    <!-- 用户关注其他用户 -->
+    <insert id="attentionUser">
+        insert into t_attention VALUES (#{0},#{1});
+    </insert>
+
+    <!-- 用户关注其他用户 -->
+    <delete id="unAttentionUser">
+        DELETE FROM t_attention WHERE attention_owner=#{0} AND attention_user=#{1};
+    </delete>
+
+    <select id="userRelation" resultType="int">
+        SELECT COUNT(*) FROM t_attention WHERE attention_owner=#{0} and attention_user=#{1};
+    </select>
+
+    <!--话题社的用户信息-->
+    <select id="getUserInfo" resultType="map">
+      SELECT
+        user_id,
+	    user_name,
+	    user_photo,
+	    user_campus_name,
+        user_academe as academy,
+        user_sex,
+	    (select sum(islike) from t_answer where t_answer.uid=t_user.user_id) as islike,
+		(select count(*) from t_answer where t_answer.uid=t_user.user_id) as answerNum,
+		(select count(*) from t_talking where t_talking.talking_user=t_user.user_id) as talkingNum,
+		(select count(*) from t_attention where t_attention.attention_user=t_user.user_id) as attentionNum,
+		(select count(*) from t_attention where t_attention.attention_owner=t_user.user_id) as owneratentionNum
+     FROM
+	    t_user
+      WHERE
+	    t_user.user_id = #{0}
+    </select>
+
+
+    <!--修改个人设置信息-->
+    <update id="updateUserInfo" >
+        update t_user
+            <set>
+            <if test="user_name != null">
+                user_name=#{user_name},
+            </if>
+            <if test="user_sex != null">
+                user_sex=#{user_sex},
+            </if>
+                <if test="user_campus_name != null">
+                    user_campus_name=#{user_campus_name},
+                </if>
+                <if test="user_academe !=null" >
+                    user_academe=#{user_academe},
+                </if>
+                <if test="user_major !=null" >
+                    user_major=#{user_major},
+                </if>
+                <if test="user_description !=null" >
+                    user_description = #{user_description},
+                </if>
+                <if test="user_title !=null" >
+                    user_title = #{user_title}
+                </if>
+        </set>
+         where user_id=#{user_id};
+    </update>
+
+
+    <update id="setUserPayAccountInfo">
+        UPDATE t_user SET user_pay_account=#{1},user_pay_name=#{2} WHERE user_id=#{0}
+    </update>
+
+    <select id="getAllFirstArea" resultType="java.util.HashMap">
+        select talking_type_name,talking_type_id from t_talking_type WHERE talking_type_floor=1
+    </select>
+
+    <select id="getAllSecondArea" resultType="java.util.HashMap">
+        select talking_type_name,talking_type_id from t_talking_type where talking_type_parent=#{0};
+    </select>
+
+
+    <select id="getAttention" resultType="int">
+        select count(*) from t_attention where t_attention.attention_owner=#{0} and t_attention.attention_user=#{1}
+    </select>
+
+    <update id="IncreTalkingCount">
+        UPDATE t_user SET user_talking_count=user_talking_count+1 WHERE user_id=#{0}
+    </update>
+
+    <update id="reducTalkingCount">
+        UPDATE t_user SET user_talking_count = user_talking_count-1 WHERE user_id=#{0}
+    </update>
+
+    <select id="getUserTalkingCount" resultType="int">
+        SELECT user_talking_count FROM t_user WHERE user_id=#{0}
+    </select>
+
+    <select id="getMyConcernMsgNum" resultType="int" parameterType="int">
+
+    SELECT
+	  count(*)
+    FROM
+	  t_user
+    WHERE
+	  t_user.user_id IN (SELECT attention_user FROM t_attention WHERE attention_owner = #{0});
+    </select>
+    <select id="getMyConcernMsg" resultType="java.util.HashMap" parameterType="int">
+     SELECT
+	t_user.user_id,
+	t_user.user_name,
+	t_user.user_photo,
+	t_user.user_campus_name,
+	(SELECT count(*) FROM	t_attention	WHERE t_attention.attention_user = t_user.user_id) AS fansNum,
+	(SELECT	count(*) FROM t_attention WHERE t_attention.attention_owner = t_user.user_id) AS attentionNum
+FROM
+	t_user
+WHERE
+	t_user.user_id IN (SELECT attention_user FROM t_attention WHERE attention_owner = #{0}) limit #{1},#{2};
+    </select>
+    <select id="getEachOtherAttention" resultType="int" parameterType="int">
+     select count(*) from t_attention where t_attention.attention_owner=#{0} and t_attention.attention_user=#{1};
+    </select>
+
+    <select id="getMyFansMsgNum" resultType="int" parameterType="int">
+        SELECT	count(*) FROM t_user WHERE
+        t_user.user_id IN (SELECT attention_owner FROM t_attention WHERE attention_user = #{0})
+    </select>
+    <select id="getMyFansMsg" resultType="java.util.HashMap" parameterType="int">
+        SELECT
+        t_user.user_id,
+        t_user.user_name,
+        t_user.user_photo,
+        t_user.user_campus_name,
+        (SELECT count(*) FROM	t_attention	WHERE t_attention.attention_user = t_user.user_id) AS fansNum,
+        (SELECT	count(*) FROM t_attention WHERE t_attention.attention_owner = t_user.user_id) AS attentionNum
+        FROM
+        t_user
+        WHERE
+        t_user.user_id IN (SELECT attention_owner FROM t_attention WHERE attention_user = #{0}) limit #{1},#{2};
+    </select>
+
+
+
+     <select id="getUserBalance" resultType="java.util.HashMap" >
+        SELECT   user_balance,user_need_cash,user_getcash_status
+        FROM
+        t_user
+        WHERE  user_id = #{0}
+    </select>
+
+
+     <update id="updateUserBalance">
+        UPDATE t_user SET user_balance=user_balance + #{0} WHERE user_id=#{1}
+    </update>
+
+	<update id="applyToCash">
+	     <!--  UPDATE t_user set user_balance=user_balance-#{0} ,user_need_cash=#{0} ,user_getcash_status=#{1} where user_id = #{2} and user_getcash_status = 0 and user_balance>0  -->
+	 UPDATE t_user set user_need_cash=#{0} ,user_getcash_status=#{1} where user_id = #{2} and user_getcash_status = 0 and user_balance>0 
+	
+	</update>
+	
+	
+
+    <select id="apkVersion" resultType="Map">
+        SELECT apk_url,apk_version,apk_forceInstall,apk_updateInfo FROM apkVersion ORDER BY apk_id DESC LIMIT 1
+    </select>
+    
+    <select id ="selectUserPasswordById" resultType="Map">
+       select user_password from t_user where user_id=#{0}
+    </select>
+    
+    <select id="showNotReadInfoCount" resultType="int">
+    SELECT COUNT(*) FROM t_information WHERE information_user=#{information_user} AND information_isread =0
+    </select>
+    
+
+    
+    
+     <update id="updateuserphoto">
+        UPDATE t_user set user_photo=#{0} WHERE user_id=#{1};
+    </update>
+    
+    <update id="updateInfo_systemReaded">
+    
+    UPDATE t_information SET information_isread=1 WHERE information_user=#{0}
+       
+    </update>
+    
+    <delete id="deleteInfo_systemReaded">
+    
+    DELETE FROM t_information WHERE information_user=#{0}
+    
+    </delete>
+    
+    
+    <select id="istruepassword" resultType="String">
+    select user_name from t_user where user_id=#{0} AND user_password=#{1}
+    </select>
+</mapper>

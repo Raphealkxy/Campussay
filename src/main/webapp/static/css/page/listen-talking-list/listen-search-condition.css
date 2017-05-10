@@ -1,0 +1,31 @@
+.talking-condition-list {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 1138px;
+  border: 1px solid #dddddd; }
+
+.filter-item {
+  padding-top: 11px;
+  padding-bottom: 10px;
+  line-height: 14px; }
+  .filter-item span {
+    float: left; }
+  .filter-item ul {
+    margin-top: -10px;
+    margin-left: 18px;
+    float: left;
+    width: 1084px; }
+  .filter-item li {
+    margin-top: 10px;
+    float: left;
+    margin-right: 42px;
+    cursor: pointer; }
+    .filter-item li:hover {
+      color: #00caab; }
+  .filter-item .filter-checked {
+    color: #00caab; }
+
+.filter-item + .filter-item {
+  border-top: 1px dashed #dddddd; }

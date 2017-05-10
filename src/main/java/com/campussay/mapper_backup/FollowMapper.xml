@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.campussay.dao.FollowDao">
+    <insert id="addAConcernField">
+        insert into t_follow VALUES (null,#{0},#{1});
+    </insert>
+    <select id="getFollowsByUserId" resultType="map">
+        SELECT
+	      t_talking_type.talking_type_name
+        FROM
+	      t_follow
+        INNER JOIN
+          t_talking_type ON t_follow.taking_type_id = t_talking_type.talking_type_id
+        WHERE
+        	t_follow.uid = #{0} limit 0,3
+    </select>
+
+
+
+    <!--得到用户未关注的领域-->
+    <select id="getUnFollowsByUserId" resultType="map">
+        SELECT
+	talking_type_id,
+	talking_type_name,
+	(
+		SELECT
+			talking_type_name
+		FROM
+			t_talking_type
+		WHERE
+			t_talking_type.talking_type_id = t.talking_type_parent
+	) AS parentName,
+	talking_type_description,
+	talking_type_picture,
+	(
+		SELECT
+			count(*)
+		FROM
+			t_topic
+		WHERE
+			t_topic.taking_type_id = t.talking_type_id
+	) AS topicNum,
+	(select count(*) from t_talking_type where t_talking_type.talking_type_id not in ((
+		SELECT
+			taking_type_id
+		FROM
+			t_follow
+		WHERE
+			t_follow.uid = 1
+	)) and t_talking_type.talking_type_floor>0) as totalLine
+FROM
+	t_talking_type AS t
+WHERE
+	talking_type_id NOT IN (
+		SELECT
+			taking_type_id
+		FROM
+			t_follow
+		WHERE
+			t_follow.uid = #{0}
+	)
+AND talking_type_floor > 0 limit #{1},#{2}
+</select>
+
+
+
+    <!--得到用户擅长领域的topic-->
+    <select id="getSkillByUserId" resultType="map" parameterType="int">
+      SELECT
+	id,
+	tile,
+	intro,
+	t_user.user_name,
+	t_talking_type.talking_type_name,
+	t_talking_type.talking_type_picture,
+	(select count(*) from t_answer where t_answer.topic_id=t_topic.id) as answerNum,
+		(select count(*) from t_topic where t_topic.taking_type_id in (select skill_talking_type from t_skill where t_skill.skill_user=#{0} )) as totalLine
+FROM
+	t_topic
+LEFT JOIN t_user ON t_user.user_id = t_topic.user_id
+LEFT JOIN t_talking_type ON t_talking_type.talking_type_id = t_topic.taking_type_id
+WHERE
+	t_topic.taking_type_id IN (
+		SELECT
+			skill_talking_type
+		FROM
+			t_skill
+		WHERE
+			t_skill.skill_user = #{0}
+	)
+ORDER BY
+	create_time DESC
+LIMIT #{1},#{2}
+ </select>
+
+    <select id="getSkillTopicNum" resultType="map" parameterType="int">
+      SELECT
+	    count(*) AS TopicNum
+      FROM
+	    t_topic
+      WHERE
+	    t_topic.taking_type_id IN (
+		SELECT
+			skill_talking_type
+		FROM
+			t_skill
+		WHERE
+			t_skill.skill_user = #{0}
+	    )
+    </select>
+
+    <select id="getSkillNameByUserId" resultType="map">
+        select talking_type_name from t_talking_type where t_talking_type.talking_type_id in (select skill_talking_type from t_skill where t_skill.skill_user=#{0}) limit 0,3
+    </select>
+
+	<delete id="cancelConcernField">
+		DELETE FROM t_follow where t_follow.uid=#{0} and t_follow.taking_type_id=#{1}
+	</delete>
+	<select id="isConcernField" resultType="int">
+		select count(*) from t_follow where uid=#{0} and taking_type_id=#{1}
+	</select>
+
+
+</mapper>

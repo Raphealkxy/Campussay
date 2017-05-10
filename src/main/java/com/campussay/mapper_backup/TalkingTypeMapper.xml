@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.campussay.dao.TalkingTypeDao">
+
+<!-- 得到第一层级 -->
+	<select id="talkingType_floor" resultType="java.util.Map">
+	SELECT talking_type_id, talking_type_name, talking_type_picture, 
+	talking_type_floor, talking_type_parent, talking_type_is_leaf FROM t_talking_type where talking_type_floor=1;
+	</select>
+	 
+	 <!-- 得到子层级的list -->
+	<select id="talkingType_floor_list" parameterType="int" resultType="java.util.Map">
+	select talking_type_id, talking_type_name, talking_type_picture, 
+	talking_type_floor, talking_type_parent, talking_type_is_leaf from t_talking_type where talking_type_parent=#{taking_type_parent} and talking_type_state=10
+	</select>
+
+	<!-- 得到同学们干啥集合 -->
+	<select id="Order_list" resultType="java.util.Map">
+	select * from t_Order where Order_state=10
+	</select>
+	
+	<!-- 得到用户名陈集合 -->
+	<select id="User_name" parameterType="int" resultType="java.lang.String">
+	select User_name from t_User where User_state=10 and User_id=#{User_id}
+	</select>
+
+	<!-- 获取用户的擅长领域 -->
+	<select id="getUserSkill" resultType="java.util.HashMap">
+		SELECT talking_type_id AS skill_id,talking_type_name AS skill_name FROM t_talking_type
+		 WHERE talking_type_id IN (SELECT skill_talking_type FROM t_skill WHERE skill_user=#{0})
+	</select>
+
+
+	<select id="getPictureUrl" resultType="String" parameterType="int">
+		select talking_type_picture from t_talking_type where talking_type_id=#{0}
+	</select>
+
+
+	<!--puzhiyuan-->
+	<select id="selectAllOneTimeType"  resultType="map">
+		select talking_type_id,talking_type_name from t_talking_type where talking_type_floor=1
+	</select>
+
+	<select id="selectAllSecondTimeType" parameterType="int" resultType="map">
+			SELECT taking_type_id FROM t_follow WHERE uid=#{0}
+	</select>
+
+	<select id="selectSecTimesTalkType" resultType="map">
+		SELECT
+	talking_type_id,
+	talking_type_name,
+	talking_type_picture,
+	talking_type_description,
+	(SELECT
+		COUNT(talking_type_id)
+	FROM
+		t_talking_type
+	WHERE
+		talking_type_floor = 2) as totalLine
+FROM
+	t_talking_type
+WHERE
+	talking_type_floor = 2
+	</select>
+
+
+	<select id="getFirstTalkingType" resultType="map">
+		 select talking_type_id,talking_type_picture,talking_type_name from t_talking_type where t_talking_type.talking_type_floor=1
+	</select>
+
+
+	<select id="getSecondTalkingType" parameterType="int" resultType="map">
+		select talking_type_id,talking_type_name from t_talking_type where t_talking_type.talking_type_parent=#{0}
+	</select>
+
+
+
+
+	<select id="selectTimesTalkType" parameterType="int" resultType="map">
+		SELECT
+		talking_type_id,
+		talking_type_name,
+		talking_type_picture,
+		talking_type_description,
+(SELECT
+		COUNT(talking_type_id)
+	FROM
+		t_talking_type
+	WHERE
+		talking_type_floor = 2 AND talking_type_parent=#{0}) as totalLine
+		FROM
+		t_talking_type
+		WHERE
+		talking_type_floor = 2
+		AND
+		talking_type_parent=#{0}
+		LIMIT #{1},#{2}
+	</select>
+
+	<select id="getTalkingTypeDetailById" resultType="map">
+		SELECT
+	talking_type_id,
+	talking_type_picture,
+	(
+		SELECT
+			talking_type_name
+		FROM
+			t_talking_type
+		WHERE
+			talking_type_id = t.talking_type_parent
+	) AS parentname,
+		talking_type_name
+	FROM
+		t_talking_type AS t
+	WHERE
+		talking_type_id = #{0}
+	</select>
+
+
+
+</mapper>

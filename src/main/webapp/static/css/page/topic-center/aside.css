@@ -1,0 +1,22 @@
+.global-center {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1180px; }
+
+.inline-block {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1; }
+
+body {
+  min-width: 1180px; }
+
+.aside {
+  width: 280px;
+  float: right;
+  margin-top: 10px; }
+  .aside > div {
+    min-height: 88px;
+    margin-bottom: 18px;
+    background-color: #fafafa;
+    border: 1px solid #f0f0f0; }

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,SAAS;EACP,QAAQ,EAAE,MAAM;EAChB,KAAK,EAAE,KAAK;EACZ,YAAE;IACA,KAAK,EAAC,IAAI",
+"sources": ["../../../../../../../../../../../campus%E2%80%94new/campusSay/src/main/webapp/static/sass/page/personal-page/test.scss"],
+"names": [],
+"file": "test.css"
+}

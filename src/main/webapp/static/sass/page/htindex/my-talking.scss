@@ -1,0 +1,88 @@
+.aside{
+    margin-top: 30px;
+    width: 216px;
+    h2{
+        font-size: 18px;
+        line-height: 22px;
+        &:before{
+            margin-right: 12px;
+            content: " ";
+            display: inline-block;
+            width: 4px;
+            height: 22px;
+            background-color: #00caab;
+            vertical-align: middle;
+        }
+        span{
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+    @at-root {
+        .my-talking-list{
+            padding-left: 12px;
+            padding-right: 12px;
+            padding-top: 12px;
+            margin-top: 13px;
+            border: 1px solid #DDDDDD;
+            background-color: #fafafa;
+        }
+        .my-talking-item{
+            padding-bottom: 26px;
+            a{
+                display: inline-block;
+            }
+            img{
+                width: 190px;
+                height: 120px;
+            }
+
+            @at-root {
+                .talking-info{
+                    float: left;
+                    h3{
+                        height: 30px;
+                        line-height: 30px;
+                        font-size: 14px;
+                    }
+                    p{
+                        font-size: 12px;
+                        line-height: 1em;
+                        i{
+                            margin-left: 10px;
+                            margin-right: 10px;
+                            display: inline-block;
+                            width: 2px;
+                            height: 12px;
+                            background-color: #5c5c5c;
+                            vertical-align: middle;
+                        }
+                    }
+                }
+                .look-talking{
+                    float: right;
+                    p{
+                        height: 30px;
+                        line-height: 30px;
+                        font-size: 14px;
+                        color: #fca825;
+                    }
+                    a{
+                        display: inline-block;
+                        width: 46px;
+                        height: 18px;
+                        line-height: 18px;
+                        background-color: #fca825;
+                        color: #FFFFFF;
+                        text-align: center;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+        .my-talking-item+.my-talking-item{
+            padding-top: 26px;
+            border-top: 1px dashed #e6e6e6;
+        }
+    }
+}

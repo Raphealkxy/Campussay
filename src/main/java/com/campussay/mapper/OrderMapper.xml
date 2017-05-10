@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.campussay.dao.OrderDao">
+
+    
+    <sql id="selectColumn">
+        o.order_id, o.order_talking as order_talking_id ,t.talking_title, u.user_name, o.order_state, o.order_price, o.order_confirm_time, t.talking_main_picture, t.talking_address
+    </sql>
+
+    <select id="getOrderByUserID" resultType="java.util.HashMap">
+        SELECT
+        <include refid="selectColumn" />
+        FROM t_user u, t_talking t, t_order o
+        WHERE o.order_user = #{userID} AND o.order_user = u.user_id AND o.order_talking = t.talking_id
+        <if test="state != null">
+            AND o.order_state = #{state}
+        </if>
+        ORDER BY o.order_creat_time DESC
+        LIMIT #{start},#{end}
+    </select>
+
+    <select id="getOrderByUserIDPageTotal" resultType="int">
+        SELECT
+        count(*) as PageTotal
+        FROM t_user u, t_talking t, t_order o
+        WHERE o.order_user = #{userID} AND o.order_user = u.user_id AND o.order_talking = t.talking_id
+        <if test="state != null">
+            AND o.order_state = #{state}
+        </if>
+    </select>
+
+
+    <update id="updateOrderState" parameterType="com.campussay.model.Order">
+        UPDATE t_order SET order_state = #{orderState} WHERE order_id = #{orderId}
+    </update>
+
+    <select id="getOrderByUserIDState" resultType="java.util.HashMap">
+        SELECT
+        <include refid="selectColumn" />
+        FROM t_user u, t_talking t, t_order o
+        WHERE o.order_user = #{userID} AND o.order_user = u.user_id AND o.order_talking = t.talking_id 
+        <if test="state != null">
+            AND o.order_state = #{state}
+        </if>
+        ORDER BY o.order_creat_time DESC
+        LIMIT #{start},#{end}
+    </select>
+
+    <select id="getMyTalkingSaleInfoCount" resultType="int">
+        SELECT COUNT(*) FROM t_order WHERE order_talking IN (SELECT talking_id FROM t_talking WHERE talking_user=#{userId})
+        <if test="state != null">
+            AND order_state=#{state}
+        </if>
+    </select>
+
+    <select id="getMyTalkingSaleInfo" resultType="java.util.HashMap">
+        SELECT order_id,order_price,order_creat_time,order_pay_time,order_confirm_time,order_pay_ways,order_pay_code,order_state
+        FROM t_order WHERE order_talking IN (SELECT talking_id FROM t_talking WHERE talking_user=#{0})
+        <if test="state != null">
+            AND order_state=#{state}
+        </if>
+         limit #{1},#{2}
+    </select>
+
+
+<!-- 创建订单 -->
+    <insert id="createOrder" parameterType="com.campussay.model.Order">
+       INSERT INTO t_order(order_id,order_user,order_talking,order_price,order_creat_time,order_state,order_user_tel,order_user_realname,order_user_extr_info,order_end_time) 
+       
+       VALUES  (#{orderId},#{orderUser},#{orderTalking} ,#{orderPrice},#{orderCreatTime},#{orderState},#{orderUserTel},#{orderUserRealname},#{orderUserExtrInfo},#{order_end_time});
+
+    </insert>
+
+    <select id="getTalkingInfo" resultType="HashMap">
+        select order_user_realname,talking_title , user_phone speakUserPhone from t_user,t_talking,t_order
+        WHERE
+        talking_id=order_talking and order_id=#{0} and order_user=user_id
+    </select>
+    
+    <select id="selectOrderByOrderId" resultType="map" >
+       SELECT order_price ,order_state,order_user,order_talking  FROM t_order   WHERE order_id=#{0} 
+    </select>
+    
+    <!-- 定时任务拿到所有已经创建但未付款的订单, -->
+    <select id="getAllNotPayOrders" resultType="java.util.HashMap">
+      SELECT order_id,order_talking,order_price,order_creat_time,order_pay_ways,order_pay_code,order_state
+      FROM t_order where order_state=1;
+    </select>
+    <!-- 定时任务修改创建订单但未支付的订单的状态,认定此订单作废, -->
+  	<update id="updateNotPayOrdersState" parameterType="java.lang.String">
+  	 	UPDATE t_order SET order_state=0 WHERE order_id=#{0};
+    </update>
+
+    <!--     定时任务修改创建订单但未支付的订单对应课程的剩余人数名额,人数++,   -->
+    <update id="updateTalkingPeopleByOrder_id">
+    UPDATE t_talking SET talking_now_persion=talking_now_persion+1 WHERE talking_id=#{talking_id};
+    </update>
+    
+    
+    <update id="paySuccess" >
+      UPDATE t_order SET order_pay_code = #{1}, order_pay_ways = #{2} ,order_pay_time = #{3} ,order_state = 2   WHERE order_id = #{0}
+    </update>
+    
+    
+    <select id="checkUserIsCreateOrder" resultType="java.util.HashMap" parameterType="com.campussay.model.Order">
+          select order_id,order_state from t_order where order_user=#{orderUser} and order_talking=#{orderTalking}  and order_state != 0
+    </select>
+
+    <select id="OrderTalking" parameterType="int" resultType="Map">
+        select order_id,order_user_tel,order_user_realname,order_user_extr_info,order_talking from t_order WHERE order_talking=#{0} AND order_state=2 OR order_state=3 OR order_state=4
+    </select>
+
+    <select id="OrderReason" parameterType="int" resultType="Map">
+       select order_close_reason,order_talking FROM t_order WHERE order_talking=#{0} AND order_state=8
+    </select>
+    
+    <!-- 根据不同状态查询订单信息 -->
+     <select id="selectOrderByStatus"  resultType="Map">
+        select o.order_id,o.order_creat_time,o.order_price,o.order_state,t.talking_title,t.talking_id,t.talking_main_picture,t.talking_start_time,t.talking_end_time,u.user_name 
+        from 
+        t_order as o ,t_talking as t,t_user as u
+        where 
+        o.order_user=#{userID} 
+        <if test="state != null">
+            AND o.order_state=#{state}
+        </if>
+         and t.talking_user= u.user_id and o.order_state !=0  and o.order_talking= t.talking_id  order by o.order_creat_time desc limit #{start},#{pageSize}
+    </select>
+    
+     <!-- 根据不同状态查询订单信息总页数 -->
+    <select id="selectOrderByStatusPage"  resultType="int">
+        select count(1)
+        from 
+        t_order as o ,t_talking as t,t_user as u
+        where 
+        o.order_user=#{userID}
+         <if test="state != null">
+            and o.order_state=#{state}
+        </if>
+         and t.talking_user= u.user_id and o.order_state !=0  and o.order_talking= t.talking_id 
+        
+    </select>
+    
+    <!--修改订单状态  -->
+    <update id="lpyUpdateOrderState" >
+      UPDATE t_order SET order_state = #{order_state} 
+        <if test="order_confirm_time != null">
+           ,order_confirm_time=#{order_confirm_time}
+        </if>
+        WHERE order_id = #{order_id} and order_user=#{order_user}
+    
+    </update>
+    
+     <!--修改订单状态  -->
+    <update id="requestRefundOrder" >
+      UPDATE t_order SET order_state = #{order_state} ,order_request_refund_reason =#{order_request_refund_reason}
+        
+        WHERE order_id = #{order_id} and order_user=#{order_user}
+    
+    </update>
+    
+    <!-- 将课程结束且支付了的订单的状态变为完成 状态：3 -->
+     <update id="updateOrderStateToFinish" >
+     update t_order set order_state = 3 where order_end_time <![CDATA[ <  ]]>  NOW() and order_state = 2
+     
+    </update>
+    
+     <select id="selectOrderTitleAndUserName"  resultType="Map">
+        select t.talking_title as talking_title,t.talking_start_time as talking_start_time,u.user_name as user_name,u.user_id as user_id
+        from 
+        t_order as o ,t_talking as t,t_user as u
+        where 
+         t.talking_user = u.user_id   and o.order_talking= t.talking_id  and o.order_id =#{0}
+        
+    </select>
+
+    <select id="sendPhoneMessage" resultType="HashMap">
+SELECT
+	ta.talking_start_time,
+	tor.order_user,
+	tr.user_name,
+	tu.user_phone,
+	ta.talking_title,
+	tor.order_id,
+	tor.order_user_tel,
+	ta.talking_address,
+	ta.talking_tool_num,
+	ta.talking_is_online
+FROM
+	t_talking ta
+RIGHT JOIN t_order tor ON tor.order_talking = ta.talking_id
+RIGHT JOIN t_user tu ON tu.user_id = ta.talking_user
+RIGHT JOIN t_user tr ON tr.user_id = tor.order_user
+WHERE
+	tor.order_phone_state = 0 and tor.order_state=2
+    </select>
+
+    <update id="setPhoneMessage" parameterType="String">
+    UPDATE t_order SET order_phone_state=1 WHERE order_id=#{orderId}
+    </update>
+
+    <select id="mapTalkingLists" parameterType="int" resultType="Map">
+        SELECT order_user_realname,order_user_tel,order_confirm_time,order_user_extr_info FROM t_order where order_talking=#{0}
+    </select>
+
+    <select id="SuccessPayOrder" parameterType="String" resultType="Map">
+        SELECT tor.order_user_realname,tt.talking_title,tor.order_user_tel FROM t_order tor RIGHT JOIN t_talking tt ON tor.order_talking=tt.talking_id WHERE tor.order_id=#{0} AND tor.order_state=2
+    </select>
+
+    <select id="RefundSuccess" parameterType="String" resultType="Map">
+       SELECT tt.talking_title,tor.order_user_tel FROM t_order tor RIGHT JOIN t_talking tt ON tor.order_talking=tt.talking_id WHERE tor.order_id=#{orderId} AND tor.order_state=7
+    </select>
+
+    <select id="RefundFail" parameterType="String" resultType="Map">
+       SELECT tt.talking_title,tor.order_user_tel FROM t_order tor RIGHT JOIN t_talking tt ON tor.order_talking=tt.talking_id WHERE tor.order_id=#{orderId} AND tor.order_state=8
+    </select>
+    
+    <!-- 显示购买课程 -->
+    <select id="BuyOrderSpend" parameterType="int" resultType="Map">
+     	select tt.talking_title,tor.order_id,tor.order_price,tor.order_pay_time,tor.order_state FROM t_order tor RIGHT JOIN t_talking tt ON tor.order_talking=tt.talking_id WHERE tor.order_user=#{order_user} 
+    </select>
+    
+    <!-- 显示提现记录 -->
+    <select id="cashrecord" parameterType="int" resultType="Map">
+     	select applay_to_cash_recode_id,applay_to_cash_recode_time,applay_to_cash_recode_status,applay_to_cash_reject_reason,applay_to_cash_recode_content from t_applay_to_cash_record where applay_to_cash_recode_user=#{user_id}
+    </select>
+    
+    <select id="isorderstate" resultType="Map">
+    	select order_id,order_state from t_order where order_user=#{0} and order_talking=#{1}
+    </select>
+
+
+    <select id="getCloseOrder" resultType="Map">
+        select order_id,order_creat_time from t_order WHERE order_state=1
+    </select>
+
+    <update id="updateCloseOrder">
+        UPDATE t_order SET order_state=#{1},order_close_reason=#{2} WHERE order_id=#{0};
+    </update>
+    
+    
+    <select id="getMyTalkingSaleRecord" resultType="Map" parameterType="int">
+		    	SELECT order_id as id,talking_id,talking_title,order_price as cash,order_creat_time as time,order_state as status
+        FROM t_order LEFT JOIN t_talking on talking_id=order_talking WHERE order_talking IN (SELECT talking_id FROM t_talking WHERE talking_user=#{0}) order by order_creat_time desc;
+    </select>
+    
+    
+     <select id="getMyOrderRecord" resultType="Map" parameterType="int">
+  		  select order_id as id,talking_id,t_talking.talking_title, order_price as cash,order_creat_time as time,order_state as status from t_order LEFT JOIN t_talking  on talking_id=t_order.order_talking where order_user=#{0} order by order_creat_time desc
+    </select>
+    
+    
+</mapper>

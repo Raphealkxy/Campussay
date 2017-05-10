@@ -1,0 +1,178 @@
+@charset "UTF-8";
+@import '../../common/global-set';
+@import 'layout';
+
+$item-h: 166px;
+$tab-h: 36px;
+$tab-bg: #f8f8f8;
+
+@mixin multi-border-radius {
+  border-top-left-radius: 25%;
+  border-top-right-radius: 25%;
+  border-bottom-right-radius: 25%;
+  border-bottom-left-radius: 25%;
+}
+
+// order main
+.order {
+  overflow: hidden;
+  zoom: 1;
+  margin-bottom: 340px;
+}
+
+
+// 详细列表
+.order-content-list {
+
+  .order-list-item {
+    height: $item-h;
+    width: 100%;
+    margin: 16px 0px;
+    box-sizing: border-box;
+    position: relative;
+
+    // 各个订单的 title
+    .item-title {
+      width: 100%;
+      height: $tab-h;
+      line-height: $tab-h;
+      padding: 0px 8px 0px 16px;
+      background-color: $tab-bg;
+      box-sizing: border-box;
+      span {
+        float: left;
+        display: inline;
+        margin-right: 12px;
+      }
+      span:last-child {
+        float: right;
+        /*width: 96px;*/
+        text-align: center;
+        margin: 0;
+        a {
+          color: $global-font;
+        }
+      }
+    }
+  }
+
+  // 各个订单 => ul
+  .item-content {
+    width: 100%;
+    float: left;
+    border: 1px solid #f0f0f0;
+    border-top: none;
+    box-sizing: border-box;
+    // 订单各个信息 => li
+    .item {
+      height: 130px;
+      float: left;
+      display: inline;
+      padding: 16px;
+      border-right: 1px solid #f0f0f0;
+      box-sizing: border-box;
+    }
+    // 商品描述信息
+    .item-describe {
+      width: 45.7%;
+      & > div {
+        float: left;
+        display: inline;
+      }
+      .item-describe-info {
+        margin-left: 16px;
+        .item-basic-info {
+          width: 192px;
+          text-overflow:ellipsis;
+          white-space:nowrap;
+          overflow:hidden;
+        }
+        .item-money-info {
+          width: 214px;
+          margin-top: 48px;
+          span {
+            display: inline-block;
+          }
+          .item-price {
+            color: #fca825;
+            /*float: right;
+            font-weight: bold;*/
+            &:before {
+              content: '￥';
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+    // 商品交易进度
+    .item-progress {
+      width: 42.7%;
+      display: inline-block;
+      .item-progress-show {
+        text-align: center;
+        line-height: 94px;
+        vertical-align: middle;
+      }
+      .progress-bar {
+        width: 272px;
+        height: 6px;
+        margin: 26px 44px 14px;
+        background-color: #ddd;
+        border-radius: 10px;
+        .progress-bar-value {
+          width: 50%;
+          height: inherit;
+          background-color: $global-bg;
+          border-radius: inherit;
+        }
+      }
+    }
+    // 进行订单操作
+    .item-operation {
+      width: 11.6%;
+      border-right: none;
+      text-align: center;
+      position: relative;
+      display: table;
+      .table-cell{
+          display: table-cell;
+          vertical-align: middle;
+        }
+      a {
+        font-size: 14px;
+        padding: 0px;
+      }
+      .item-time {
+        text-align: right;
+        position: relative;
+        top: -12px;
+        right: -14px;
+        margin-bottom: 18px;
+      }
+      .operation {
+        /*margin: auto;*/
+        width: 100%;
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+      }
+      .link {
+        a {
+          color: $global-bg;
+          // margin: 16px auto;
+        }
+        &:first-child {
+          a {
+            color: $global-font;
+            &:hover {
+              color: $global-bg;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

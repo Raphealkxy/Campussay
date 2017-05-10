@@ -1,0 +1,380 @@
+@charset "UTF-8";
+@import '../../common/global-set';
+@import '../pager/kkpager';
+$picPath:"/static/img/page/personal-index/";
+$color-f0: #f0f0f0;
+$color-fa: #fafafa;
+$color-dd: #dddddd;
+$item-h: 90px;
+
+/* 王欣瑜 */
+.personal-content{
+  margin-top: 26px;
+  margin-bottom: 167px;
+}
+.personal-content-care{
+  float: left;
+  width: 880px;
+}
+.personal-care-tab{
+  width: 100%;
+  height: 36px;
+  background-color: $global-fontbg;
+  border-bottom: 1px solid $color-dd;
+}
+.personal-care-tab-item{
+  padding-top: 10px;
+  float: left;
+  cursor: pointer;
+  width: 136px;
+  height: 25px;
+  text-align: center;
+  border: 1px solid transparent;
+}
+.current-care-item{
+  border-color: $color-dd;
+  border-bottom-color: #fff;
+  background-color: #fff;
+}
+//详细列表
+.circle-content-list {
+
+  .circle-list-item {
+    height: $item-h;
+    width: 100%;
+    margin-top: 20px;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  // 各个关注的人列表 => ul
+  .item-content {
+    width: 100%;
+    float: left;
+    border-bottom: 1px solid #f0f0f0;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    // 关注人各个信息 => li
+    .item {
+      height: 100%;
+      float: left;
+      display: inline;
+    }
+    // 关注人基本信息描述
+    .item-describe {
+      width: 52%;
+      & > div {
+        float: left;
+        display: inline;
+      }
+      .item-describe-pic img {
+        padding: 12px;
+      }
+      .item-describe-info {
+        height: 100%;
+        margin-left: 4px;
+        .item-basic-info ul {
+          float: left;
+          li {
+            float: left;
+            display: inline;
+            span {
+              color: $global-bg;
+            }
+          }
+          li.split-bar {
+            padding: 0px 10px;
+          }
+        }
+        .item-good-field {
+          margin-top: 14px;
+        }
+      }
+    }
+    .item-care {
+      width: 38%;
+      .item-care-field {
+        margin-top: 54px;
+        padding: 0px 20px;
+      }
+    }
+    // 关注人关注领域
+    .item-field {
+      float: left;
+      display: inline;
+      position: relative;
+    }
+    // 进行关注操作
+    .item-operation {
+      width: 10%;
+      .operation {
+        padding: 2px 8px;
+        color: #b8b8b8;
+        background-color: #f8f8f8;
+        border-radius: 4px;
+        text-align: right;
+        box-sizing: border-box;
+      }
+      .cancel-care {
+        cursor: pointer;
+        &:hover {
+          background-color: $global-bg;
+          color: #fff;
+          i {
+            background: url('/static/img/page/personal-center/false-hover.png') no-repeat;
+          }
+        }
+      }
+    }
+  }
+}
+.tag {
+  margin: 4px 4px 14px;
+  display: inline-block;
+  .item-tag {
+    border: 1px solid #969696;
+    margin-right: 12px;
+    color: #969696;
+    border-right: none;
+    padding: 0px 4px;
+    position: relative;
+    display: inline-block;
+    &:after {
+      content:' ';
+      display: inline-block;
+      height: 20px;
+      width: 9px;
+      position: absolute;
+      left: 100%;
+      top: -1px;
+      background: url('/static/img/page/personal-center/tag.png') no-repeat;
+    }
+    .tag-rect {
+      padding: 1px 0px;
+      display: inline-block;
+    }
+  }
+}
+.icon {
+  width: 11px;
+  height: 11px;
+  margin-right: 4px;
+  display: inline-block;
+}
+.icon-false {
+  background: url('/static/img/page/personal-center/false.png') no-repeat;
+}
+.icon-each {
+  background: url('/static/img/page/personal-center/each.png') no-repeat;
+}
+
+/* 复用自 personal-content.scss */
+
+//侧边栏 个人相关
+.personal-content-care-aside{
+    float: right;
+    width: 282px;
+}
+.personal-about-list{
+    border: 1px solid $color-f0;
+    background-color: $color-fa;
+    li{
+        padding-top: 19px;
+        float: left;
+        width: 93px;
+        height: 59px;
+        text-align: center;
+    }
+    dt{
+        font-size: 24px;
+        color: $global-bg;
+        line-height: 24px;
+    }
+    dd{
+        font-size: 16px;
+    }
+}
+.personal-identify-list{
+    margin-top: 10px;
+    padding-top: 16px;
+    padding-left: 11px;
+    padding-bottom: 26px;
+    padding-right: 11px;
+    border: 1px solid $color-f0;
+    background-color: $color-fa;
+    h3{
+        font-size: 0;
+        line-height: 18px;
+    }
+    span{
+        height: 18px;
+        vertical-align: top;
+        font-size: 16px;
+    }
+    @at-root {
+        //竖线
+        .v-line{
+            margin-right: 7px;
+            width: 4px;
+            height: 18px;
+            background-color: $global-bg;
+            vertical-align: middle;
+        }
+    }
+}
+.personal-identify-info-list{
+    margin-top: 29px;
+    margin-bottom: 28px;
+}
+.personal-identify-info-item+.personal-identify-info-item{
+    margin-left: 9px;
+}
+.personal-identify-info-item{
+    float: left;
+    width: 80px;
+    dl{
+        text-align: center;
+    }
+    dt{
+        margin-bottom: 8px;
+        font-size: 0;
+    }
+    dd{
+        line-height: 1em;
+    }
+    @at-root {
+        .identify-pic{
+            height: 34px;
+        }
+        .identify-xueli{
+            width: 47px;
+            background: url(#{$picPath}xueli.png) no-repeat;
+        }
+        .identify{
+            width: 44px;
+            background: url(#{$picPath}identify.png) no-repeat;
+        }
+        .student-identify{
+            width: 48px;
+            background: url(#{$picPath}student-identify.png) no-repeat;
+        }
+        .no-student-identify{
+          width: 48px;
+          background: url(#{$picPath}no_ident.png) no-repeat;
+        }
+    }
+}
+.skill-list{
+    margin-left: -10px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+.skill-item{
+    margin-top: 15px;
+    margin-left: 10px;
+    padding-left: 6px;
+    padding-right: 6px;
+    float: left;
+    height: 28px;
+    line-height: 28px;
+    background-color: #eee;
+    text-align: center;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+//交流方式
+.communication-style{
+    margin-top: 15px;
+    padding: 15px 11px;
+    border: 1px solid $color-f0;
+    background-color: $color-fa;
+    line-height: 18px;
+    dt{
+        margin-right: 22px;
+        float: left;
+        font-size: 0;
+        line-height: 18px;
+    }
+    span{
+        height: 18px;
+        vertical-align: top;
+        font-size: 16px;
+    }
+    dd{
+        float: left;
+        font-size: 0;
+        line-height: 18px;
+        i{
+            margin-left: 8px;
+            width: 12px;
+            height: 9px;
+            vertical-align: middle;
+        }
+        span{
+            vertical-align: middle;
+            font-size: 14px;
+        }
+    }
+    @at-root {
+        .communication-style-checked{
+            i{
+                background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJCAYAAAAGuM1UAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAPNJREFUeNpi/PXrFwMxYNPH523MjIw/mQgp/M/AwLjq/dNJOz69qvz7/z87Cz7F3//95V/w7tHiy98/+TrwiEz245esAtvw+s9PZZBJ6Ionv763E6RYj5NvU6igdD5InOnRr28mnS9vn1n67vFsmCaY4ge/vpkrs3MfSRSWj2YEu46BgYWDifkjOyPTl2Nf3yWDBIIEpEqmvL63A6Y4R1TJEyQPs5kRFEqv/vxUnfjq7r73f3/LcDExv//2768gNsVwDSAA0jTh1d39H/7+lgYpzhZR8uJgYvqMERIgDTD85Ntn1enPb6/89OMHL7I4MgYIMAAtnZV+FEX/aQAAAABJRU5ErkJggg==") no-repeat;
+            }
+        }
+        .communication-style-check{
+            i{
+                background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJCAYAAAAGuM1UAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAANZJREFUeNpi/PXrFwMx4Pv3721A6icTEWoZv337NunHjx+VQDY7Cz6V////5//69evi379/+7Kzs0/m5OSsAtvw798/ZZBJ6Io/f/68E6SYlZV1ExcXVz5InOnPnz8mnz59OgM0aTZME0zx379/zVlYWI5wc3NHg4RBciyMjIwfgfgL0PPJIAGgSSVAxTtginl4eDxB8nAPgUIJKKn65cuXfUCnyQAl3wNtEMSmGOwkEMHMzHwbKOkElHyKpNgLXTHcBhgA2QQMvhags1KAij9jCzmAAAMAHeZyAk7bpywAAAAASUVORK5CYII=") no-repeat;
+            }
+        }
+    }
+    dd+dd{
+        margin-left: 24px;
+    }
+}
+.friends-label{
+    padding-left: 11px;
+    padding-right: 11px;
+    margin-top: 29px;
+}
+.friends-label-title{
+    font-size: 18px;
+    line-height: 100%;
+}
+.friends-label-list{
+    margin-left: -10px;
+    margin-top: 2px;
+}
+.friends-label-item{
+    margin-top: 11px;
+    margin-left: 10px;
+    padding: 5px 8px;
+    float: left;
+    border: 1px solid $global-bg;
+}
+/* 评价开始 */
+.selfImg-list{
+  float: left;
+  padding:22px 33px 0 22px;
+  .show-name{
+    margin-top: 9px;
+    font-size: 12px
+  }
+}
+.talking-show{
+  margin-left: 133px;
+  margin-top: 24px;
+  h1{
+    font-size:16px;
+    margin-bottom: 10px;
+  }
+  .talking-comment-content{
+    font-size: 14px;
+  }
+  .comment-time{
+    text-align: right;
+  }
+}
+/* 评价结束 */
+
+

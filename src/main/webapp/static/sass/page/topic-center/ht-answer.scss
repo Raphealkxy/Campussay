@@ -1,0 +1,315 @@
+@import '../../modules/editor';
+$page-width:1180px;
+$pic-path:"/static/img/page/pay/";
+//颜色：
+$head-color:#34495e;
+$green:#00caab;
+$graf:#b4b4b4;
+@mixin radius($number){
+  -moz-border-radius: $number; /* Firefox */
+  -webkit-border-radius: $number; /* Safari 和 Chrome */
+  border-radius: $number; /* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */
+}
+@mixin button(){
+	float: right;
+    display: inline-block;
+    cursor: pointer;
+    font-size:16px;
+    @include radius(2px);
+    	width: 100px;
+    	height: 40px;
+    	line-height: 40px;
+    	text-align: center;
+    	color:#fff;
+    	background:$green;
+}
+
+//全局 <i class="icon">：
+@mixin icon($width,$height){
+	display:inline-block;
+    width: $width;
+    height: $height;
+}
+
+.icon-vote{
+	@include icon(9px,12px);
+	margin-right:4px;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAMCAYAAACwXJejAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAGlJREFUeNpiPHToEAMS4AfiJUAcA8QfYYJMSAqYgXgVEPsA8UooH0NRDxC7QdnuUD6KoiQgLmBABSB+MojBAsTWQDydATuYBsS3QIrUgbgOKtiBpKACSqsyovnuPxKbEZvDcYLBqAggwADlZBCiowQ55gAAAABJRU5ErkJggg==") no-repeat;
+}
+.icon-comment{
+	@include icon(12px,11px);
+	margin-right:5px;
+	vertical-align:middle;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAALCAYAAABLcGxfAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJhJREFUeNpiPHToUAMDA0MFELMz4Ac/gbiDBUhUATErA2EAMrCciUjFMMDBBGVsA2J/JIk6IG5B4oPktoIYLFABQSBWQVIgiyTHAJUDqWFgBHr6PwlOYgA56RsJ6j+DrM0H4iK0YBUHYm4k/j1osPaCNMyBYgY0N28GYg0oXxnZSdjAHSC2BOJd2PyAC3wAYm8gnoosCBBgACFFGBiXxqpCAAAAAElFTkSuQmCC") no-repeat;
+}
+.icon-comment:hover{
+    background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAALCAYAAABLcGxfAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2lpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpGRDA2RDFBRUU1N0FFNTExQUVEOEQ4MTk0QjlCMzBCOCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo3NENBQTM1NkM1QTExMUU1OUQ0MkI4MTQyNDUxMTJDQiIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo3NENBQTM1NUM1QTExMUU1OUQ0MkI4MTQyNDUxMTJDQiIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6M2RjYzVhNWMtMzczNi1kYzRiLThjZTItZWY1OTNkZWFjYzJlIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkZEMDZEMUFFRTU3QUU1MTFBRUQ4RDgxOTRCOUIzMEI4Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+QGTS3QAAAJVJREFUeNpiZDi1toGBgaECiNkZ8IOfQNzBCNTwC8hgZSAO/GAiQTEIcDBBGduA2B9Jog6IW5D4ILmtIAYLVEAQiFWQFMgiyTFA5UBqGEB++E+CkxhATvpGgvrPIGvzgbgILVjFgZgbiX8PGqy9ICdhMwnk5s1ArAHlMyI7CRu4A8SWQLwLmx9wgQ9A7A3EU5EFAQIMACOeGQIsH6guAAAAAElFTkSuQmCC") no-repeat;
+}
+.icon-share{
+	@include icon(12px,11px);
+	margin:0 5px 0 24px;
+	vertical-align:middle;
+	background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAMCAYAAAC5tzfZAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2lpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpGRDA2RDFBRUU1N0FFNTExQUVEOEQ4MTk0QjlCMzBCOCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpBRkZCRjU5OEM1OUYxMUU1QTY4MkU1N0JBNjQyOTM1NiIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpBRkZCRjU5N0M1OUYxMUU1QTY4MkU1N0JBNjQyOTM1NiIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6YWNmYmQ1ZmMtZDhjOS1iNzRhLWFmZDctZGJiMTdjMDU0NjAwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkZEMDZEMUFFRTU3QUU1MTFBRUQ4RDgxOTRCOUIzMEI4Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8++bs5WgAAAM1JREFUeNpiPHToEAMB0AbErUD8FSbAxEAY+ADxXiAWgQmwYFHECcT2QKwIxMJALArEEkB8FIg9gPg+siZ2IC4B4nIg5sVimBoQHwNiLxYk07dDbcAHQDZOgGlqR9LwB4ivA/FbIBaH2sAMlXsFxNGggJAG4iwg/gvEHVDT9IDYEYi1gPgaVMMvIA4A4icgmwKB+D80lHbgcVo6EB+HBbkVEOcQ0NAHxAuQ4+k5EM/BowFkWBmyAEjTXKjzcIFKqH9RNF0jEMx/0QUAAgwAMtIkZFvyOygAAAAASUVORK5CYII=") no-repeat;
+}
+.icon-share:hover{
+  	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAALCAYAAACksgdhAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAMVJREFUeNpiZDi1loEAaAPiViD+ChNgYiAMfIB4LxCLwARYsCjiBGJ7IFYEYmEgFgViCSA+CsQeQHwfWRM7EJcAcTkQ82IxTA2IjwGxFwuS6duhNuADIBsnwDS1I2n4A8TXgfgtEItDbWCGyr0C4mhQQEgDcRYQ/wXiDqhpekDsCMRaQHwNquEXEAcA8ROQTYFA/B8aSjvwOC0diI/DgtwKiHMIaOgD4gXI8fQciOfg0QAyrAxZAKRpLtR5uEAl1L9wABBgAPn8IcAZCpqVAAAAAElFTkSuQmCC") no-repeat;
+
+}
+
+//用户已登录头部开始
+.head{
+	.container{
+		width: $page-width;
+		height: 36px;
+		margin: 0 auto;
+		overflow: hidden;
+		line-height: 36px;
+	}
+	.left{
+		float: left;
+	}
+	.user-name{
+		margin-left: 16px;
+	}
+	.user-exit{
+		margin-left: 36px;
+		color:$green;
+	}
+	.right{
+		float: right;
+		padding-right: 20px;
+		a{
+			margin-left: 46px;
+		}
+	}
+	background:$head-color;
+	color:#fff;
+	font-size:14px;
+}
+//头部结束
+
+//页面主题部分开始
+.content{
+	width:$page-width;
+	margin:0 auto;
+	padding-bottom:20px;
+	overflow:hidden;
+	.left{
+		float: left;
+		width: 924px;
+	}
+	.right{
+		float: right;
+		width: 218px;
+	}
+}
+
+.detail-head{
+	padding-top: 27px;
+	font-size:14px;
+	color:$graf;
+	position:relative;
+	h1{
+		font-size: 16px;
+		font-weight: bold;
+		color:#000;
+		margin-bottom: 14px;
+	}
+	.tag-box{
+		margin:14px 0 12px 0;
+		font-size: 12px;
+	}
+	.tag{
+		display: inline-block;
+		line-height:18px;
+		height: 18px;
+		padding: 0 5px 0 5px;
+		border:1px solid $graf;
+		//background:url(#{$pic-path}tag-bg.png) no-repeat;
+	}
+	.detail-question{
+		padding-bottom: 5px;
+		line-height:180%;
+	}
+    .attention{
+    	position: absolute;
+    	width: 58px;
+    	height: 22px;
+    	background:$green;
+    	color:#fff;
+    	line-height: 22px;
+    	text-align: center;
+    	top:28px;
+    	right: 0px;
+    	cursor: pointer;
+    	@include radius(4px);
+    }
+}
+
+.answer-textarea{
+	border:1px solid $graf;
+	padding:10px;
+	width:924px; 
+	min-height:135px; 
+	margin: 30px auto;
+}
+ .answer-wrapper{
+    	text-align: left;
+    	overflow: hidden;
+
+  }
+    .button-answer{
+    	@include button();
+    	margin-top: 10px;
+    }
+
+//左边答案详情
+.answer{
+	padding-top: 28px;
+	position:relative;
+	border-bottom:1px solid $graf;
+	.answer-left{
+		margin-left: 20px;
+		float: left;
+		width: 45px;
+	}
+	.user-img{
+		width: 45px;
+		height: 45px;
+		margin-bottom: 8px;
+	}
+	.user-vote{
+		width: 45px;
+		height: 22px;
+		background:#f1f1f1;
+		color:#c2c2c2;
+		line-height: 22px;
+		text-align: center;
+		font-size: 12px;
+		cursor: pointer;
+	}
+	.answer-right{
+		margin-left: 72px;
+		font-size: 14px;
+		padding-bottom: 45px;
+	}
+	.user-name{
+		height: 40px;
+		line-height: 40px;
+		font-size: 18px;
+	}
+	.user-answer{
+		line-height: 140%;
+	}
+	.opera-panel{
+		float: right;
+		position:relative;
+		top: 20px;
+		color:$graf;
+		font-size: 12px;
+		right: 24px;
+		span:hover{
+			cursor: pointer;
+			color:$green;
+		}
+	}
+	.time{
+		position: absolute;
+		top:28px;
+		right: 24px;
+		font-size: 12
+		px;
+		color:$graf;
+	}
+}
+//右边访客信息
+.visitor{
+	width: 218px;
+}
+
+.visitor-head{
+	margin:27px 0 18px 0;
+	font-size:14px;
+	.count{
+		color:$graf;
+	}
+}
+.visitor-content{
+	font-size:0;
+}
+.visitor-img{
+	width: 40px;
+	height: 40px;
+	@include radius(20px);
+	margin-right: 12px;
+}
+
+
+//评论列表
+.comments{
+	overflow:hidden;
+	padding:0 0 0 70px;
+}
+.commets-user{
+	float:left;
+	margin-right:10px;
+	margin-top:10px;
+	img{
+		width: 42px;
+		height: 42px;
+    	@include radius(24px);	
+
+	}
+}
+.comments-info{
+	margin: 22px 0 0 54px;
+	padding-bottom:4px;
+
+	border-bottom:1px dashed $graf;
+	font-size:14px;
+	line-height: 120%;
+	.user-name{
+		color:$green;
+		margin-right: 6px;
+	}
+	.comments-handle{
+		text-align: right;
+		color:$graf;
+		font-size: 12px;
+		vertical-align: middle;
+		span{
+			margin-right:28px;
+		}
+	}
+}
+.comments-more{
+	padding: 20px 0 0 70px;
+	text-align:center;
+	font-size:14px;
+	span{
+		cursor: pointer;
+	}
+}
+//评论答案
+.comments-answer{
+	padding:20px 0 0 70px;
+	textarea{
+		width: 834px;
+		min-height: 70px;
+		padding:10px;
+		margin-left:-1px;
+		line-height: 120%;
+		border:1px solid $graf;
+		resize: none;
+	}
+	.button-row{
+		margin-top:20px;
+		overflow: hidden;
+	}
+	.botton-comments{
+		@include button();
+	}
+}
+
+
+

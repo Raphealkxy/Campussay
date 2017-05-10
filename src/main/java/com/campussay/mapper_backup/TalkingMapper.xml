@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.campussay.dao.TalkingDao">
+
+	<!-- 手动获取banner首页图片 -->
+	<select id="getBannerPicture" resultType="Map">
+		select talking_main_picture,talking_id from t_talking where talking_app_ad=10;
+	</select>
+
+<!-- 	这是尝试使用parameterMap代码
+	<parameterMap id="talkingquestionPM" type="map">
+        <parameter property="talking_question_id"/>
+		<parameter property="talking_question_user"/>
+		<parameter property="talking_question_content"/>
+    </parameterMap> -->
+    
+    <update id="updateout">
+    	update t_talking set talking_state=100 where talking_id=#{talking_id};
+    </update>
+    
+	<select id="getTaking" parameterType="int" resultType="map">
+		select 
+			talking_id,talking_user,talking_title<!-- ,talking_type -->,talking_max_persion,talking_now_persion,talking_price,
+			talking_address,talking_main_picture,talking_campus,talking_start_time,
+			talking_end_time,talking_info,talking_target,talking_state,talking_tool,talking_tool_num,talking_is_online
+		from t_talking
+		where talking_id=#{talking_id} and talking_state !=0 limit 1;
+	</select>
+	<select id="userisbuy" resultType="map">
+	select order_id from t_order where order_user=#{1} and order_talking=#{0};
+	</select>
+	
+		<select id="getTakingInfo" parameterType="int" resultType="map">
+		select 
+			talking_id,talking_user,talking_title<!-- ,talking_type -->,talking_max_persion,talking_now_persion,talking_price,
+			talking_address,talking_main_picture,talking_campus,talking_start_time,
+			talking_end_time,talking_info,talking_target,talking_state
+		from t_talking
+		where talking_id=#{talking_id}  limit 1;
+	</select>
+	
+	<select id="avgcomment" parameterType="int" resultType="String">
+	SELECT AVG(talking_comment_grade) FROM t_talking_comment WHERE talking_comment_talking IN 
+	(SELECT talking_id FROM t_talking WHERE talking_user=#{user_id})
+	</select>
+	
+	<select id="getTalkingPicture" parameterType="int" resultType="String">
+		select 
+			talking_picture_url
+		from t_talking_picture
+		where talking_picture_talking=#{talking_id} and talking_picture_state=1;
+	</select>
+	
+	<select id="getTalkingtitle" parameterType="int" resultType="String">
+		select 
+			talking_title
+		from t_talking
+		where (talking_id=#{talking_id} and talking_state=10)or(talking_id=#{talking_id} and talking_state=50);
+	</select>
+	
+	<select id="getFristTalkingClass" parameterType="int" resultType="map">
+		select 
+			class_start_time,class_finish_time
+		from t_talking_class 
+		where class_talking=#{talking_id} and class_state=1 order by class_start_time limit 1;
+	</select>
+	
+	<select id="getUserId" parameterType="int" resultType="int">
+		select talking_user
+		from t_talking
+		where talking_id=#{talking_id} and talking_state !=0 limit 1;
+	</select>
+	
+	<select id="getUserName" parameterType="int" resultType="String">
+		select user_name
+		from t_user
+		where user_id=#{user_id} and user_state=10 limit 1;
+	</select>
+	<select id="gettalkingtypename" parameterType="int" resultType="String">
+	select talking_type_name
+	from t_talking_type
+	where talking_type_id=#{talkingtypeid} and talking_type_state=10 limit 1;
+	</select>
+	<select id="getUserPhoto" parameterType="int" resultType="Object">
+		select user_photo
+		from t_user
+		where user_id=#{user_id} and user_state=10 limit 1;
+	</select>
+
+	<select id="getTakingComment" parameterType="int" resultType="map">
+		select talking_comment_user,talking_comment_content,talking_comment_grade,
+			talking_comment_time
+		from t_talking_comment
+		where talking_comment_talking=#{0} and talking_comment_state=10 limit #{1},10;
+	</select>
+	
+	<select id="CountTalking" parameterType="int" resultType="int">
+		select count(*) from t_talking_comment 
+		where talking_comment_talking=#{0} and talking_comment_state=10;
+	</select>
+	
+	<select id="count_good" parameterType="int" resultType="int">
+		select count("talking_comment_grade")
+		from t_talking_comment
+		where talking_comment_talking=#{talking_id} and talking_comment_state=10 and talking_comment_grade&lt;2;
+	</select>
+	
+	<select id="getUserID" parameterType="int" resultType="int">
+		select talking_user from t_talking 
+		where talking_id=#{TalkingId};
+	</select>
+
+	<select id="getUserDetails" parameterType="int" resultType="map">
+		select user_id,user_name,user_photo,user_register_time,user_description
+		 from t_user where user_id=#{user_id};
+	</select>
+	
+	<select id="getothertalking" parameterType="int" resultType="map">
+		select talking_id,talking_user,talking_title,talking_price,talking_main_picture,
+		talking_type,talking_max_persion,talking_now_persion,talking_start_time,talking_state
+		from t_talking
+		where talking_user=#{talking_user} and talking_state=10 limit 4;
+	</select>
+
+	<insert id="joinTaking" parameterType="map">
+		insert into t_order(order_user,order_talking,order_price,order_creat_time,order_state)
+		value(#{1},#{0},#{2},(select sysdate()),10);
+	</insert>
+	
+	<select id="getUserContact" parameterType="int" resultType="map">
+		select user_phone
+		from t_user
+		where user_id=#{user_id} and user_state=10 limit 1;
+	</select>
+	
+	<select id="getTalkingType" parameterType="int" resultType="map">
+		select talking_type_id,talking_type_name,talking_type_picture,talking_type_floor,talking_type_is_leaf			
+		from t_talking_type
+		where talking_type_parent=#{0} and talking_type_state=10;
+	</select>
+	
+	<insert id="newTalkingPicture" parameterType="map">
+		insert into t_talking_picture(talking_picture_url,talking_picture_talking,talking_picture_state)
+		value(#{0},#{1},1);
+	</insert>
+	
+	<insert id="newTalkingClass" parameterType="map">
+		insert into t_talking_class(class_talking,class_start_time,class_finish_time,
+		class_content,class_state)
+		value(#{0},#{1},#{2},#{3},1);
+	</insert>
+	
+	<select id="getUserCampusId" parameterType="String" resultType="int">
+		select campus_id
+		from t_campus
+		where campus_name=#{campus_name} and campus_state=10 limit 1;
+	</select>
+	
+	<select id="getUserCampusName" parameterType="int" resultType="String">
+		select user_campus_name  
+		from t_user
+		where user_id=#{user_id};
+	</select>
+	
+	<update id="Addtalkingcount" parameterType="int">
+	update t_user set user_talking_count=user_talking_count+1 where user_id=#{user_id}
+	
+	</update>
+	
+	<insert id="CreateNewTalking" parameterType="com.campussay.model.Talking" useGeneratedKeys="true" keyProperty="talkingId">
+	insert into t_talking (talking_user,talking_title,talking_publish_time,talking_root_type,talking_type,
+	talking_max_persion,talking_now_persion,talking_price,talking_address,
+	talking_main_picture,talking_target,talking_start_time,talking_end_time,talking_info,
+	talking_campus,talking_state,talking_tool,talking_tool_num,talking_is_online)
+	value(#{talkingUser},#{talkingTitle},(select sysdate()),#{talkingRootType},#{talkingType},#{talkingMaxPersion},#{talkingMaxPersion},#{talkingPrice},
+				#{talkingAddress},#{talkingMainPicture},#{talkingTarget},#{talkingStartTime},
+				#{talkingEndTime},#{talkingInfo},#{talkingCampus},10,#{talking_tool},#{talking_tool_num},#{talking_is_online});
+	</insert>
+	<!-- 详情页talking编辑-->
+	<select id="gettalkingdetails" parameterType="int" resultType="map">
+	select  talking_id,talking_title,talking_publish_time,
+	talking_root_type,talking_type,talking_max_persion,talking_now_persion,
+	talking_price,talking_address,talking_main_picture,talking_target,
+	talking_start_time,talking_end_time,talking_info,talking_tool,talking_tool_num,talking_is_online
+	from t_talking 
+	where talking_id=#{talkingid};
+	</select>
+	
+		<!-- 详情页talking编辑-->
+	<update id="updatetalkingdetails" parameterType="com.campussay.model.Talking" >
+	update  t_talking 
+	set talking_title=#{talkingTitle},talking_root_type=#{talkingRootType},
+	talking_type=#{talkingType},talking_max_persion=#{talkingMaxPersion},
+	talking_now_persion=#{talkingMaxPersion},
+	talking_price=#{talkingPrice},talking_address=#{talkingAddress},
+	talking_main_picture=#{talkingMainPicture},talking_target=#{talkingTarget},
+	talking_start_time=#{talkingStartTime},talking_end_time=#{talkingEndTime},
+	talking_info=#{talkingInfo},talking_tool=#{talking_tool},
+	talking_tool_num=#{talking_tool_num},talking_is_online=#{talking_is_online}
+	where talking_id=#{talkingId} and talking_now_persion=#{talkingMaxPersion} and talking_state=10;
+	</update>
+	
+	<!-- 首页精品talking -->
+    <select id="Specialtalking" parameterType="int" resultType="map">
+    select talking_id,talking_main_picture,talking_max_persion,talking_now_persion,
+    talking_title,talking_start_time
+     from t_talking where talking_state =50
+    and talking_campus=#{talking_campus}
+    </select>
+	
+	
+	
+	<!-- 查找出t_taking_type表中所有根节点的课程类型数据-->
+	<select id="SelectTalkingHomePage" resultType="java.util.Map">
+		SELECT talking_type_id,talking_type_name,talking_type_picture,talking_type_description,talking_type_floor,talking_type_parent,talking_type_is_leaf,talking_type_state  FROM
+		t_talking_type WHERE talking_type_floor=1  AND talking_type_state in(10,50)
+	</select>
+	
+	<!-- 查找出t_taking_type表中所有根节点的课程类型数据-->
+	<select id="SelectPushTalkingHomePage" resultType="java.util.Map">
+		SELECT talking_type_id,talking_type_name,talking_type_picture,talking_type_description,talking_type_floor,talking_type_parent,talking_type_is_leaf,talking_type_state  FROM
+		t_talking_type WHERE talking_type_floor=1  AND talking_type_state=50
+	</select>
+	
+	<!-- 根据t_taking_type表根节点查找出它所有下一层的节点-->
+	<select id="SelectNodeByRootNode" resultType="java.util.Map">
+		SELECT talking_type_id,talking_type_name,talking_type_picture,talking_type_description,talking_type_floor,talking_type_parent,talking_type_is_leaf,talking_type_state  FROM t_talking_type WHERE talking_type_parent IN
+		<foreach item="taking_type_parent" index="index" collection="taking_type_parent"
+			open="(" separator="," close=")">
+			#{taking_type_parent}
+		</foreach>
+		AND talking_type_state in(10,50) 
+	</select>
+	
+	<!-- 根据t_taking_type表一个根节点查找出它所有下一层的节点-->
+	<select id="SelectNodeByRootNodeOne" resultType="java.util.Map">
+		SELECT talking_type_id,talking_type_name,talking_type_picture,talking_type_description,talking_type_floor,talking_type_parent,talking_type_is_leaf,talking_type_state  FROM t_talking_type WHERE talking_type_parent =#{taking_type_parent}
+	AND talking_type_state in(10,50,55)
+	</select>
+	
+	<!-- 根据所有的叶子节点查询出所有的课程-->
+	<select id="SelectTalkingByLeafNode" resultType="java.util.Map">
+		SELECT talking_id,talking_user,talking_title,talking_publish_time,talking_root_type,talking_type,talking_max_persion,talking_now_persion,talking_price,talking_address,talking_main_picture,talking_target,talking_start_time,talking_end_time,talking_info,talking_campus,talking_state  FROM t_talking where talking_type IN
+		<foreach item="leafNode" index="index" collection="leafNode" open="("
+			separator="," close=")">
+			#{leafNode}
+		</foreach>
+	</select>
+	
+	<!-- 根据三级结构找出所有叶子节点-->
+	<select id="SelectT_taking_type_idByNode" resultType="java.util.Map">
+		SELECT talking_type_id FROM t_talking_type WHERE talking_type_parent IN
+	<foreach item="taking_type_id" index="index" collection="taking_type_id" open="("
+			separator="," close=")">
+			#{taking_type_id}
+		</foreach>
+	</select>
+	
+	<!-- 根据三级结构找出所有叶子节点的taking_type_id-->
+	<select id="SelectT_taking_type_idByNode_id" resultType="Integer">
+		SELECT talking_type_id FROM t_talking_type WHERE talking_type_parent =#{taking_type_id}  AND talking_type_is_leaf=1
+	</select>
+
+	<!-- 根据根节点查找t_taking表所有的课程-->
+	<select id="SelectT_takingByTaking_RootNode" resultType="java.util.Map">
+		SELECT talking_id,talking_title,talking_publish_time,talking_root_type,talking_type,talking_max_persion,talking_now_persion,talking_price,talking_address,talking_main_picture,talking_target,talking_start_time,talking_end_time,talking_info,talking_campus,talking_state  FROM  t_talking WHERE talking_root_type=#{taking_rootnode} limit 0,4
+	</select>
+	
+	<!-- 根据t_talking,t_user连表,根节点查找t_taking表所有的课程-->
+	<select id="SelectT_talkingByTaking_RootNode" resultType="java.util.Map">
+	SELECT talking_id,user_name,talking_info,talking_now_persion,talking_start_time,talking_publish_time,talking_main_picture,talking_title,talking_max_persion,talking_price,talking_target,talking_end_time,talking_address FROM t_talking,t_user WHERE talking_user=user_id AND talking_root_type=#{taking_rootnode}  AND talking_state =55  <!-- ORDER BY talking_publish_time  DESC  limit 0,4 --> 
+	</select>
+
+	<!-- 根据根节点的taking_type_id查找出对应Name-->
+	<select id="SelectRootNodeNameBytaking_type_id" resultType="String">
+		SELECT talking_type_name FROM t_talking_type WHERE talking_type_id =#{taking_type_id}
+	</select>
+	
+	<!-- 根据三级结构找出所有叶子节点-->
+	<select id="SelectT_taking_leafNodesByNode" resultType="java.util.Map">
+		SELECT talking_type_id,talking_type_name,talking_type_picture,talking_type_description,talking_type_floor,talking_type_parent,talking_type_is_leaf,talking_type_state FROM t_talking_type WHERE talking_type_parent IN
+	<foreach item="taking_type_id" index="index" collection="taking_type_id" open="("
+			separator="," close=")">
+			#{taking_type_id}
+		</foreach>
+	</select>
+	<!-- 根据第二级节点找出叶子节点,  -->
+	<!-- 根据三级结构找出所有叶子节点-->
+	<select id="SelectT_taking_leafNodesByNode_id" resultType="java.util.Map">
+		SELECT talking_type_id,talking_type_name,talking_type_picture,talking_type_description,talking_type_parent FROM t_talking_type WHERE talking_type_parent=#{taking_type_id} and talking_type_state=10 
+		
+	</select>
+	
+	<!-- 查找出所有城市,t_city表 -->
+	<select id="SelectCity" resultType="java.util.Map">
+		SELECT city_id,city_province,city_name,city_state FROM t_city
+	</select>
+	
+	<!-- 查找出所有学校,t_campus表 -->
+	<select id="SelectCampus" resultType="java.util.Map">
+		SELECT campus_id,campus_area,campus_city,campus_province,campus_name,campus_state FROM t_campus
+	</select>
+	
+	<!-- 查找出所有学校id根据城市id -->
+	<select id="SelectCampus_idByCity_id" resultType="int">
+		SELECT campus_id FROM t_campus WHERE campus_city=#{campus_city}
+	</select>
+	
+	<!-- 组合查询课程, -->
+	<select id="SelectTalkingByCf" resultType="java.util.Map">
+		
+		<if test="type==0">
+		SELECT campus_name,user_id,talking_title,talking_now_persion,talking_start_time,talking_title,talking_max_persion,talking_price,talking_id,talking_end_time,user_sex,talking_main_picture,user_name,talking_address FROM t_talking LEFT JOIN t_user ON user_id= talking_user LEFT JOIN t_campus ON campus_id=talking_campus WHERE  talking_state IN(10,50,55)
+		<!-- SELECT SQL_CALC_FOUND_ROWS talking_id,talking_user,talking_title,talking_root_type,talking_type,talking_max_persion,talking_now_persion,talking_price,talking_main_picture,talking_start_time,talking_end_time,talking_campus  FROM t_talking WHERE ${type}=${type} -->
+		</if>
+		<if test="type==1">
+		<!-- SELECT user_student_check_result,user_campus_name,user_name,user_photo,user_id,user_sex FROM t_talking LEFT JOIN t_user ON user_id= talking_user WHERE ${type}=${type} -->
+		SELECT  campus_name,user_id,user_title,user_name,user_sex,user_photo, user_student_check_result,user_campus_name,user_major,user_talking_count,user_photo  FROM t_user  LEFT JOIN t_talking ON user_id =talking_user LEFT JOIN t_campus ON campus_id=talking_campus   WHERE 1=1 AND  talking_state IN(10,50,55)
+		</if>
+		<if test="sex!=-1">
+		AND user_sex = ${sex}
+		</if>
+		<if test="taking_type!=0">
+		AND	talking_type=${taking_type} 
+		</if> 
+		<if test="taking_rootnode!=0">
+		AND talking_root_type=${taking_rootnode}		
+		</if> 
+		<if test="taking_campus!=0">
+		AND	talking_campus=${taking_campus}				
+		</if> 
+		<!-- <if test="nodes!=null and taking_type==0">
+		AND talking_type in
+		<foreach item="nodes" index="index" collection="nodes" open="("
+			separator="," close=")">
+			#{nodes}
+		</foreach>
+		</if> -->
+		<if test="city!=null and taking_campus==0">
+		AND talking_campus in
+		<foreach item="city" index="index" collection="city" open="("
+			separator="," close=")">
+			#{city}
+		</foreach>
+		
+		</if>
+		<if test="type==1">
+			GROUP BY user_id ORDER BY user_talking_count DESC
+		</if> 
+		<if test="type==0">
+			ORDER BY  talking_publish_time DESC,talking_now_persion  
+		</if>
+		 LIMIT #{pageCount},#{offset}
+		
+	</select>
+	
+	<!-- FOUND_ROWS() -->
+	<select id="SelectFound_Rows" resultType="int">
+	SELECT FOUND_ROWS()
+	</select>
+	
+	<!-- 根据user_id查找出sex -->
+	<select id="SelectSexByUser_id" resultType="int">
+	SELECT user_sex FROM t_user WHERE user_id=#{0}
+	</select>
+	<!--  -->
+	<select id="SelectTalkingsSize" resultType="int">
+		
+		<if test="type==0">
+		SELECT count(*) FROM t_talking WHERE talking_state IN(10,50,55)
+		</if>
+		<if test="type==1">
+		SELECT count(*) FROM t_user WHERE user_id IN(SELECT talking_user FROM t_talking where ${type}=${type} and  talking_state IN(10,50,55)
+		</if>
+		<if test="sex!=-1">
+		AND user_sex = ${sex}
+		</if>
+		<if test="taking_type!=0">
+		AND	talking_type=${taking_type} 
+		</if> 
+		<if test="taking_rootnode!=0">
+		AND talking_root_type=${taking_rootnode}		
+		</if> 
+		<if test="taking_campus!=0">
+		AND	talking_campus=${taking_campus}				
+		</if> 
+		<!-- <if test="nodes!=null and taking_type==0">
+		AND talking_type in
+		<foreach item="nodes" index="index" collection="nodes" open="("
+			separator="," close=")">
+			#{nodes}
+		</foreach>
+		</if> -->
+		<if test="city!=null and taking_campus==0">
+		AND talking_campus in
+		<foreach item="city" index="index" collection="city" open="("
+			separator="," close=")">
+			#{city}
+		</foreach>
+		
+		</if>
+		<if test="type==1">
+			)
+		</if>
+		
+		
+	</select>
+	<!-- 根据user_id查出user_name -->
+	<select id="SelectUser_NameByUser_Id" resultType="String">
+	SELECT user_name FROM t_user WHERE user_id=#{0}
+	</select>
+	
+	<!-- 根据city_id找出他所属的学校集合 -->
+	<select id="SelectCampusByCity_id" resultType="java.util.Map">
+	SELECT * FROM t_campus WHERE campus_city=#{0}	
+	</select>
+	
+	<!-- 根据city_id找出city_name -->
+	<select id="SelectCityNameByCity_id" resultType="String">
+	SELECT city_name FROM t_city WHERE city_id=#{campus_city}
+	</select>
+	
+	<!-- 查找出所有talkings的数量  -->
+	<select id="getTalkingsCount" resultType="int">
+	SELECT COUNT(*) FROM t_talking
+	</select>
+
+
+	<!-- 获取他所参与（购买）的talking信息列表 -->
+	<select id="getUserBuyTalking" resultType="java.util.HashMap">
+		SELECT talking_id,talking_title,talking_max_persion,talking_now_persion,talking_price,talking_address,
+		talking_main_picture,talking_target,talking_start_time,talking_end_time,talking_state
+		FROM t_talking WHERE talking_id IN
+		(SELECT order_talking FROM t_order WHERE order_user=#{0} AND order_state!=0) AND talking_state=#{3} limit #{1},#{2}
+	</select>
+
+	<!-- 获取他所参与（购买）的talking信息列表 -->
+	<select id="getUserBuyTalkingCount" resultType="int">
+		SELECT COUNT(*) FROM t_talking WHERE talking_id IN
+		(SELECT order_talking FROM t_order WHERE order_user=#{0} AND order_state!=0) AND talking_state=#{1}
+	</select>
+
+	<!-- 获取用户所发布的talking的数量 -->
+	<select id="getUserTalkingCount" resultType="int">
+		SELECT COUNT(*) FROM t_talking WHERE talking_user=#{0} AND talking_state!=#{1}
+	</select>
+
+	<!-- 获取用户的发布的talking -->
+	<select id="getUserTalking" resultType="java.util.HashMap">
+		SELECT talking_id,talking_title,talking_publish_time,talking_max_persion,talking_now_persion,talking_price,talking_address,
+		talking_main_picture,talking_target,talking_start_time,talking_end_time,talking_tool,talking_tool_num,talking_is_online,
+		talking_state
+		FROM t_talking WHERE talking_user=#{0} AND talking_state!=0 order by talking_publish_time desc limit #{1},#{2} 
+	</select>
+
+	<!-- 获取用户所删除的talking的数量 -->
+	<select id="getUserDeleTalkingCount" resultType="int">
+		SELECT COUNT(*) FROM t_talking WHERE talking_user=#{0} AND talking_state=#{1}
+	</select>
+
+	<!-- 获取用户的发布的talking -->
+	<select id="getDeleUserTalking" resultType="java.util.HashMap">
+		SELECT talking_id,talking_title,talking_publish_time,talking_max_persion,talking_now_persion,talking_price,talking_address,
+		talking_main_picture,talking_target,talking_start_time,talking_end_time,talking_tool,talking_tool_num,talking_is_online,
+		talking_state
+		FROM t_talking WHERE 
+		talking_user=#{0} AND talking_state=0 limit #{1},#{2}
+	</select>
+
+
+	<update id="delTalking">
+		UPDATE t_talking SET talking_state=0 WHERE talking_id=#{0}
+	</update>
+	<update id="updateTalkingRemainNum">
+	UPDATE t_talking SET talking_now_persion = talking_now_persion-1 WHERE talking_id=#{0} AND talking_now_persion > 0
+	</update>
+	<!--  得到课程信息 主要用于下单时 确认产品信息-->
+	<select id="getTalkingInfoForCreateOrder" resultType="java.util.HashMap">
+	    select talking_title,talking_main_picture,talking_start_time,talking_end_time,talking_price , user_name,campus_name  from t_talking ,t_campus,t_user
+	    where  talking_id=#{0} and talking_user= user_id and talking_campus =campus_id
+	
+	</select>
+	
+	<select id="getTalkingInfoAndPhoneNUM" resultType="java.util.HashMap">
+	    select t.talking_title as talking_title ,u.user_phone as user_phone  from t_talking as t ,t_user as u where t.talking_user=u.user_id and talking_id=#{0}
+	
+	</select>
+	
+	<update id="updateTalkingStatus">
+	 update t_talking set  talking_state=#{0} where  talking_id=#{1};
+	</update>
+	
+	<update id="updateTalkingOverdue">
+	UPDATE t_talking SET talking_state=100 WHERE talking_id=#{0}
+	</update>
+	
+	
+	<!-- 删除talking前，判断talking有没人参加 -->
+	<select id="judgeIsDelTalking" parameterType="int" resultType="int">
+		SELECT count(*) from t_order where t_order.order_state>0 and t_order.order_talking=#{0}
+	</select>
+	
+	<!-- 通过talkingId得到说友信息 -->
+	<select id="getUserTalkingInfo" parameterType="int" resultType="java.util.Map">
+		select talking_title,t_user.user_phone from t_talking LEFT JOIN t_user on t_user.user_id=t_talking.talking_user where t_talking.talking_id=#{0}
+	</select>
+	
+	
+</mapper>

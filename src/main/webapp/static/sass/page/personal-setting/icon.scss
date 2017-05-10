@@ -1,0 +1,116 @@
+@charset "UTF-8";
+
+$imgBaseUrl: '/static/img/page/personal-center/';
+.icon {
+  margin: 0px 18px;
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+}
+
+// 认证设置
+.icon-user-identity {
+  background: url(#{$imgBaseUrl}icon-user-identity.png) no-repeat;
+}
+.icon-user-identity.done {
+  background: url(#{$imgBaseUrl}icon-user-identity-done.png) no-repeat;
+}
+.icon-student-card {
+  background: url(#{$imgBaseUrl}icon-student-card.png) no-repeat;
+}
+.icon-student-card.done {
+  background: url(#{$imgBaseUrl}icon-student-card-done.png) no-repeat;
+}
+.icon-degree {
+  background: url(#{$imgBaseUrl}icon-degree.png) no-repeat;
+}
+.icon-degree.done {
+  background: url(#{$imgBaseUrl}icon-degree-done.png) no-repeat;
+}
+.icon-skill {
+  background: url(#{$imgBaseUrl}icon-skill.png) no-repeat;
+}
+.icon-skill.done {
+  background: url(#{$imgBaseUrl}icon-skill-done.png) no-repeat;
+}
+.icon-warn {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin: 0px 2px 0px 14px;
+  background: url(#{$imgBaseUrl}info.png) no-repeat;
+}
+
+// 安全设置
+.icon-phone {
+  background: url(#{$imgBaseUrl}icon-phone.png) no-repeat;
+}
+.icon-phone.done {
+  background: url(#{$imgBaseUrl}icon-phone-done.png) no-repeat;
+}
+.icon-mail {
+  background: url(#{$imgBaseUrl}icon-mail.png) no-repeat;
+}
+.icon-mail.done {
+  background: url(#{$imgBaseUrl}icon-mail-done.png) no-repeat;
+}
+.icon-qq {
+  background: url(#{$imgBaseUrl}icon-qq.png) no-repeat;
+}
+.icon-qq.done {
+  background: url(#{$imgBaseUrl}icon-qq-done.png) no-repeat;
+}
+.icon-password {
+  background: url(#{$imgBaseUrl}icon-password.png) no-repeat;
+}
+.icon-password.done {
+  background: url(#{$imgBaseUrl}icon-password-done.png) no-repeat;
+}
+
+// 个人设置
+.icon-info {
+  background: url(#{$imgBaseUrl}icon-info.png) no-repeat;
+}
+.icon-info.selected {
+  background: url(#{$imgBaseUrl}icon-info-selected.png) no-repeat;
+}
+.icon-mail {
+  background: url(#{$imgBaseUrl}icon-mail.png) no-repeat;
+}
+.icon-mail.done {
+  background: url(#{$imgBaseUrl}icon-mail-done.png) no-repeat;
+}
+.icon-qq {
+  background: url(#{$imgBaseUrl}icon-qq.png) no-repeat;
+}
+.icon-qq.done {
+  background: url(#{$imgBaseUrl}icon-qq-done.png) no-repeat;
+}
+.icon-password {
+  background: url(#{$imgBaseUrl}icon-password.png) no-repeat;
+}
+.icon-password.done {
+  background: url(#{$imgBaseUrl}icon-password-done.png) no-repeat;
+}
+
+.icon-big-basic {
+  background: url(#{$imgBaseUrl}icon-big-basic.png) no-repeat;
+}
+.icon-big-education {
+  background: url(#{$imgBaseUrl}icon-big-education.png) no-repeat;
+}
+.icon-big-job {
+  background: url(#{$imgBaseUrl}icon-big-job.png) no-repeat;
+}
+.icon-big-practice {
+  background: url(#{$imgBaseUrl}icon-big-practice.png) no-repeat;
+}
+.icon-big-awards {
+  background: url(#{$imgBaseUrl}icon-big-awards.png) no-repeat;
+}
+.icon-big-basic {
+  background: url(#{$imgBaseUrl}icon-big-basic.png) no-repeat;
+}
+.icon-big-basic {
+  background: url(#{$imgBaseUrl}icon-big-basic.png) no-repeat;
+}

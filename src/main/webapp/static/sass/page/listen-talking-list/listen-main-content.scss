@@ -1,0 +1,369 @@
+@charset "UTF-8";
+$img-path: '/static/img/page/listen-talking-list/';
+$sprite-img: '/static/img/page/listen-talking-list/share-sb493cdee69.png';
+//背景图片文件目录
+.listen-content-wrap {
+  margin-top: 20px;
+  margin-bottom: 80px;
+}
+
+//tab工具栏
+.listen-main-content-tab-bar {
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #dddddd;
+  height: 36px;
+}
+
+.listen-main-content-tab {
+  float: left;
+  width: 135px;
+  height: 36px;
+  line-height: 35px;
+  text-align: center;
+  border-left: 1px solid #f8f8f8;
+  border-right: 1px solid #f8f8f8;
+  border-top: 1px solid #f8f8f8;
+  a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    color: #5c5c5c;
+  }
+  span {
+    font-size: 12px;
+    color: #969696;
+    cursor: pointer;
+    &:after {
+      display: inline-block;
+      *display: inline;
+      *zoom: 1;
+      content: " ";
+      background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAKCAYAAACJxx+AAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAI9JREFUeNpi/PHjBwMMnDp16j+INjMzY4SJMTEQAPRQcOfOnZW/f/8WQ5f48+ePKEiO5d27d2GfP392kJeXz4FJAsVCHj58OBWkkfHJkycJDx48mPrv3z8uFKOZmL4pKChkM4LC4fv37zpA41YAaW2QJCcn53UVFZUwIH2FERZQIBNAJoHYIJ0gE0BsgAADAD7FSMDzaghXAAAAAElFTkSuQmCC") no-repeat;
+      width: 8px;
+      height: 10px;
+    }
+  }
+}
+
+.tab-active {
+  background-color: #fff;
+  border-top-color: #dddddd;
+  border-right-color: #dddddd;
+  border-left-color: #dddddd;
+  a {
+    color: #5c5c5c;
+  }
+}
+
+/*//Talking 导航栏
+.listen-talking-nav {
+  height: 40px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.listen-talking-nav-item {
+  float: left;
+  height: 39px;
+  line-height: 40px;
+  font-size: 14px;
+  color: #5c5c5c;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-tab {
+  width: 100px;
+  text-align: center;
+  cursor: pointer;
+  &:hover {
+    color: #00caab;;
+  }
+}
+
+.nav-tab-active {
+  border-bottom-color: #00caab;
+  color: #00caab;;
+}
+
+.nav-price {
+  width: 260px;
+}
+
+.nav-page {
+  width: 80px;
+  text-align: center;
+}
+
+.price-range {
+  margin-left: 36px;
+  margin-right: 40px;
+}
+
+.price-input {
+  padding-left: 3px;
+  padding-right: 3px;
+  width: 36px;
+  height: 19px;
+  line-height: 19px;
+  border: 1px solid #dddddd;
+  vertical-align: middle;
+  font-size: 12px;
+  color: #dddddd;
+  &:focus {
+    outline: 1px solid #00caab;
+  }
+}
+
+.price-link-line {
+  margin-right: 3px;
+  margin-left: 3px;
+  width: 8px;
+  height: 2px;
+  background-color: #dddddd;
+}*/
+
+//翻页按钮
+.page-btn {
+  width: 5px;
+  height: 10px;
+  cursor: pointer;
+}
+
+.pre-btn {
+  background: url(#{$img-path}pre.png) no-repeat;
+}
+
+.next-btn {
+  background: url(#{$img-path}next.png) no-repeat;
+}
+
+.current-page {
+  color: #00caab;
+}
+
+//Talking content
+.talking-list {
+  margin-left: -20px;
+}
+
+.listen-talking-item {
+  margin-left: 20px;
+  margin-top: 20px;
+  float: left;
+  width: 278px;
+  height: 290px;
+  border: 1px solid #DDDDDD;
+  &:hover{
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+
+  }
+  img {
+    width: 278px;
+    height: 170px;
+    &:hover{
+    }
+  }
+  h2 {
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 18px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  div {
+    position: relative;
+    top: -4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 119px;
+    border-top: none;
+    background: #ffffff;
+  }
+}
+
+.talking-item + .talking-item {
+  border-top: 1px solid #dddddd;
+}
+
+.talking-item {
+  padding-top: 23px;
+  padding-bottom: 23px;
+  padding-left: 4px;
+}
+
+.course-pic-link {
+  float: left;
+  img {
+    width: 238px;
+    height: 150px;
+  }
+}
+
+.course-dec {
+  margin-left: 18px;
+  float: left;
+}
+
+.course-dec-title {
+  line-height: 20px;
+  font-size: 20px;
+  a {
+    color: #5c5c5c;
+    &:hover {
+      color: #00caab;
+    }
+  }
+}
+
+.teacher-info {
+  margin-top: 12px;
+  dt, dd {
+    float: left;
+    height: 33px;
+    line-height: 33px;
+  }
+  dt {
+    width: 114px;
+  }
+}
+
+.teacher-pic-link {
+  //display: inline-block;
+  color: #5c5c5c;
+}
+
+.teacher-pic {
+  width: 33px;
+  height: 33px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.teacher-name {
+  margin-left: 8px;
+}
+
+.teacher-star {
+  margin-top: 11px;
+  width: 12px;
+  height: 11px;
+}
+
+.star-wrap {
+  margin-right: 47px;
+  font-size: 0;
+}
+
+.star1 {
+  background: url(#{$sprite-img}) no-repeat;
+  background-position: 0 -16px;
+}
+
+.star2 {
+  background: url(#{$sprite-img}) no-repeat;
+  background-position: 0 -27px;
+}
+
+.school {
+  margin-right: 7px;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  background: url(#{$sprite-img}) no-repeat;
+  background-position: 0 0;
+}
+
+.course-info {
+  float: left;
+  margin-top: 6px;
+  .course-info-item {
+    height: 24px;
+    line-height: 24px;
+  }
+  .other-course {
+    margin-left: 12px;
+    color: #5c5c5c;
+    text-decoration: underline;
+    &:hover {
+      color: #00caab;
+    }
+  }
+  .course-info-item-pic {
+    margin-right: 7px;
+    vertical-align: middle;
+  }
+  .tip, .time {
+    width: 16px;
+    height: 16px;
+  }
+  .tip {
+    background: url(#{$sprite-img}) no-repeat;
+    background-position: 0 -71px;
+  }
+  .time {
+    background: url(#{$sprite-img}) no-repeat;
+    background-position: 0 -55px;
+  }
+  .style {
+    width: 15px;
+    height: 17px;
+    background: url(#{$sprite-img}) no-repeat;
+    background-position: 0 -38px;
+  }
+}
+
+.sex-man {
+  width: 14px;
+  height: 14px;
+  background: url("/static/img/page/listen-talking-list/man.png") no-repeat;
+}
+
+.sex-gir {
+  width: 14px;
+  height: 14px;
+  background: url("/static/img/page/listen-talking-list/girl.png") no-repeat;
+}
+
+.campus {
+  width: 14px;
+  height: 13px;
+  background: url("/static/img/page/listen-talking-list/book.png") no-repeat;
+}
+
+.course-deal {
+  float: right;
+}
+
+.course-deal-item {
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 18px;
+  color: #fca825;
+}
+
+.course-deal-price {
+  font-size: 24px;
+}
+
+.course-att-btn {
+  margin-top: 22px;
+  width: 79px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  font-size: 14px;
+  background-color: #fff;
+  border: 1px solid #fca825;
+}
+
+.current-att {
+  color: #fca825;
+}
+

@@ -1,0 +1,27 @@
+.comment-star{
+  font-size: 18px;
+  width: 1126px;
+  background: #f8f8f8;
+  margin: 46px auto 30px auto;
+  overflow: hidden;
+  padding-left: 54px;
+  height: 70px;
+  .score{
+    width: 100px;
+    margin-right: 10px;
+    float: left;
+    line-height: 70px;
+    span{
+      color: #ffb137;
+      font-size: 36px;
+    }
+  }
+  ul{
+    float: left;
+    margin-top: 26px;
+    li{
+      float: left;
+      margin-right: 2px;
+    }
+  }
+}

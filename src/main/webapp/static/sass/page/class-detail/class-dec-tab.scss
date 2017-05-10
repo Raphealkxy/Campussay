@@ -1,0 +1,42 @@
+@charset "UTF-8";
+@import "../personal-index/personal-menu-bar";
+.class-dec-tab{
+    margin-top: 42px;
+    background-color: #f8f8f8;
+    border: none;
+}
+.personal-menu-item.current-menu-item{
+    a{
+        color: #00caab;
+    }
+}
+.personal-menu-item{
+    top: 0;
+    a{
+        color: #5c5c5c;
+    }
+    &:hover a{
+        color: #00caab;
+    }
+}
+.personal-menu-item.class-tab-bar-btn{
+    float: right;
+    padding: 0;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #00caab;
+    border: none;
+    color: #fff;
+}
+.personal-menu-item.class-price-btn{
+    width: 84px;
+}
+.personal-menu-item.add-now-btn{
+    margin-left: 1px;
+    width: 110px;
+}
+
+
+
+

@@ -1,0 +1,47 @@
+@charset "UTF-8";
+/*
+*边框函数：warp()
+*/
+/*
+*普通样式
+*/
+/*
+*提示样式
+*/
+/*
+*链接样式
+*/
+/*
+*邮箱或者手机号码样式
+*/
+/*
+*标题样式
+*/
+/*
+*按钮样式
+*/
+.pwd-found-logo {
+  margin-bottom: 64px;
+  height: 57px; }
+
+.pwd-found-title {
+  font-family: "Microsoft YaHei";
+  font-size: 20px;
+  color: #5c5c5c; }
+
+.progress-bar {
+  overflow: hidden;
+  width: 534px;
+  height: 44px;
+  margin: 0 auto; }
+  .progress-bar li {
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
+    line-height: 14px;
+    color: #5c5c5c;
+    float: left; }
+  .progress-bar .progress-bar_center {
+    margin: 0 175px 0 161px; }
+
+.error {
+  border: 1px solid #f06060; }

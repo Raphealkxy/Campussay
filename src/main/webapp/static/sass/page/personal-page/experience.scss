@@ -1,0 +1,50 @@
+.experience{
+  width: 770px;
+  position: relative;
+  .line{
+    position: absolute;
+    //z-index: -1;
+    width: 1px;
+    background-color: #00caab;
+    left: 25px;
+  }
+  .list-info{
+    width: 650px;
+    margin-top: 18px;
+    .item-list{
+      .detail-info{
+        margin-top: 0;
+        overflow: hidden;
+        font-size: 14px;
+        background: url("/static/img/page/personal-page/dot.png") no-repeat left center;
+        .time-data{
+          float: left;
+          margin-right: 26px;
+          position: relative;
+          span{
+            width: 60px;
+          }
+        }
+        .company{
+          float: left;
+          margin-right: 40px;
+        }
+        .order{
+          float: left;
+        }
+      }
+      p{
+        margin-left: 160px;
+        text-indent: 0;
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+  .last-para{
+    margin-left: 160px;
+    text-indent: 0;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+}

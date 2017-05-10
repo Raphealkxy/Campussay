@@ -1,0 +1,23 @@
+@charset "UTF-8";
+@import "../common/global-set";
+#slide {
+	min-height: 100%;
+	over-flow: hidden;
+	background-color: #C0EEE7;
+}
+.section {
+	width: 100%;
+	height: 100%;
+	.bg {
+	    width: 100%;
+	}
+}
+#section1 {
+	//background: url("/static/img/download/downpage1.png") no-repeat;
+	.andriod-download {
+	  position: absolute;
+	  float: right;
+	  right: 26.6%;
+	  top: 45%;
+	}
+}

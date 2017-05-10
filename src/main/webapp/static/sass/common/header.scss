@@ -1,0 +1,167 @@
+@import "global-set";
+@import "../page/sign-in/sign-in";
+$nav-font-size: 14px;
+$bg-color: #34495e;
+$h: 36px;
+.common-header {
+  background-color: $bg-color;
+  overflow: hidden;
+  height: $h;
+  min-width: $global-w;
+  font-size: $nav-font-size;
+}
+.common-header-list {
+  float: left;
+}
+.common-header-aside{
+  float: right;
+}
+.common-header-item{
+  float: left;
+  color: #fff;
+  line-height: $h;
+  a{
+    color: #FFFFFF;
+  }
+}
+.index{
+  padding-left: 6px;
+}
+.index-font,
+.home-pic{
+  vertical-align: middle;
+}
+.home-pic{
+  background: url("/static/img/common/home.png") no-repeat;
+  //background-size: 100%;
+  width: 18px;
+  height: 16px;
+}
+.what-campus{
+  padding-left: 24px;
+  padding-right: 24px;
+}
+.login-or-register{
+  padding-left: 17px;
+  padding-right: 17px;
+}
+
+
+.main-nav{
+  padding: 10px 0;
+  .link-index{
+    float: left
+  }
+  .address{
+    //padding-top:2px;
+    height: 45px;
+   /* h1{
+      margin-left:38px;
+    }*/
+  }
+}
+.address{
+  margin-left: 12px;
+  margin-top: 6px;
+  padding-left: 12px;
+  height: 46px;
+  width: 136px;
+  border-left: 1px solid #dddddd;
+  //当前选中学校名称
+  h1{
+    margin-top: -2px;
+    font-size: 16px;
+    height: 19px;
+    line-height: 19px;
+  }
+  //切换学校按钮
+  button{
+    margin-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: #fff;
+    border: 1px solid #dddddd;
+    font-size: 12px;
+    color: #777777;
+    height: 22px;
+  }
+}
+.nav-list{
+  overflow: hidden;
+  float: right;
+  li{
+    float:left;
+  }
+  a{
+    display: block;
+    height: 58px;
+    line-height:58px;
+    text-align: center;
+    padding:0 30px;
+    font-size: 16px;
+    color:$global-font;
+    &:hover{
+       color:$global-bg;
+      //颜色渐变 lbj
+    }
+  }
+  .nav-active{
+    color:$global-bg;    
+  }
+  
+}
+
+//用户已登录头部开始
+.head{
+  .container{
+    width: 1180px;
+    height: 36px;
+    margin: 0 auto;
+    overflow: hidden;
+    line-height: 36px;
+  }
+  .left{
+    float: left;
+  }
+  .user-name a{
+    color: #ffffff;
+    margin-left: 16px;
+    cursor:pointer;
+  }
+  .user-exit{
+    margin-left: 8px;
+    color:#00caab;
+    cursor:pointer;
+  }
+  .right{
+    float: right;
+    padding-right: 20px;
+    a{
+      margin-left: 46px;
+      color: #fff;
+    }
+  }
+  background:#34495e;
+  color:#fff;
+  font-size:14px;
+}
+//头部结束
+
+//引入话题社头部的样式
+@import 'ht-common-bar';
+
+.user-infor{
+  a{
+    color: #FFFFFF;
+    margin-left: 34px ;
+    padding-left: 22px;
+    background:url("/static/img/common/infoIco.png") no-repeat 0 4px ;
+  }
+}
+
+
+
+
+
+
+

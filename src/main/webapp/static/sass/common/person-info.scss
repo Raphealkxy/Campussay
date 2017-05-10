@@ -1,0 +1,111 @@
+.person-info{
+  width: 284px;
+  float: right;
+  margin-top:31px;
+  .person-info-content{
+    border: 1px solid #f0f0f0;
+    background-color: #fafafa;
+    img{
+      width: 73px;
+      height: 73px;
+      float: left;
+    }
+    .person-name{
+      margin-left: 25px;
+      margin-top: 20px;
+      h3 a{
+        font-size: 16px;
+        line-height: 16px;
+        color: #5c5c5c;
+        width: 128px;
+        display:block;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+      }
+      div{
+        margin-top: 16px;
+        margin-left: 16px;
+        float: left;
+        ul{
+          margin-top: 10px;
+          li{
+            width: 48px;
+            float: left;
+            color: #5c5c5c;
+            font-size: 12px;
+            margin-left: 10px;
+            display:block;
+            white-space:nowrap;
+            overflow:hidden;
+            text-overflow:ellipsis;
+          }
+          :first-child{
+            background: url("../../../../static/img/page/hot/hot-ico.png") no-repeat right -122px;
+            padding-right: 10px;
+            margin-left: 0;
+          }
+
+        }
+      }
+
+    }
+    dl{
+      width: 240px;
+      clear: both;
+      float: left;
+      margin-left: 23px;
+      display:block;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      dt{
+        float: left;
+        font-size: 14px;
+        color: #5c5c5c;
+        padding-right: 4px;
+      }
+      dd{
+        height: 18px;
+        line-height: 18px;
+        float: left;
+        margin-right: 5px;
+        padding: 0px 10px;
+        border: 1px solid #afafaf ;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 2px;
+      }
+    }
+    .good-skill{
+      margin-top: 24px;
+    }
+    .attention{
+      margin-top: 4px;
+      margin-bottom: 21px;
+    }
+  }
+  .person-num{
+    margin-top: 17px;
+    padding-left: 25px;
+    padding-right: 25px;
+    height: 84px;
+    border: 1px solid #f0f0f0;
+    background-color: #fafafa;
+    li a{
+      float: left;
+      width: 76px;
+      color: #969696;
+      font-size: 14px;
+      text-align: center;
+      margin-top: 22px;
+      span{
+        width: 76px;
+        display: block;
+        color: #5c5c5c;
+        font-size: 18px;
+        text-align: center;
+      }
+    }
+  }
+}

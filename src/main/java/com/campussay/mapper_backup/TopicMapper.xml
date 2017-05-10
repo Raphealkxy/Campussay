@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.campussay.dao.TopicDao">
+
+	<insert id="insertSelective" parameterType="com.campussay.model.Topic">
+		insert into
+		t_topic(taking_type_id,user_id,tile,cover_img,intro,create_time,update_time,state)
+		values
+		(#{takingTypeId},#{userId},#{tile},#{coverImg},#{intro},#{createTime},#{updateTime},#{state})
+	</insert>
+
+
+	<select id="getNewTopicsUnLogin" resultType="java.util.Map">
+		SELECT
+		id,
+		t_user.user_name,
+		tile,
+		cover_img,
+		(
+		SELECT
+		t.talking_type_name
+		FROM
+		t_talking_type AS t
+		WHERE
+		t.talking_type_id = t_talking_type.talking_type_parent
+		) AS parentName,
+		t_talking_type.talking_type_name,
+		t_talking_type.talking_type_picture,
+		(
+		SELECT
+		count(*)
+		FROM
+		t_answer
+		WHERE
+		t_answer.topic_id = t_topic.id
+		) AS answerNum,
+		update_time,
+		t_topic.taking_type_id,
+		t_user.user_id,
+		(SELECT t_answer.id FROM t_answer WHERE t_answer.topic_id = t_topic.id ORDER
+		BY t_answer.islike DESC LIMIT 0,1) AS answerId,
+		(SELECT t_answer.context FROM t_answer WHERE t_answer.topic_id = t_topic.id
+		ORDER BY t_answer.islike DESC LIMIT 0,1) AS context,
+		(SELECT t_answer.islike FROM t_answer WHERE t_answer.topic_id = t_topic.id
+		ORDER BY t_answer.islike DESC LIMIT 0,1) AS isLike,
+		(select count(*) from t_topic) as totalLine
+		FROM
+		t_topic
+		LEFT JOIN t_user ON t_user.user_id = t_topic.user_id
+		LEFT JOIN t_talking_type ON t_talking_type.talking_type_id =
+		t_topic.taking_type_id
+		where state=1
+		ORDER BY
+		update_time DESC
+		LIMIT #{0},#{1}
+	</select>
+
+
+	<!-- yangchun -->
+	<select id="getNewTopics" resultType="java.util.Map">
+		SELECT
+		id,
+		t_user.user_name,
+		tile,
+		cover_img,
+		(
+		SELECT
+		t.talking_type_name
+		FROM
+		t_talking_type AS t
+		WHERE
+		t.talking_type_id = t_talking_type.talking_type_parent
+		) AS parentName,
+		t_talking_type.talking_type_name,
+		t_talking_type.talking_type_picture,
+		(
+		SELECT
+		count(*)
+		FROM
+		t_answer
+		WHERE
+		t_answer.topic_id = t_topic.id
+		) AS answerNum,
+		update_time,
+		t_topic.taking_type_id,
+		t_user.user_id,
+		(SELECT t_answer.id FROM t_answer WHERE t_answer.topic_id = t_topic.id ORDER
+		BY t_answer.islike DESC LIMIT 0,1) AS answerId,
+		(SELECT t_answer.context FROM t_answer WHERE t_answer.topic_id = t_topic.id
+		ORDER BY t_answer.islike DESC LIMIT 0,1) AS context,
+		(SELECT t_answer.islike FROM t_answer WHERE t_answer.topic_id = t_topic.id
+		ORDER BY t_answer.islike DESC LIMIT 0,1) AS isLike,
+		(select count(*) from t_topic where t_topic.taking_type_id in (select
+		t_follow.taking_type_id from t_follow where t_follow.uid=#{0}) ) as
+		totalLine
+		FROM
+		t_topic
+		LEFT JOIN t_user ON t_user.user_id = t_topic.user_id
+		LEFT JOIN t_talking_type ON t_talking_type.talking_type_id =
+		t_topic.taking_type_id
+		where state=1 and t_topic.taking_type_id in (select t_follow.taking_type_id
+		from t_follow where t_follow.uid=#{0})
+		ORDER BY
+		update_time DESC
+		LIMIT #{1},#{2}
+	</select>
+
+	<select id="getUnanswerTopics" resultType="java.util.Map">
+		select * from t_topic where id not in (select topic_id from t_answer) and
+		state=1
+	</select>
+	<select id="getAllTopicByUserID" resultType="java.util.Map">
+		SELECT
+		id,
+		cover_img,
+		tile,
+		create_time,
+		(
+		SELECT
+		count(*)
+		FROM
+		t_answer
+		WHERE
+		t_answer.topic_id = t_topic.id
+		) AS answerNum,
+		(
+		SELECT
+		context
+		FROM
+		t_answer
+		WHERE
+		t_answer.topic_id = t_topic.id
+		ORDER BY
+		t_answer.time DESC
+		LIMIT 0,
+		1
+		) AS answerContent,
+		(select count(*) from t_topic where t_topic.user_id=#{0} and state=1) as
+		totalLine,
+		(select count(*) from t_follow_topic where t_follow_topic.topicId=t_topic.id)
+		as followNum,
+		(select count(*) from t_follow_topic where t_follow_topic.topicId=t_topic.id
+		and t_follow_topic.userId=#{0}) as isFollow
+		FROM
+		t_topic
+		WHERE
+		user_id = #{1} and state=1
+		ORDER BY
+		create_time DESC
+		LIMIT #{2},#{3}
+	</select>
+	<select id="getAllTopicByFieldID" parameterType="int"
+		resultType="map">
+		SELECT
+		id,
+		tile,
+		t_user.user_id,
+		t_user.user_name,
+		t_user.user_campus_name,
+		t_topic.update_time,
+		(select id from t_answer where t_answer.topic_id=id ORDER BY t_answer.time
+		desc limit 0,1) as answerId,
+		(select left(context,800) from t_answer where t_answer.topic_id=id ORDER BY
+		t_answer.time desc limit 0,1) as context,
+		(select islike from t_answer where t_answer.topic_id=id ORDER BY
+		t_answer.time desc limit 0,1) islike,
+		(select count(*) from t_answer where t_answer.topic_id=t_topic.id) as
+		answerNum,
+		(select count(*) from t_topic where t_topic.taking_type_id=#{0} and state=1)
+		as totalLine
+		FROM
+		t_topic
+		LEFT JOIN t_user ON t_user.user_id = t_topic.user_id
+		WHERE
+		t_topic.taking_type_id = #{0} and state=1
+		ORDER BY
+		t_topic.update_time DESC limit #{1},#{2}
+	</select>
+	<!--  
+	<select id="getAllTopicByPFieldID" parameterType="int"
+		resultType="map">
+		select id,tile,cover_img,left(intro,300) as intro,(select count(*) from
+		t_answer where t_answer.topic_id=t_topic.id) as answerNum,create_time
+		from t_topic where t_topic.field_id in (select id from t_field where
+		t_field.pid=#{0}) and state=1 order by create_time DESC limit
+		#{1},#{2}
+	</select>
+	-->
+	<select id="getDetailTopic" parameterType="int" resultType="map">
+		SELECT
+		id,
+		tile,
+		user_id,
+		t_talking_type.talking_type_name,
+		(
+		SELECT
+		talking_type_name
+		FROM
+		t_talking_type AS t
+		WHERE
+		t.talking_type_id = t_talking_type.talking_type_parent
+		) as parentName,
+		intro,
+		create_time,
+		(select count(*) from t_follow_topic where t_follow_topic.userId=#{0} and
+		t_follow_topic.topicId=#{1}) as isFollow
+		FROM
+		t_topic
+		INNER JOIN t_talking_type ON t_talking_type.talking_type_id =
+		t_topic.taking_type_id
+		WHERE
+		t_topic.id = #{1} and state=1
+	</select>
+
+	<update id="updateTopicTime" parameterType="com.campussay.model.Topic">
+		update t_topic
+		<set>
+			<if test="takingTypeId != null">
+				taking_type_id = #{takingTypeId,jdbcType=INTEGER},
+			</if>
+			<if test="userId != null">
+				user_id = #{userId,jdbcType=INTEGER},
+			</if>
+			<if test="tile != null">
+				tile = #{tile,jdbcType=VARCHAR},
+			</if>
+			<if test="coverImg != null">
+				cover_img = #{coverImg,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				create_time = #{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="updateTime != null">
+				update_time = #{updateTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="intro != null">
+				intro = #{intro,jdbcType=LONGVARBINARY},
+			</if>
+		</set>
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+
+	<select id="getAllUserByTopicId" resultType="map">
+		select t_user.user_name from t_user where t_user.user_id in (select uid from
+		t_answer where t_answer.topic_id=1) limit 0,3
+	</select>
+
+
+	<select id="getNewTopicsByUser" resultType="java.util.Map">
+		SELECT
+		id,
+		tile,
+		update_time,
+		taking_type_id,
+		cover_img,
+		(select id from t_answer ORDER BY t_answer.time desc limit 0,1) as answerId,
+		(select context from t_answer ORDER BY t_answer.time desc limit 0,1)
+		as context,
+		(select islike from t_answer ORDER BY t_answer.time desc limit 0,1) as
+		islike,
+		(select count(*) from t_answer where t_answer.topic_id=t_topic.id) as
+		answerNum,
+		(select count(*) from t_topic where t_topic.taking_type_id in (select
+		t_follow.taking_type_id from t_follow where t_follow.uid=#{0} )) as
+		totalLine
+		FROM
+		t_topic
+		where t_topic.taking_type_id in (select t_follow.taking_type_id from
+		t_follow where t_follow.uid=#{0}) and state=1
+		ORDER BY
+		update_time DESC
+		LIMIT #{1},#{2}
+	</select>
+
+	<select id="getTopicById" parameterType="int" resultType="java.util.Map">
+		select
+		t_topic.id,t_topic.tile,t_topic.user_id from t_topic where
+		t_topic.id=#{0}
+	</select>
+
+
+	<select id="getTopicByAnswerId" parameterType="int" resultType="java.util.Map">
+		select t_topic.id,t_topic.tile from t_answer LEFT JOIN t_topic on
+		t_answer.topic_id=t_topic.id where t_answer.id=#{0}
+	</select>
+	
+	
+	<select id="getAllTopicByFirstFieldID">
+		
+	
+	
+	</select>
+	
+	<select id="getNewTopicId" resultType="int" parameterType="int">
+		select id from t_topic where user_id=#{0} order by t_topic.id desc limit 1
+	</select>
+	
+	
+
+
+
+
+</mapper>

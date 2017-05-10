@@ -1,0 +1,38 @@
+<script src='/static/html/common/header.js' data-css='personal-center/order'></script>
+
+<!-- 个人中心通用头部导航 -->
+<div class="personal-main-nav">
+    <!-- personal-center/common/header.js render here -->
+</div>
+<!-- 个人中心通用头部导航结束 -->
+
+<div class="order global-center clearfix">
+    <!-- 左侧菜单栏 -->
+    <div class="personal-aside">
+        <!-- personal-center/common/aside.js render here -->
+    </div>
+    <!-- 左侧菜单栏结束 -->
+
+    <!-- 个人中心主要内容 -->
+    <div class="personal-content order-content clearfix">
+        <!-- 菜单切换列表-->
+        <ul class="personal-content-tab order-tab clearfix">
+            <li class="tab-item current-tab-item">全部</li>
+            <li class="tab-item">带付款</li>
+            <li class="tab-item">进行中</li>
+            <li class="tab-item">待确认</li>
+        </ul>
+        <!-- 详细列表 -->
+        <div class="order-content-list order-all-list">
+            <!-- personal-center/order.js render here -->
+        </div>
+
+        <!-- 翻页-->
+        <div style="margin:0 auto;margin-top: 40px; text-align: center;">
+            <div id="kkpager" class="inline-block"></div>
+        </div>
+    </div>
+    <!-- 个人中心主要内容结束 -->
+</div>
+
+<script src='/static/html/common/footer.js' data-js='personal-center/order'></script>

@@ -1,0 +1,92 @@
+.person-info {
+  width: 284px;
+  float: right;
+  margin-top: 31px; }
+  .person-info .person-info-content {
+    border: 1px solid #f0f0f0;
+    background-color: #fafafa; }
+    .person-info .person-info-content img {
+      width: 73px;
+      height: 73px;
+      float: left; }
+    .person-info .person-info-content .person-name {
+      margin-left: 25px;
+      margin-top: 20px; }
+      .person-info .person-info-content .person-name h3 a {
+        font-size: 16px;
+        line-height: 16px;
+        color: #5c5c5c;
+        width: 128px;
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; }
+      .person-info .person-info-content .person-name div {
+        margin-top: 16px;
+        margin-left: 16px;
+        float: left; }
+        .person-info .person-info-content .person-name div ul {
+          margin-top: 10px; }
+          .person-info .person-info-content .person-name div ul li {
+            width: 48px;
+            float: left;
+            color: #5c5c5c;
+            font-size: 12px;
+            margin-left: 10px;
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis; }
+          .person-info .person-info-content .person-name div ul :first-child {
+            background: url("../../../../static/img/page/hot/hot-ico.png") no-repeat right -122px;
+            padding-right: 10px;
+            margin-left: 0; }
+    .person-info .person-info-content dl {
+      width: 240px;
+      clear: both;
+      float: left;
+      margin-left: 23px;
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+      .person-info .person-info-content dl dt {
+        float: left;
+        font-size: 14px;
+        color: #5c5c5c;
+        padding-right: 4px; }
+      .person-info .person-info-content dl dd {
+        height: 18px;
+        line-height: 18px;
+        float: left;
+        margin-right: 5px;
+        padding: 0px 10px;
+        border: 1px solid #afafaf;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 2px; }
+    .person-info .person-info-content .good-skill {
+      margin-top: 24px; }
+    .person-info .person-info-content .attention {
+      margin-top: 4px;
+      margin-bottom: 21px; }
+  .person-info .person-num {
+    margin-top: 17px;
+    padding-left: 25px;
+    padding-right: 25px;
+    height: 84px;
+    border: 1px solid #f0f0f0;
+    background-color: #fafafa; }
+    .person-info .person-num li a {
+      float: left;
+      width: 76px;
+      color: #969696;
+      font-size: 14px;
+      text-align: center;
+      margin-top: 22px; }
+      .person-info .person-num li a span {
+        width: 76px;
+        display: block;
+        color: #5c5c5c;
+        font-size: 18px;
+        text-align: center; }

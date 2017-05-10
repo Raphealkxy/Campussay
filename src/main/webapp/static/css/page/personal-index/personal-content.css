@@ -1,0 +1,218 @@
+.personal-content {
+  margin-top: 26px;
+  margin-bottom: 167px; }
+
+.personal-content-care {
+  float: left;
+  width: 857px; }
+
+.personal-care-tab {
+  width: 100%;
+  height: 36px;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #dddddd; }
+
+.personal-care-tab-item {
+  padding-top: 10px;
+  float: left;
+  cursor: pointer;
+  width: 136px;
+  height: 25px;
+  text-align: center;
+  border: 1px solid transparent; }
+
+.current-care-item {
+  border-color: #dddddd;
+  border-bottom-color: #fff;
+  background-color: #fff; }
+
+.personal-dec-list {
+  padding-top: 1px; }
+
+.personal-dec-item {
+  padding-left: 13px;
+  padding-right: 13px;
+  padding-top: 31px;
+  padding-bottom: 31px;
+  height: 116px; }
+  .personal-dec-item:hover {
+    background-color: #f8f8f8;
+    border-color: #f8f8f8 !important; }
+  .personal-dec-item:hover + .personal-dec-item {
+    border-color: #f8f8f8 !important; }
+
+.personal-dec-item + .personal-dec-item {
+  border-top: 1px solid #e6e6e6; }
+
+.personal-dec-item-pic {
+  margin-right: 17px;
+  float: left; }
+  .personal-dec-item-pic img {
+    width: 172px;
+    height: 104px; }
+
+.personal-dec-panel {
+  float: left; }
+
+.personal-dec-title {
+  color: #5c5c5c;
+  line-height: 27px;
+  font-size: 20px; }
+
+.personal-dec-info-list {
+  margin-top: 15px; }
+
+.personal-dec-info-item {
+  margin-top: 6px;
+  height: 17px;
+  line-height: 17px;
+  font-size: 0; }
+  .personal-dec-info-item span {
+    font-size: 14px;
+    vertical-align: middle; }
+  .personal-dec-info-item i {
+    margin-right: 6px;
+    height: 16px;
+    width: 16px;
+    vertical-align: middle; }
+  .personal-dec-info-item .address-pic {
+    margin-left: 1px;
+    margin-right: 7px;
+    width: 14px;
+    height: 17px;
+    background: url(/static/img/page/personal-index/address.png) no-repeat; }
+  .personal-dec-info-item .tip {
+    background: url(/static/img/page/personal-index/tip.png) no-repeat; }
+  .personal-dec-info-item .time {
+    background: url(/static/img/page/personal-index/time.png) no-repeat; }
+  .personal-dec-info-item .personal-pic {
+    background: url(/static/img/page/personal-index/personal.png) no-repeat; }
+
+.class-info {
+  float: right;
+  text-align: right; }
+
+.class-info-price {
+  padding-top: 43px;
+  color: #ffb137; }
+  .class-info-price strong {
+    margin-bottom: 5px;
+    margin-right: 8px;
+    font-size: 24px; }
+
+.class-info-add a {
+  margin-top: 15px;
+  color: #ffffff;
+  width: 86px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 16px;
+  text-align: center;
+  background-color: #ffb137;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px; }
+
+.personal-content-care-aside {
+  float: right;
+  width: 291px; }
+
+.personal-about-list {
+  border: 1px solid #f0f0f0;
+  background-color: #fafafa; }
+  .personal-about-list li {
+    padding-top: 19px;
+    float: left;
+    width: 96px;
+    height: 59px;
+    text-align: center; }
+  .personal-about-list dt a {
+    font-size: 24px;
+    color: #00caab;
+    line-height: 24px; }
+  .personal-about-list dd {
+    font-size: 16px; }
+
+.personal-identify-list {
+  margin-top: 10px;
+  padding-top: 16px;
+  padding-left: 11px;
+  padding-bottom: 26px;
+  padding-right: 11px;
+  border: 1px solid #f0f0f0;
+  background-color: #fafafa; }
+  .personal-identify-list h3 {
+    font-size: 0;
+    line-height: 18px; }
+  .personal-identify-list span {
+    height: 18px;
+    vertical-align: top;
+    font-size: 16px; }
+  .v-line {
+    margin-right: 7px;
+    width: 4px;
+    height: 18px;
+    background-color: #00caab;
+    vertical-align: middle; }
+
+.personal-identify-info-list {
+  margin-top: 29px;
+  margin-bottom: 28px; }
+
+.personal-identify-info-item + .personal-identify-info-item {
+  margin-left: 9px; }
+
+.personal-identify-info-item {
+  float: left;
+  width: 80px; }
+  .personal-identify-info-item dl {
+    text-align: center; }
+  .personal-identify-info-item dt {
+    margin-bottom: 8px;
+    font-size: 0; }
+  .personal-identify-info-item dd {
+    line-height: 1em; }
+  .identify-pic {
+    height: 34px; }
+  .identify-xueli {
+    width: 47px;
+    background: url(/static/img/page/personal-index/xueli.png) no-repeat; }
+  .identify {
+    width: 44px;
+    background: url(/static/img/page/personal-index/identify.png) no-repeat; }
+  .student-identify {
+    width: 48px;
+    background: url(/static/img/page/personal-index/student-identify.png) no-repeat; }
+
+.skill-list {
+  margin-left: -10px;
+  padding-left: 2px;
+  padding-right: 2px; }
+
+.skill-item {
+  margin-top: 15px;
+  margin-left: 10px;
+  padding-left: 6px;
+  padding-right: 6px;
+  float: left;
+  height: 28px;
+  line-height: 28px;
+  background-color: #eee;
+  text-align: center;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px; }
+
+i.style-way {
+  margin-left: 10px;
+  font-style: normal;
+  width: 32px;
+  height: 18px;
+  line-height: 18px;
+  color: #FFFFFF;
+  text-align: center;
+  background-color: #00caad;
+  vertical-align: middle; }
+
+.personal-dec-info-item .style-way {
+  font-size: 12px; }

@@ -1,0 +1,72 @@
+@import 'common/global-set';
+.banner{
+	width: 100%;
+	height: 310px;
+	background: #a5e7f3;
+}
+.main-banner{
+	width:$global-w;
+	.main-nav{
+		overflow: hidden;
+		background: $global-fontbg;
+		@at-root{
+			.nav-item{
+				float:left;
+				width:(1180/5);
+				font-size: 16px;
+				text-align: center;
+				a{
+					color:$global-font;
+					display: block;
+					height: 37px;
+					line-height: 37px;
+					border-top:3px solid $global-fontbg;
+					&:hover{
+						border-top:3px solid $global-bg;
+					}
+				}
+				.item-active{
+					border-top:3px solid $global-bg;
+				}
+			}
+		}
+	}
+	.common-banner{
+		width:100%;
+		height: 310px;
+		overflow: hidden;
+		position: relative;
+		.common-blist{
+		  	height: 100%;
+			overflow: hidden;
+			position:absolute;
+			img{
+				float:left;
+				height: 310px;
+				width:$global-w;
+			}
+		}
+		.common-slist{
+			position:absolute;
+			overflow: hidden;
+			height: 10px;
+			bottom: 15px;
+			left:50%;
+			a{
+				display: block;
+				width: 10px;
+				height:10px;
+				float:left;
+				background: #fff;
+				margin: 0 5px;
+				border-radius: 5px;
+				&:hover{
+					background: #ccc;
+				}
+			}
+			.active{
+				background:#ccc;
+			}
+		}
+	}
+}

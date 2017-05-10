@@ -1,0 +1,88 @@
+@charset "UTF-8";
+/* ��ɫ�󱳾����� */
+/* ͷ��logo */
+.binding-logo {
+  margin: 25px 0 64px; }
+
+.binding-title {
+  font-size: 20px;
+  color: #5c5c5c; }
+
+/* ��ɫ�󱳾��������ݣ����������ֻ� */
+.binding {
+  border: 1px solid #dddddd;
+  background-color: #f8f8f8;
+  padding: 42px 0 130px 0;
+  margin: 16px 0 97px 0;
+  width: 978px;
+  box-sizing: border-box; }
+  .binding .singup-success {
+    color: #5c5c5c;
+    font-size: 18px;
+    margin: 14px 0; }
+  .binding .btn {
+    width: 132px;
+    height: 34px;
+    border: none;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    line-height: 34px;
+    vertical-align: middle;
+    text-align: center;
+    color: #fff;
+    background-color: #2ce6c9;
+    display: inline-block;
+    font-size: 16px;
+    border-bottom: 2px solid #12b59c; }
+    .binding .btn:hover {
+      background-color: #00caab; }
+  .binding .binding-mail-and-phone {
+    margin-top: 38px; }
+    .binding .binding-mail-and-phone h3 {
+      color: #5c5c5c; }
+    .binding .binding-mail-and-phone input {
+      width: 206px;
+      height: 34px;
+      line-height: 34px;
+      margin-top: 14px;
+      border: 1px solid #eee;
+      text-indent: 10px;
+      color: #777; }
+      .binding .binding-mail-and-phone input:focus {
+        border: 1px solid #2ce6c9; }
+    .binding .binding-mail-and-phone a {
+      margin-left: 10px; }
+  .binding .send-verification-code {
+    padding-right: 18px;
+    color: #f06060;
+    background: url("/static/img/page/binding/arrow-right-red.png") no-repeat center right; }
+  .binding .activate {
+    width: 120px;
+    height: 30px;
+    border: 1px solid #12b59c;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    line-height: 30px;
+    vertical-align: middle;
+    text-align: center;
+    color: #12b59c;
+    background-color: transparent;
+    display: inline-block; }
+    .binding .activate:hover {
+      background-color: #00caab; }
+    .binding .activate:hover {
+      color: #fff;
+      background-color: #2ce6c9;
+      border: #2ce6c9; }
+
+/* ��ɫ�󱳾��������ݣ������ɹ� */
+.binding-success {
+  text-align: center; }
+  .binding-success .singup-success {
+    color: #00caab; }
+  .binding-success h3 {
+    margin-bottom: 24px; }
+  .binding-success .jump-countdown {
+    color: #f06060; }

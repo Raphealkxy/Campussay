@@ -1,0 +1,319 @@
+[33mcommit 928226705c84c56d2e21781f0946da5433f13ede[m
+Author: ludong <ling58764@163.com>
+Date:   Fri Jan 22 10:51:13 2016 +0800
+
+    ludong
+
+[33mcommit 98bade04df1a4c3860f14f42b4b141a33a0680b7[m
+Merge: 35fe3e5 100bb37
+Author: wangwenxiang <4491074@qq.com>
+Date:   Wed Jan 20 20:09:09 2016 +0800
+
+    x
+
+[33mcommit 35fe3e5c39285d58fe14c47c80225f2b968c78f8[m
+Author: wangwenxiang <4491074@qq.com>
+Date:   Wed Jan 20 20:03:26 2016 +0800
+
+    x
+
+[33mcommit 100bb372bab1fa92c55412293045d675e7e7ea97[m
+Author: unknown <243091786@qq.com>
+Date:   Wed Jan 20 19:35:01 2016 +0800
+
+    wzh
+
+[33mcommit 239a13f02ab80b681a200185bbabc77e21b939a9[m
+Author: unknown <243091786@qq.com>
+Date:   Wed Jan 20 19:15:33 2016 +0800
+
+    wzh
+
+[33mcommit ae709d793c72826a511242e274cc7a61c52a5eac[m
+Merge: f29abfb 50b7f32
+Author: unknown <243091786@qq.com>
+Date:   Wed Jan 20 17:27:44 2016 +0800
+
+    Merge branch 'master' of 103.227.76.194:campusSay
+
+[33mcommit f29abfb9f9806882a8155189fbff2034e71fa108[m
+Author: unknown <243091786@qq.com>
+Date:   Wed Jan 20 17:27:35 2016 +0800
+
+    wzh
+
+[33mcommit 50b7f32bb3afc1bd4bde7ae860974c1f6a903066[m
+Author: 吉鹏 <jipeng@meituan.com>
+Date:   Wed Jan 20 16:01:15 2016 +0800
+
+    addludong
+
+[33mcommit 097f3dd74fe3669ac55b741f52fd38ca48932281[m
+Merge: bef79a9 55c0692
+Author: wangwenxiang <4491074@qq.com>
+Date:   Wed Jan 20 14:59:29 2016 +0800
+
+    xx
+
+[33mcommit bef79a90ce885ba71158bfbd5a47c309f8ba8d6f[m
+Author: wangwenxiang <4491074@qq.com>
+Date:   Wed Jan 20 14:59:06 2016 +0800
+
+    xx
+
+[33mcommit 55c069286e209dcc2532721e71e2356eb8f696ae[m
+Author: BlairFzq <584432520@qq.com>
+Date:   Wed Jan 20 14:38:37 2016 +0800
+
+    example
+
+[33mcommit fefd8c065c126439782dc1d16ec46d7f7574fa1f[m
+Author: BlairFzq <584432520@qq.com>
+Date:   Wed Jan 20 14:30:41 2016 +0800
+
+    views example
+
+[33mcommit 66af60549d4ec5705f46f53943c6b68f2073d4de[m
+Author: BlairFzq <584432520@qq.com>
+Date:   Wed Jan 20 14:26:38 2016 +0800
+
+    changed mvc.xml
+
+[33mcommit 4030d026969505f4b1409403d0866807a3381f24[m
+Author: effine <iballad@163.com>
+Date:   Wed Jan 20 13:51:36 2016 +0800
+
+    del unrelated files
+
+[33mcommit c97efc925415738d3eebbb331d0ca52f13cf43ff[m
+Merge: bf11b91 87578ef
+Author: wangwenxiang <4491074@qq.com>
+Date:   Wed Jan 20 13:31:52 2016 +0800
+
+    x
+
+[33mcommit bf11b919c214562e36fa169caaa2598b9e9de672[m
+Author: wangwenxiang <4491074@qq.com>
+Date:   Wed Jan 20 13:30:55 2016 +0800
+
+    x
+
+[33mcommit 87578ef4793be58f2c10038872d2c5dada683f39[m
+Author: effine <iballad@163.com>
+Date:   Wed Jan 20 00:05:27 2016 +0800
+
+    del unrelated files
+
+[33mcommit 8db3b89b6e120e2556de8f37dfab49141f875a79[m
+Merge: 31d49ae b8fe6ac
+Author: effine <iballad@163.com>
+Date:   Wed Jan 20 00:03:33 2016 +0800
+
+    Merge branch 'master' of 103.227.76.194:campusSay
+
+[33mcommit 31d49ae9054800385ed87a1e49b5d21f4104ce81[m
+Author: effine <iballad@163.com>
+Date:   Wed Jan 20 00:03:26 2016 +0800
+
+    del unrelated dir of .idea
+
+[33mcommit b8fe6acb0038bee68b1fae309609fb074d28ba5e[m
+Merge: ef39a56 114605e
+Author: unknown <651584809@qq.com>
+Date:   Tue Jan 19 23:23:28 2016 +0800
+
+    Merge branch 'master' of 103.227.76.194:campusSay
+
+[33mcommit 114605e7523e50a3bb53246bc3c145aff3a164c0[m
+Author: BlairFzq <584432520@qq.com>
+Date:   Tue Jan 19 23:18:55 2016 +0800
+
+    add ttinde.ftl
+
+[33mcommit ef39a56f273e859cff7ca901ea5f20c7ebe3a499[m
+Author: unknown <651584809@qq.com>
+Date:   Tue Jan 19 23:18:30 2016 +0800
+
+    xx
+
+[33mcommit 8389120bf4172e0722496112d92f8833e032ca7d[m
+Author: effine <iballad@163.com>
+Date:   Tue Jan 19 23:06:02 2016 +0800
+
+    del unrelated file of campussay.iml
+
+[33mcommit 213e20e735097901b4c5e4422450b6a969003b8a[m
+Merge: 398979b 48cfc96
+Author: effine <iballad@163.com>
+Date:   Tue Jan 19 22:26:23 2016 +0800
+
+    update
+
+[33mcommit 398979bd52fab7db366f9f31145ec533a041e8ef[m
+Author: effine <iballad@163.com>
+Date:   Tue Jan 19 22:22:45 2016 +0800
+
+    del unrelated files
+
+[33mcommit 48cfc965f79e3a3f38941bf703838f14a80bc6bd[m
+Merge: 3adf541 6695bf7
+Author: unknown <651584809@qq.com>
+Date:   Tue Jan 19 22:14:28 2016 +0800
+
+    Merge branch 'master' of 103.227.76.194:campusSay
+
+[33mcommit 3adf5418c19834e2188de429dc4bb9e11b522aa6[m
+Author: unknown <651584809@qq.com>
+Date:   Tue Jan 19 22:14:20 2016 +0800
+
+    2016-1-19-22:14 gr
+
+[33mcommit 6695bf719076008be5fd64eea24ec1e5bef4cc36[m
+Merge: 4febe13 4605f33
+Author: wangwenxiang <4491074@qq.com>
+Date:   Tue Jan 19 21:53:57 2016 +0800
+
+    Merge branch 'master' of 103.227.76.194:campusSay
+
+[33mcommit 4febe13915c8d04a237fa320002f78a619588bb1[m
+Author: wangwenxiang <4491074@qq.com>
+Date:   Tue Jan 19 21:53:50 2016 +0800
+
+    x
+
+[33mcommit 4605f3359acdde60abec26bc5901af2d2d679086[m
+Author: effine <iballad@163.com>
+Date:   Tue Jan 19 21:12:09 2016 +0800
+
+    del unrelated files for dir keydir
+
+[33mcommit 0bb5935ba1d13e529173bbd7eed2fab83c172f0b[m
+Merge: 004170f b193683
+Author: effine <iballad@163.com>
+Date:   Tue Jan 19 21:02:31 2016 +0800
+
+    Merge branch 'master' of 103.227.76.194:campusSay
+
+[33mcommit 004170f9ba813421d16fffe749debd6b5ce439fd[m
+Author: 吉鹏 <jipeng@meituan.com>
+Date:   Tue Jan 19 20:08:59 2016 +0800
+
+    add jenkins
+
+[33mcommit 49c31187c29db91d72837bee313d11a748765e77[m
+Merge: 5b1d079 cede5c4
+Author: unknown <651584809@qq.com>
+Date:   Tue Jan 19 19:43:20 2016 +0800
+
+    Merge branch 'master' of 103.227.76.194:campusSay
+
+[33mcommit 5b1d07967d5d7cf5883c3f7367c09168de8bccb8[m
+Author: unknown <651584809@qq.com>
+Date:   Tue Jan 19 19:43:09 2016 +0800
+
+    grqinjie
+
+[33mcommit cede5c422025021c5f15b768e0d10da86a346fbd[m
+Author: TianleZhang <cqtianle@163.com>
+Date:   Tue Jan 19 18:44:42 2016 +0800
+
+    错误修复
+
+[33mcommit c5a3f3f94cef82d70ca55a8aeb5f65da82632ae5[m
+Merge: 8880027 3dc980a
+Author: TianleZhang <cqtianle@163.com>
+Date:   Tue Jan 19 18:37:33 2016 +0800
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #	campussay.iml
+    #	src/main/java/com/campussay/mapper/PrizeMapper.xml
+
+[33mcommit 8880027a1aac17430a56008fb9dcbaf78d141889[m
+Author: TianleZhang <cqtianle@163.com>
+Date:   Tue Jan 19 18:29:28 2016 +0800
+
+    添加用户获奖情况（文件上传未写）
+
+[33mcommit 3dc980ad02e17d98c5b6e058c108885370a0ce3c[m
+Merge: ec6ab24 6afd9ae
+Author: yangchun <986732056@qq.com>
+Date:   Tue Jan 19 17:56:35 2016 +0800
+
+    xx
+
+[33mcommit ec6ab249322a616216e773caf18068d88052e189[m
+Author: yangchun <986732056@qq.com>
+Date:   Tue Jan 19 17:55:00 2016 +0800
+
+    xx
+
+[33mcommit 9bbe37d9266eff7502638cc1035e7031629f8dd1[m
+Author: 吉鹏 <jipeng@meituan.com>
+Date:   Tue Jan 19 17:47:45 2016 +0800
+
+    xx
+
+[33mcommit 6afd9aeef60bb4688f44e40d10e02b6b1b1a2579[m
+Merge: 9f3f696 98fee61
+Author: unknown <651584809@qq.com>
+Date:   Tue Jan 19 17:45:16 2016 +0800
+
+    gr
+
+[33mcommit 98fee612382cb0d7ed586ffba0a4404a9a59142f[m
+Merge: 62dfc13 d495101
+Author: wangwenxiang <4491074@qq.com>
+Date:   Tue Jan 19 17:43:46 2016 +0800
+
+    x
+
+[33mcommit 62dfc135c6ead881fb04a59a4490b46edc785e96[m
+Author: wangwenxiang <4491074@qq.com>
+Date:   Tue Jan 19 17:43:14 2016 +0800
+
+    xx
+
+[33mcommit 9f3f69692cb19d2574bf0e777862be26804b71b2[m
+Author: unknown <651584809@qq.com>
+Date:   Tue Jan 19 17:40:19 2016 +0800
+
+    gr
+
+[33mcommit d495101027b9b185d7f27b2e2e8d40a615740d2d[m
+Author: effine <iballad@163.com>
+Date:   Tue Jan 19 16:54:38 2016 +0800
+
+    update database connection of online
+
+[33mcommit 3abbd2535a49ee506d040b327af734f4b7a8deb2[m
+Merge: 990fefa 0d2064a
+Author: TianleZhang <cqtianle@163.com>
+Date:   Tue Jan 19 15:23:04 2016 +0800
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #	.idea/modules.xml
+
+[33mcommit 990fefad3f04f2721ac38474f848e38ef7e2cdbf[m
+Author: TianleZhang <cqtianle@163.com>
+Date:   Tue Jan 19 15:21:26 2016 +0800
+
+    c
+
+[33mcommit 0d2064a74a6f27447f8a7d336e71a3b2256775dd[m
+Author: effine <iballad@163.com>
+Date:   Tue Jan 19 13:48:40 2016 +0800
+
+    rm unrelated dir for .idea
+
+[33mcommit d0cc526b8afbdc1c1f8f8255b77acec48dd8944c[m
+Author: 吉鹏 <jipeng@meituan.com>
+Date:   Mon Jan 18 21:10:48 2016 +0800
+
+    增加王蛀
+
+[33mcommit 1feacf2a9e840f81a3d8dbd49c46a074e0e0d3a3[m
+Author: wangwe

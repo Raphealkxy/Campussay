@@ -1,0 +1,315 @@
+//支付页面全部：提交－
+$pay-width:1180px;
+$pic-path:"/static/img/page/pay/";
+
+//颜色
+$gref:#ddd;
+$green:#00caab;
+$orange:#fcba65;
+$lightgref:#fafafa;
+$selectgref:#f8f8f8;
+
+//css3
+@mixin radius($number){
+  -moz-border-radius: $number; /* Firefox */
+  -webkit-border-radius: $number; /* Safari 和 Chrome */
+  border-radius: $number; /* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */
+}
+
+//
+.pay{
+	width:$pay-width;
+	margin: 0 auto;
+}
+
+//
+@mixin step(){
+	height:(90px-44px);
+	padding:44px 0px 0 98px;
+	font-size:14px;
+    .span-1{
+        margin-right: 132px;
+    }
+    .span-2{
+        margin-right: 128px;
+    }
+    .span-3{
+        margin-right: 128px;
+    }
+    .span-4{
+        margin-right: 150px;
+    }
+}
+
+//支付步骤1.提交订单
+.step-1{
+	@include step();
+	background:url(#{$pic-path}step1.png) no-repeat left 136px bottom;
+}
+
+//联系方式
+.contact{
+	font-size:14px;
+    .ct-head{
+    	height: 26px;
+        margin-top: 34px;
+    	border-bottom:1px solid $gref;
+    	font-size: 16px;
+    	font-weight: bold;
+    	span{
+    		vertical-align: bottom;
+    	}
+
+    }	
+    .ct-body{
+    	padding:40px 0 28px 0;
+    }
+}
+    
+    //表单元素
+    .control-group{
+    	margin-bottom: 20px;
+    }
+    .control-label{
+    	width:110px;
+    	height: 30px;
+    	line-height: 30px;
+    	float: left;
+    	text-align: right;
+
+    }
+    .controls{
+		margin-left: 120px;
+		input{
+			width:196px;
+			height: 30px;
+			padding:5px;
+			border:1px solid $gref;
+		}
+    }
+
+    .con-message{
+    	textarea{
+    		width:400px;
+    		height: 80px;
+ 			border:1px solid $gref;
+    	}
+    }
+//确认产品信息
+	.cf-head{
+		font-size: 16px;
+		font-weight: bold;
+	}
+    
+    .infor-title{
+    	overflow: hidden;
+    	margin-top:15px;
+    	margin-right: -4px;
+    	li{
+    		float: left;
+    		width:($pay-width/5-4);
+    		height: 45px;
+    		margin-right: 4px;
+    		text-align: center;
+    		line-height: 45px;
+    		font-size: 14px;
+    		border-bottom:1px solid $green;
+    	}
+    }
+
+@mixin sayer(){
+    		span{
+    			display: inline-block;
+    			width:100%;
+    		}
+}
+@mixin button($width:100px,$height:40px){
+    width: $width;
+    height: $height;
+    display: inline-block;
+    text-align: center;
+    line-height:40px;
+    background:$green;
+    color: #fff;
+    font-size: 20px;
+    @include radius(4px);
+}
+
+    .infor-body{
+    	overflow: hidden;
+    	font-size: 14px;
+    	background:$lightgref;
+    	li{
+    		float: left;
+    		width:$pay-width/5;
+    		height: 144px;
+    		text-align: center;
+    	}
+    	.infor-body-topic{
+
+    		img{
+                margin-top: 20px;
+    			width: 146px;
+    			height: 88px;
+    		}
+    		p{
+    			margin-top:12px;
+    		}
+    	}
+    	.sayer{
+    		@include sayer();
+            line-height: 144px;
+    	}
+    	.school{
+    		line-height: 144px;
+    	}
+    	.time{
+    		@include sayer()
+    	}
+    	.money{
+     		line-height: 144px;
+     		color: $orange;
+    	}
+    }
+    .total-money{
+    	font-size: 20px;
+    	text-align: right;
+    	margin : 22px 0 54px 0;
+    	span{
+    		color:$orange;
+    	}
+    }
+    .infor-submit{
+    	text-align: right;
+    	margin-bottom:54px;
+    }
+    .infor-button{
+    	@include button();
+    }
+
+//支付步骤2:选择支付方式
+.step-2{
+    @include step();
+    background:url(#{$pic-path}step3.png) no-repeat left 136px bottom;
+}
+//订单信息
+.orderform-hd{
+    margin:44px 0 28px 0 ;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: $green;
+}
+.orderform-bd{
+    height: 160px;
+    background:$selectgref;
+    overflow: hidden;
+    margin-right: -2px;
+}
+.orderform-bd-left{
+    float: left;
+    width:50%;
+    height:120px;
+    margin:20px 0 20px 0;
+    border-right:2px dashed $green;     
+    text-align: center;
+    line-height: 120px;
+    font-size: 20px;
+    .money{
+        color:$orange;
+        font-size: 26px;
+    }
+}
+.orderform-bd-right{
+    float: left;
+    margin:40px 0 0 45px;
+    font-size: 14px;
+    p{
+        margin-bottom: 12px;
+    }
+}
+//选择支付方式 selet-pay
+.sp-hd{
+    padding:50px 0 28px 0;
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom:2px dashed $gref;
+
+}
+.sp-bd{
+    padding: 30px 0 266px 0;
+}
+.select-pay-method{
+    margin-bottom: 24px;
+    a{
+        display: inline-block;
+        width:156px;
+        height: 46px;
+        border:1px solid $gref;
+    }
+    .seleted-pay{
+        border:1px solid $green;
+    }
+    .zhifubao{
+        background:url(#{$pic-path}zhifubao.png) no-repeat 40px 10px;
+    }
+    .weixin{
+        background:url(#{$pic-path}weixin.png) no-repeat 40px 10px;
+    }
+}
+.seletpay-button{
+    @include button(110px);
+    cursor: pointer;
+}
+//支付步骤3.支付成功
+.step-3{
+    @include step();
+    background:url(#{$pic-path}step5.png) no-repeat left 136px bottom;
+}
+.pay-success{
+    position: relative;
+    height: 308px-60px;
+    background: #f8f8f8;    
+    padding: 60px 0 0 244px;
+}
+.ps-hd{
+    width:460px;
+    border-bottom:1px dashed $gref;
+    font-size: 14px;
+    p{
+        margin-bottom: 18px;
+    }
+}
+.ps-hd-title{
+    font-size: 20px;
+    color:$green;
+}
+.ps-bd{
+    width: 460px;
+    margin:22px 0 0 0;
+    p{
+        margin-bottom: 24px;
+    }
+}
+.order-button{
+    @include button(110px);   
+}
+.erweima{
+    position:absolute;
+    width: 130px;
+    top:86px;
+    right:214px;
+    text-align: center;
+    img{
+        width: 106px;
+        height: 106px;
+    }
+    p{
+        margin: 12px 0 4px 0;  
+        font-size: 14px;
+    }
+}
+
+
+
+

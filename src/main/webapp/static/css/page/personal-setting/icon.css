@@ -1,0 +1,105 @@
+.icon {
+  margin: 0px 18px;
+  width: 48px;
+  height: 48px;
+  display: inline-block; }
+
+.icon-user-identity {
+  background: url(/static/img/page/personal-center/icon-user-identity.png) no-repeat; }
+
+.icon-user-identity.done {
+  background: url(/static/img/page/personal-center/icon-user-identity-done.png) no-repeat; }
+
+.icon-student-card {
+  background: url(/static/img/page/personal-center/icon-student-card.png) no-repeat; }
+
+.icon-student-card.done {
+  background: url(/static/img/page/personal-center/icon-student-card-done.png) no-repeat; }
+
+.icon-degree {
+  background: url(/static/img/page/personal-center/icon-degree.png) no-repeat; }
+
+.icon-degree.done {
+  background: url(/static/img/page/personal-center/icon-degree-done.png) no-repeat; }
+
+.icon-skill {
+  background: url(/static/img/page/personal-center/icon-skill.png) no-repeat; }
+
+.icon-skill.done {
+  background: url(/static/img/page/personal-center/icon-skill-done.png) no-repeat; }
+
+.icon-warn {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin: 0px 2px 0px 14px;
+  background: url(/static/img/page/personal-center/info.png) no-repeat; }
+
+.icon-phone {
+  background: url(/static/img/page/personal-center/icon-phone.png) no-repeat; }
+
+.icon-phone.done {
+  background: url(/static/img/page/personal-center/icon-phone-done.png) no-repeat; }
+
+.icon-mail {
+  background: url(/static/img/page/personal-center/icon-mail.png) no-repeat; }
+
+.icon-mail.done {
+  background: url(/static/img/page/personal-center/icon-mail-done.png) no-repeat; }
+
+.icon-qq {
+  background: url(/static/img/page/personal-center/icon-qq.png) no-repeat; }
+
+.icon-qq.done {
+  background: url(/static/img/page/personal-center/icon-qq-done.png) no-repeat; }
+
+.icon-password {
+  background: url(/static/img/page/personal-center/icon-password.png) no-repeat; }
+
+.icon-password.done {
+  background: url(/static/img/page/personal-center/icon-password-done.png) no-repeat; }
+
+.icon-info {
+  background: url(/static/img/page/personal-center/icon-info.png) no-repeat; }
+
+.icon-info.selected {
+  background: url(/static/img/page/personal-center/icon-info-selected.png) no-repeat; }
+
+.icon-mail {
+  background: url(/static/img/page/personal-center/icon-mail.png) no-repeat; }
+
+.icon-mail.done {
+  background: url(/static/img/page/personal-center/icon-mail-done.png) no-repeat; }
+
+.icon-qq {
+  background: url(/static/img/page/personal-center/icon-qq.png) no-repeat; }
+
+.icon-qq.done {
+  background: url(/static/img/page/personal-center/icon-qq-done.png) no-repeat; }
+
+.icon-password {
+  background: url(/static/img/page/personal-center/icon-password.png) no-repeat; }
+
+.icon-password.done {
+  background: url(/static/img/page/personal-center/icon-password-done.png) no-repeat; }
+
+.icon-big-basic {
+  background: url(/static/img/page/personal-center/icon-big-basic.png) no-repeat; }
+
+.icon-big-education {
+  background: url(/static/img/page/personal-center/icon-big-education.png) no-repeat; }
+
+.icon-big-job {
+  background: url(/static/img/page/personal-center/icon-big-job.png) no-repeat; }
+
+.icon-big-practice {
+  background: url(/static/img/page/personal-center/icon-big-practice.png) no-repeat; }
+
+.icon-big-awards {
+  background: url(/static/img/page/personal-center/icon-big-awards.png) no-repeat; }
+
+.icon-big-basic {
+  background: url(/static/img/page/personal-center/icon-big-basic.png) no-repeat; }
+
+.icon-big-basic {
+  background: url(/static/img/page/personal-center/icon-big-basic.png) no-repeat; }

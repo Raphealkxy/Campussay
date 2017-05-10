@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.campussay.dao.StarDao">
+<!-- 得到牛人集合 -->
+	<select id="Star_list"  parameterType="string" resultType="java.util.Map">
+	select user_id,user_name,user_photo,user_title,user_campus_name from t_user where user_state=10 and user_is_star=2
+
+	<if test="campus_name != null">
+	and user_campus_name=#{campus_name}
+	</if>
+	limit 0,6;
+	</select>
+	
+	<!--得到学校-->
+	<select id="campus_name" parameterType="int" resultType="java.lang.String">
+	select campus_name  from t_campus where campus_state=10 and campu_id=#{campus_id}
+	</select>
+	
+	<!--得到学院-->
+	<select id="Star_academe" parameterType="int" resultType="java.lang.String">
+	select user_academe  from t_user where user_state=10 and user_id=#{star_user_id}
+	</select>
+
+</mapper>

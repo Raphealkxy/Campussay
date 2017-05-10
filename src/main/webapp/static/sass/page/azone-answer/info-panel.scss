@@ -1,0 +1,68 @@
+.wrap-info{
+  float: right;
+  width: 280px;
+  .wrap-info-head{
+    background: #fafafa;
+    border: 1px solid #fafafa;
+    padding: 20px;
+    .info-title{
+        overflow: hidden;
+      margin-bottom: 20px;
+      .info-head{
+        float: left;
+        width: 77px;
+        height: 77px;
+        background: url("/static/img/page/azone-answer/dog-head.PNG") no-repeat;
+      }
+      .info-detail{
+        position: relative;
+        top: 18px;
+        float: left;
+        h2{
+          padding-left: 10px;
+          font-size: 16px;
+        }
+        .info-list{
+          float: left;
+          li{
+            float: left;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-size: 12px;
+            &.xian{
+                border-right: 1px solid #555555;
+            }
+          }
+        }
+      }
+    }
+}
+  .wrap-info-bottom{
+    margin-top: 16px;
+    background: #fafafa;
+    border: 1px solid #fafafa;
+    padding: 20px;
+    overflow: hidden;
+    .number{
+      overflow: hidden;
+      li{
+        float: left;
+        width: 78px;
+        text-align: center;
+        line-height: 22px;
+      }
+    }
+
+    .fans{
+      overflow: hidden;
+      li{
+        float: left;
+        width: 78px;
+        text-align: center;
+        line-height: 22px;
+        font-size: 14px;
+        color: #b2b2b2;
+      }
+    }
+  }
+}

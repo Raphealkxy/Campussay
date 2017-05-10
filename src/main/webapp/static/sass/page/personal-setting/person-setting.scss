@@ -1,0 +1,191 @@
+@charset "UTF-8";
+@import '../../common/global-set';
+@import '../personal-center/personal-header';
+@import '../personal-center/personal-aside';
+@import '../personal-center/personal-tab';
+@import '../personal-setting/common';
+@import '../personal-setting/icon';
+
+$item-h: 90px;
+$item-title-h: 20px;
+$icon-mg: 6px;
+$font-color: #2ce6c9;
+$label-w: 140px;
+$label-w: 140px;
+
+// person-setting main
+.person-setting {
+  overflow: hidden;
+  zoom: 1;
+  margin-bottom: 340px;
+}
+
+.person-setting-content-list {
+
+  .person-setting-list-item {
+    /*height: $item-h;*/
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+  }
+  // 模块（基本信息、技能证书...）
+  .item-content {
+    margin-top: 26px;
+    margin-left: 18px;
+    &:last-child {
+      .item-body{
+        padding-bottom: 200px;
+      }
+    }
+    // display: none;
+    .item-title {
+      font-size: 16px;
+      height: $item-title-h;
+      cursor:pointer;
+      span {
+        display: inline-block;
+        line-height: $item-title-h;
+        vertical-align: top;
+        padding-right: 18px;
+      }
+      .item-title-sub {
+        color: #777;
+        font-size: 14px;
+      }
+    }
+    .item-body {
+      position: relative;
+      display: none;
+      .item-body-con {
+        border-bottom: 2px dotted #f0f0f0;
+        margin-bottom: 30px;
+      }
+      label {
+        display: inline-block;
+        width: $label-w;
+        text-align: right;
+        & > span {
+          color: #f06060;
+        }
+      }
+      .item {
+        margin: 16px 0px;
+      }
+      .item.delete {
+        width: 28%;
+        text-align: right;
+        a {
+          color: $global-bg;
+        }
+      }
+      .item-time,.item-job-name {
+        span {
+          padding: 0px 6px;
+        }
+      }
+      .select-result {
+        width: 500px;
+        min-height: 70px;
+        border: 1px solid #bababa;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 2px;
+      }
+      .select-sub-info {
+        span {
+          display: inline-block;
+        }
+        .left {
+          height: 24px;
+          margin-left: 10px;
+          a {
+            height: 30px;
+            line-height: 30px;
+            padding-left: 30%;
+            color: #777;
+            background: url('/static/img/page/personal-center/plus.png') no-repeat 15% center;
+          }
+        }
+        .right {
+          text-align: right;
+          a {
+            color: $global-bg;
+          }
+        }
+      }
+      .add {
+        display: block;
+        position: absolute;
+        top: 6px;
+        left: 600px;
+        text-align: right;
+        padding-left: 17px;
+        background: url("/static/img/page/personal-center/add-tag.png") no-repeat left center;
+        a {
+          color: $global-bg;
+        }
+      }
+    }
+  }
+
+  // 基本信息模块
+  .item-basic {
+    .select-result {
+      margin: 16px 0px 0px $label-w+2px;
+    }
+    .select-sub-info {
+      span {
+        width: 106px;
+      }
+      .left {
+        color: #777;
+        background-color: #fff;
+      }
+    }
+  }
+
+  // 技能证书模块
+  .item-skill {
+    .select-sub-info {
+      .left {
+        width: 100px;
+        background-color: #eee;
+      }
+    }
+  }
+
+  // 获奖成果模块
+  .item-awards {
+    .select-sub-info {
+      .left {
+        width: 100px;
+        background-color: #eee;
+      }
+    }
+  }
+
+  // 实践经历模块
+  .item-practice, .item-job {
+    .select-sub-info {
+      .left {
+        width: 100px;
+        background-color: #eee;
+      }
+    }
+    .item-text-input {
+      width: 214px;
+    }
+    .item-job-desc {
+      label {
+        vertical-align: top;
+      }
+    }
+  }
+}
+
+.icon {
+  margin: 0px $icon-mg;
+  width: 24px;
+  height: 20px;
+  display: inline-block;
+}

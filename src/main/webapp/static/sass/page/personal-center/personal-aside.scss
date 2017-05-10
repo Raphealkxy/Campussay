@@ -1,0 +1,199 @@
+@charset "UTF-8";
+@import '../../common/global-set';
+@import '../personal-setting/common';
+
+$aside-bg: #fafafa;
+$aside-w: 210px;
+$imgBaseUrl: '/static/img/page/personal-center/';
+
+// 通用左侧栏
+.personal-aside {
+  width: $aside-w;
+  min-height: 420px;
+  background-color: $aside-bg;
+  border: 1px solid #f0f0f0;
+  float: left;
+  .personal-aside-item {
+	margin-left: auto;
+	margin-right: auto;
+	padding: 38px 0px;
+	text-align: center;
+  }
+  .person {
+	display: block;
+	margin: 10px 0px;
+    img {
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      background-image: url('/static/img/common/defaultUserImg.png');
+      &:hover {
+        opacity: 0.4;
+        filter: alpha(opacity=40);
+        cursor: pointer;
+      }
+    }
+  }
+  .person-info {
+	span {
+	  padding: 0px 8px;
+	}
+  }
+  .personal-menu {
+	.personal-menu-item {
+	  line-height: 40px;
+	  i {
+		width: 16px;
+		height: 16px;
+		display: inline-block;
+		position: relative;
+        top: 3px;
+		padding-right: 10px;
+	  }
+	  a {
+		color: $global-font;
+	  }
+      &:hover > a {
+        color: $global-bg;
+      }
+	}
+	.current-menu-item {
+	  a {
+		color: $global-bg;
+	  }
+	}
+    .sub-personal-menu {
+      line-height: 40px;
+      display: block;
+      a {
+        color: $global-font;
+        &:hover {
+          color: $global-bg;
+        }
+      }
+    }
+  }
+}
+
+#uploadUserPhoto {
+  .user-photo-upload {
+    display: block;
+    width: 83px;
+    margin: 0 auto;
+  }
+  .upload-info {
+    width: 205px;
+    margin: 0 auto;
+  }
+  .upload {
+    margin-left: 108px;
+    padding: 2px 16px;
+  }
+  .icon-warn {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: 0px 2px 0px 14px;
+    background: url(#{$imgBaseUrl}icon-right.png) no-repeat;
+  }
+  img {
+    background: url('/static/img/page/personal-center/upload.png') no-repeat 50%;
+  }
+}
+
+/* 非通用 */
+// 安全设置设置/账户设置的左侧栏
+.security-setting-menu,.authentication-setting-menu {
+  text-align: left;
+  padding-left: 38px;
+}
+// 个人设置
+.person-setting-menu {
+  text-align: center;
+}
+
+// 首页——我的订单 左侧
+.my-order {
+  background: url('/static/img/page/personal-center/my-order.png') no-repeat;
+}
+.my-order.selected {
+  background: url('/static/img/page/personal-center/my-order-selected.png') no-repeat;
+}
+.my-publish {
+  background: url('/static/img/page/personal-center/my-publish.png') no-repeat;
+}
+.my-publish.selected {
+  background: url('/static/img/page/personal-center/my-publish-selected.png') no-repeat;
+}
+.my-circle {
+  background: url('/static/img/page/personal-center/my-circle.png') no-repeat;
+}
+.my-circle.selected {
+  background: url('/static/img/page/personal-center/my-circle-selected.png') no-repeat;
+}
+.receive-money-account {
+  background: url('/static/img/page/personal-center/money-account.png') no-repeat;
+}
+.receive-money-account.selected {
+  background: url('/static/img/page/personal-center/money-account-selected.png') no-repeat;
+}
+
+// 安全设置左侧
+.icon-account {
+  background: url('/static/img/page/personal-center/icon-account.png') no-repeat;
+}
+.icon-account.selected {
+  background: url('/static/img/page/personal-center/icon-account-selected.png') no-repeat;
+}
+.icon-lock {
+  background: url('/static/img/page/personal-center/icon-lock.png') no-repeat;
+}
+.icon-lock.selected {
+  background: url('/static/img/page/personal-center/icon-lock-selected.png') no-repeat;;
+}
+
+// 个人设置左侧
+.icon-basic {
+  background: url('/static/img/page/personal-center/icon-basic.png') no-repeat;
+}
+.icon-basic.selected {
+  background: url('/static/img/page/personal-center/icon-basic-selected.png') no-repeat;
+}
+.icon-star {
+  background: url('/static/img/page/personal-center/icon-star.png') no-repeat;
+}
+.icon-star.selected {
+  background: url('/static/img/page/personal-center/icon-star-selected.png') no-repeat;
+}
+.icon-book {
+  background: url('/static/img/page/personal-center/icon-book.png') no-repeat;
+}
+.icon-book.selected {
+  background: url('/static/img/page/personal-center/icon-book-selected.png') no-repeat;
+}
+.icon-cup {
+  background: url('/static/img/page/personal-center/icon-cup.png') no-repeat;
+}
+.icon-cup.selected {
+  background: url('/static/img/page/personal-center/icon-cup-selected.png') no-repeat;
+}
+.icon-flag {
+  background: url('/static/img/page/personal-center/icon-flag.png') no-repeat;
+}
+.icon-flag.selected {
+  background: url('/static/img/page/personal-center/icon-flag-selected.png') no-repeat;
+}
+.icon-box {
+  background: url('/static/img/page/personal-center/icon-box.png') no-repeat;
+}
+.icon-box.selected {
+  background: url('/static/img/page/personal-center/icon-box-selected.png') no-repeat;
+}
+
+// 认证设置左侧
+.icon-identity.selected {
+  background: url('/static/img/page/personal-center/icon-identity-selected.png') no-repeat;
+}
+.icon-other-identity {
+  background: url('/static/img/page/personal-center/icon-other-identity.png') no-repeat;
+}

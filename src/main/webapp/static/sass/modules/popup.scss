@@ -1,0 +1,87 @@
+/**
+ * Created by WXY on 2015/12/12.
+ */
+/* 弹窗框框架子 & 遮罩层
+ ------------------------------------------------------------- */
+@charset "UTF-8";
+@import "../page/sign-in/sign-in";
+
+$img-close: '/static/img/login-popup/close.png';
+$img-triangle-up: '/static/img/login-popup/arrow-up.png';
+$img-refresh: '/static/img/login-popup/refresh.png';
+$img-arrow-right: '/static/img/login-popup/arrow-right.png';
+$img-arrow-right-hover: '/static/img/login-popup/arrow-right-hover.png';
+$popup-w: 484px;
+$popup-header-h: 42px;
+$tab-color: #00caab;
+$err-color: #f06060;
+
+@mixin border-radius ($raduis) {
+  -webkit-border-radius: $raduis;
+  -moz-border-radius: $raduis;
+  border-radius: $raduis;
+}
+@mixin box-sizing ($sizing) {
+  -webkit-box-sizing: $sizing;
+  -moz-box-sizing: $sizing;
+  box-sizing: $sizing;
+}
+@mixin inline-block {
+  display:inline-block;
+  *display:inline;
+  *zoom:1;
+}
+#popup {
+  position: fixed;
+  background: #fff;
+  z-index: 9999;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  filter: alpha(opacity=100);
+  .popup-header {
+    height: $popup-header-h;
+    border-bottom: 1px solid #e6e6e6;
+  }
+  .popup-header, .popup-body {
+    width: $popup-w;
+    padding: 0;
+  }
+  .popup-close{
+    width: 18px;
+    height: 18px;
+    display: block;
+    position: absolute;
+    right: 16px;
+    top: 12px;
+    background: url(#{$img-close}) no-repeat;
+  }
+}
+
+.popup-mask-layer{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9988;
+  background-color: #000;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+}
+
+/* 重置 sign-in 的样式 */
+#popup {
+  .sign-register, .sign-in-warp {
+    margin: 20px 40px;
+  }
+  .sign-register {
+    padding: 0;
+    border-color: #fff;
+  }
+}

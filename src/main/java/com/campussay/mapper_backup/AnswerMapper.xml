@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.campussay.dao.AnswerDao">
+	<select id="selectAnswersByTopicId" resultType="java.util.HashMap">
+		SELECT
+		id,
+		t_user.user_name,
+		t_user.user_photo,
+		islike,
+		t_answer.uid,
+		context,
+		time,
+		(
+		SELECT
+		count(*)
+		FROM
+		t_comments
+		WHERE
+		t_comments.answer_id =t_answer.id
+		GROUP BY
+		t_comments.answer_id
+		) as commentNum,
+		(select count(*) from t_answer where t_answer.topic_id=#{0} ) as totalLine
+		FROM
+		t_answer
+		LEFT JOIN t_user ON t_user.user_id = t_answer.uid
+		WHERE
+		t_answer.topic_id = #{0} and t_answer.state=1
+		ORDER BY
+		islike DESC limit #{1},#{2}
+	</select>
+
+	<insert id="insertOneAnswerByUserID" parameterType="com.campussay.model.Comments">
+		INSERT INTO t_comments(id,uid,answer_id,context,islike,time)
+		VALUES(#{id},#{uid},#{answerId},#{context},#{islike},#{time})
+	</insert>
+
+	<select id="selectAllAnswerByUserID" resultType="java.util.Map">
+		SELECT
+		t_answer.id as answerId,
+		t_topic.tile,
+		t_topic.id AS topicId,
+		(select t_talking_type.talking_type_name from t_talking_type where
+		t_talking_type.talking_type_id=t_topic.taking_type_id) as
+		talkingTypeName,
+		t_answer.context,
+		t_answer.islike,
+		t_answer.time,
+		(select count(*) from t_comments where t_comments.answer_id=t_answer.id) as
+		commentsNum,
+		(select count(*) from t_answer where t_answer.uid = #{0}) as totalLine
+		FROM
+		t_answer
+		LEFT JOIN t_topic ON t_topic.id = t_answer.topic_id
+		WHERE
+		t_answer.uid = #{0} and t_answer.state=1
+		ORDER BY
+		time DESC limit #{1},#{2}
+	</select>
+
+	<select id="getTopAnswerByTopicId" resultType="java.util.HashMap"
+		parameterType="int">
+		select context from t_answer where t_answer.topic_id=#{0} and
+		t_answer.state=1 order by islike DESC limit 0,1
+	</select>
+
+	<select id="getDetailAnswerById" parameterType="int"
+		resultType="java.util.HashMap">
+		select id,left(context,800) as context,islike from t_answer where
+		t_answer.id=#{0} and t_answer.state=1
+	</select>
+
+	<select id="getAnswerNumByTopicId" parameterType="int"
+		resultType="Map">
+		select count(*) as answerNum from t_answer where topic_id=#{0} and
+		t_answer.state=1
+	</select>
+
+	<update id="addIsLike" parameterType="int">
+		update t_answer set
+		t_answer.islike=t_answer.islike+1 where t_answer.id=#{0} and
+		t_answer.state=1
+	</update>
+	<update id="disIsLike" parameterType="int">
+		update t_answer set
+		t_answer.islike=t_answer.islike-1 where t_answer.id=#{0} and
+		t_answer.state=1
+	</update>
+
+	<insert id="addAnswer" parameterType="com.campussay.model.Answer">
+		insert into t_answer
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="uid != null">
+				uid,
+			</if>
+			<if test="topicId != null">
+				topic_id,
+			</if>
+			<if test="islike != null">
+				islike,
+			</if>
+			<if test="time != null">
+				time,
+			</if>
+			<if test="context != null">
+				context,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=INTEGER},
+			</if>
+			<if test="uid != null">
+				#{uid,jdbcType=INTEGER},
+			</if>
+			<if test="topicId != null">
+				#{topicId,jdbcType=INTEGER},
+			</if>
+			<if test="islike != null">
+				#{islike,jdbcType=INTEGER},
+			</if>
+			<if test="time != null">
+				#{time,jdbcType=TIMESTAMP},
+			</if>
+			<if test="context != null">
+				#{context,jdbcType=LONGVARBINARY},
+			</if>
+		</trim>
+	</insert>
+	<select id="getNewAnswerByTopic" resultType="map" parameterType="int">
+		select id,context,islike from t_answer where t_answer.topic_id=#{0}
+		and t_answer.state=1 ORDER BY t_answer.time desc limit 0,1
+	</select>
+	<select id="getLastPageByTopicId" resultType="int"
+		parameterType="int">
+		select count(*) from t_answer where t_answer.topic_id=#{0};
+	</select>
+
+
+	<select id="getAnswerById" resultType="map" parameterType="int">
+		select t_answer.uid,t_answer.topic_id from t_answer where
+		t_answer.id=#{0}
+	</select>
+
+
+	<select id="getUserIsLike" parameterType="int" resultType="Integer">
+		select count(1) from t_user_answerIslike where uid=#{0} and
+		answerId=#{1} and isLike=1;
+	</select>
+
+	<select id="getAnswerLikeNum" parameterType="int" resultType="Integer">
+		SELECT count(*) from t_user_answerIslike where
+		t_user_answerIslike.answerId=#{0} and t_user_answerIslike.isLike=1
+	</select>
+
+
+	<select id="getAnswerDisLikeNum" parameterType="int" resultType="Integer">
+		SELECT count(*) from t_user_answerIslike where
+		t_user_answerIslike.answerId=#{0} and t_user_answerIslike.isLike=-1
+	</select>
+
+
+	<select id="getAnswerDetailById" resultType="java.util.Map">
+		SELECT
+		t_user.user_id AS uid,
+		t_user.user_name,
+		t_user.user_photo,
+		t_answer.context,
+		t_answer.islike,
+		t_answer.time,
+		(SELECT count(*) FROM t_comments WHERE answer_id = #{0}) as commentNum
+		FROM `t_answer` LEFT JOIN t_user on t_answer.uid=t_user.user_id where
+		t_answer.id=#{0};
+	</select>
+
+
+
+
+</mapper>

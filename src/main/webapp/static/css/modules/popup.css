@@ -1,0 +1,368 @@
+@charset "UTF-8";
+/**
+ * Created by WXY on 2015/12/12.
+ */
+/* 弹窗框框架子 & 遮罩层
+ ------------------------------------------------------------- */
+.global-center {
+  overflow: hidden; }
+  .global-center input {
+    text-indent: 8px;
+    border: 1px solid #bfbfbf; }
+  .global-center input[type=button] {
+    border: none; }
+  .global-center input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset; }
+  .global-center .error-text {
+    border: 1px solid #f06060;
+    display: block; }
+  .global-center .error-info {
+    color: #f06060; }
+  .global-center .error-box {
+    display: block;
+    width: 324px;
+    height: 34px;
+    line-height: 34px;
+    text-indent: 10px;
+    position: absolute;
+    top: 37px;
+    background-color: #ffffff;
+    margin-left: 1px; }
+  .sign-in-header {
+    height: 52px;
+    margin-top: 10px;
+    overflow: hidden; }
+    .sign-in-header a {
+      float: left; }
+      .sign-in-header a img {
+        width: 136px;
+        height: 52px; }
+    .address {
+      height: 52px;
+      float: left; }
+      .address h2 {
+        font-size: 14px;
+        line-height: 14px;
+        color: #5c5c5c;
+        margin-top: 5px; }
+      .address button {
+        margin-top: 6px;
+        border: 1px solid #e2e2e2;
+        padding: 2px;
+        background-color: #ffffff;
+        color: #777777;
+        font-size: 12px; }
+        .address button:hover {
+          color: #00caab; }
+      .address .get-validate {
+        height: 22px;
+        width: 58px;
+        text-align: center;
+        line-height: 20px;
+        font-size: 12px;
+        border: 1px solid #e2e2e2;
+        margin-top: 6px;
+        margin-left: 38px;
+        background-color: #ffffff; }
+        .address .get-validate:hover {
+          color: #00caab; }
+  .sign-in-warp {
+    margin-top: 23px;
+    overflow: hidden; }
+    .sign-in-warp img {
+      float: left;
+      margin-top: 79px;
+      margin-left: 100px; }
+    .id-pwd .error {
+      position: relative;
+      display: block;
+      text-indent: 5px;
+      width: 250px;
+      top: -10px;
+      height: 12px;
+      line-height: 12px;
+      font-size: 12px;
+      color: #f06060; }
+    .id-pwd #sign-in-id {
+      width: 324px;
+      height: 32px;
+      margin-top: 38px; }
+      .id-pwd #sign-in-id:focus {
+        position: relative;
+        z-index: 2; }
+    .id-pwd #sign-in-pwd {
+      position: relative;
+      top: -1px;
+      width: 324px;
+      height: 32px; }
+    .id-pwd span {
+      display: block;
+      width: 324px;
+      height: 16px; }
+      .id-pwd span a {
+        font-size: 12px;
+        line-height: 12px;
+        color: #f06060;
+        margin-top: 4px;
+        float: right; }
+    .validate {
+      position: relative;
+      margin-top: 24px;
+      height: 32px;
+      width: 328px; }
+      .validate input {
+        width: 156px;
+        height: 32px;
+        float: left; }
+      .validate img {
+        width: 121px;
+        height: 34px;
+        float: left;
+        margin-left: 11px;
+        margin-top: 0px; }
+      .validate i img {
+        display: block;
+        width: 19px;
+        height: 16px;
+        float: left;
+        margin-right: 8px;
+        margin-top: 9px;
+        margin-bottom: 9px; }
+      .validate .validate-error {
+        position: absolute;
+        top: 35px;
+        left: 4px;
+        font-size: 12px;
+        color: #f06060; }
+    .auto-sign-in {
+      margin-top: 25px;
+      font-size: 12px;
+      color: #777777; }
+    .sign-in-btn {
+      height: 42px;
+      width: 326px;
+      margin-top: 28px;
+      font-size: 16px;
+      color: #ffffff;
+      background: url("/static/img/page/sign-in/sign-in-btn-bg.png"); }
+      .sign-in-btn:hover {
+        background: url("/static/img/page/sign-in/sign-in-btn-bg2.png"); }
+    .sign-register {
+      float: right;
+      margin-right: 20px;
+      margin-top: 40px;
+      margin-bottom: 50px;
+      width: 326px;
+      padding: 36px 40px 40px;
+      border: 2px solid #d6d6d6;
+      border-top: 3px solid #00caab;
+      border-left: 2px solid #d6d6d6;
+      border-bottom: 2px solid #d6d6d6;
+      border-right: 2px solid #d6d6d6;
+      border-style: solid; }
+      .sign-register h3 {
+        width: 163px;
+        padding-bottom: 10px;
+        height: 28px;
+        text-align: center;
+        font-size: 16px;
+        color: #777777;
+        background: url("/static/img/page/sign-in/sign-in-backgroundbar.png") no-repeat 0 26px;
+        float: left; }
+        .sign-register h3:hover {
+          background: url("/static/img/page/sign-in/sign-in-backgroundbar-hover.png") no-repeat 0 22px; }
+      .sign-register .h3-onfocus {
+        background: url("/static/img/page/sign-in/sign-in-backgroundbar-hover.png") no-repeat 0 22px; }
+      .sign-register input {
+        outline: none;
+        border-top: 1px solid #bfbfbf; }
+        .sign-register input:focus {
+          border: 1px solid #35e3c8; }
+    #register {
+      overflow: hidden; }
+      #register ul {
+        float: left;
+        margin-top: 50px;
+        margin-bottom: 44px;
+        overflow: hidden; }
+        #register ul li {
+          float: left;
+          width: 108px;
+          height: 84px; }
+          #register ul li a {
+            text-align: center;
+            display: block;
+            margin-left: 24px;
+            font-size: 14px;
+            color: #5c5c5c;
+            height: 14px;
+            line-height: 14px;
+            padding-top: 68px; }
+            #register ul li a:hover {
+              text-decoration: underline;
+              color: #f06060; }
+      #register .sign-in-QQ a {
+        background: url("/static/img/page/sign-in/sign-in-ico.png") 18px 0 no-repeat; }
+        #register .sign-in-QQ a:hover {
+          background: url("/static/img/page/sign-in/sign-in-ico.png") -54px 0 no-repeat; }
+      #register .sign-in-phone {
+        margin-left: 40px; }
+        #register .sign-in-phone a {
+          background: url("/static/img/page/sign-in/sign-in-ico.png") 18px -84px no-repeat; }
+          #register .sign-in-phone a:hover {
+            background: url("/static/img/page/sign-in/sign-in-ico.png") -54px -84px no-repeat; }
+      #register .sign-in-mail a {
+        background: url("/static/img/page/sign-in/sign-in-ico.png") 18px -168px no-repeat; }
+        #register .sign-in-mail a:hover {
+          background: url("/static/img/page/sign-in/sign-in-ico.png") -54px -168px no-repeat; }
+    #register-form-phone a {
+      color: #f06060;
+      margin-left: -3px; }
+    .change-mail, .change-phone {
+      color: #f06060;
+      font-size: 12px;
+      line-height: 12px;
+      margin-top: 13px;
+      display: block;
+      margin-left: 242px; }
+    #register-form-phone .register-validate {
+      position: relative; }
+      #register-form-phone .register-validate .sign-phone {
+        margin-top: 4px;
+        width: 324px;
+        height: 34px;
+        clear: both; }
+        #register-form-phone .register-validate .sign-phone:focus {
+          position: relative;
+          z-index: 2; }
+      #register-form-phone .register-validate .phone-validate {
+        width: 202px;
+        height: 34px;
+        position: relative;
+        top: -1px; }
+      #register-form-phone .register-validate button {
+        position: absolute;
+        bottom: 1px;
+        width: 122px;
+        height: 36px;
+        float: right;
+        color: #5c5c5c;
+        border: 1px,solid,#000; }
+    #register-form-phone .register-pwd {
+      position: relative;
+      width: 326px;
+      margin-top: 29px; }
+      #register-form-phone .register-pwd .register-pwd-1 {
+        width: 326px;
+        height: 34px; }
+        #register-form-phone .register-pwd .register-pwd-1:focus {
+          position: relative;
+          z-index: 2; }
+      #register-form-phone .register-pwd .register-pwd-2 {
+        width: 326px;
+        height: 34px;
+        position: relative;
+        top: -1px; }
+      #register-form-phone .register-pwd .pwd_error {
+        position: absolute;
+        top: -29px;
+        left: 4px;
+        font-size: 12px;
+        color: #f06060; }
+      #register-form-phone .register-pwd .pwd_error_info {
+        position: absolute;
+        bottom: -16px;
+        left: 4px;
+        color: #f06060; }
+    #register-form-phone .change-qq {
+      display: block;
+      margin-top: 6px; }
+    #register-form-mail a {
+      color: #f06060; }
+    #register-form-mail .change-mail {
+      color: #f06060;
+      font-size: 12px;
+      line-height: 12px;
+      margin-top: 13px;
+      float: right; }
+    #register-form-mail .register-validate .sign-phone {
+      margin-top: 4px;
+      width: 326px;
+      height: 34px; }
+      #register-form-mail .register-validate .sign-phone:focus {
+        position: relative;
+        z-index: 2; }
+    #register-form-mail .register-validate .phone-validate {
+      width: 204px;
+      height: 34px; }
+    #register-form-mail .register-validate button {
+      width: 122px;
+      height: 36px;
+      float: right;
+      border: 1px,solid,#000; }
+    #register-form-mail .register-validate a {
+      display: none;
+      float: right;
+      color: #bababa;
+      font-size: 12px; }
+      #register-form-mail .register-validate a:hover {
+        color: #00caab; }
+    #register-form-mail .register-pwd {
+      width: 326px;
+      margin-top: 29px; }
+      #register-form-mail .register-pwd .register-pwd-1 {
+        width: 326px;
+        height: 34px; }
+      #register-form-mail .register-pwd .register-pwd-2 {
+        width: 326px;
+        height: 34px; }
+    #register-form-mail .change-qq {
+      display: block;
+      margin-top: 6px; }
+
+#popup {
+  position: fixed;
+  background: #fff;
+  z-index: 9999;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  filter: alpha(opacity=100); }
+  #popup .popup-header {
+    height: 42px;
+    border-bottom: 1px solid #e6e6e6; }
+  #popup .popup-header, #popup .popup-body {
+    width: 484px;
+    padding: 0; }
+  #popup .popup-close {
+    width: 18px;
+    height: 18px;
+    display: block;
+    position: absolute;
+    right: 16px;
+    top: 12px;
+    background: url(/static/img/login-popup/close.png) no-repeat; }
+
+.popup-mask-layer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9988;
+  background-color: #000;
+  opacity: 0.8;
+  filter: alpha(opacity=80); }
+
+/* 重置 sign-in 的样式 */
+#popup .sign-register, #popup .sign-in-warp {
+  margin: 20px 40px; }
+
+#popup .sign-register {
+  padding: 0;
+  border-color: #fff; }

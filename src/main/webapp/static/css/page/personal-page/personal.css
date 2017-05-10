@@ -1,0 +1,143 @@
+.header-intro {
+  margin: 46px auto 0 auto;
+  border: dashed 2px #f8f8f8;
+  width: 980px;
+  overflow: hidden; }
+  .header-intro .header-left {
+    float: left;
+    width: 702px;
+    margin: 10px 8px;
+    padding: 34px;
+    background: #f8f8f8; }
+    .header-intro .header-left .touxiang {
+      float: left;
+      background: url("/static/img/page/personal-page/touxiang-back.png") no-repeat;
+      width: 98px;
+      height: 98px; }
+    .header-intro .header-left .list {
+      float: left; }
+      .header-intro .header-left .list h1 {
+        margin-bottom: 28px; }
+    .header-intro .header-left p {
+      margin-left: 40px;
+      width: 284px;
+      float: right;
+      line-height: 18px;
+      border-left: 2px #e6e6e6 dashed;
+      padding-left: 30px; }
+  .header-intro .header-right {
+    float: right;
+    background: #f8f8f8;
+    width: 60px;
+    margin: 10px 8px 10px 0;
+    padding: 70px 60px; }
+
+.container {
+  width: 1160px;
+  margin: 28px auto 0 auto;
+  overflow: hidden; }
+  .container .c-left {
+    float: left;
+    width: 770px;
+    background-color: #fafafa;
+    border: 1px solid #f0f0f0;
+    margin-bottom: 118px;
+    margin-right: 38px;
+    padding: 24px 26px 90px 42px; }
+    .container .c-left li {
+      margin-top: 18px;
+      font-size: 18px;
+      line-height: 24px; }
+      .container .c-left li p {
+        color: #9d9d9d; }
+      .container .c-left li img {
+        position: relative;
+        top: -6px;
+        left: 8px; }
+        .container .c-left li img.title-icon {
+          width: 20px;
+          height: 20px;
+          position: relative;
+          left: -10px;
+          top: 5px; }
+      .container .c-left li .border-line {
+        position: relative; }
+      .container .c-left li.education span {
+        font-size: 16px; }
+      .container .c-left li.education li {
+        color: #9d9d9d; }
+      .container .c-left li ul {
+        margin-top: 18px;
+        padding-left: 22px;
+        overflow: hidden; }
+        .container .c-left li ul.timeline {
+          margin-top: 2px;
+          position: relative; }
+          .container .c-left li ul.timeline:before {
+            content: '';
+            position: absolute;
+            top: 16px;
+            bottom: 14px;
+            left: 2.6px;
+            width: 2px;
+            background: #00caab; }
+          .container .c-left li ul.timeline .dot {
+            width: 7px;
+            height: 7px;
+            position: relative;
+            top: 16px;
+            background: url("/static/img/page/personal-page/dot.png"); }
+          .container .c-left li ul.timeline .timelabel {
+            margin-top: 0;
+            position: relative;
+            z-index: 9999; }
+            .container .c-left li ul.timeline .timelabel li p {
+              margin: 0 0 0 150px;
+              width: 492px;
+              text-indent: 0;
+              font-size: 14px;
+              font-weight: normal; }
+            .container .c-left li ul.timeline .timelabel li em {
+              display: inline-block;
+              width: 124px; }
+            .container .c-left li ul.timeline .timelabel li span {
+              margin-left: 26px; }
+        .container .c-left li ul li {
+          margin-top: 0;
+          float: left;
+          font-size: 14px; }
+      .container .c-left li p {
+        font-size: 14px;
+        line-height: 18px;
+        text-indent: 2em;
+        margin: 18px 0 0 22px; }
+  .container .c-right-top {
+    font-size: 14px;
+    float: right;
+    width: 246px;
+    padding: 16px;
+    background-color: #fafafa;
+    border: 1px solid #f0f0f0;
+    margin-bottom: 14px; }
+    .container .c-right-top span {
+      color: #24cdb1;
+      font-size: 18px; }
+    .container .c-right-top img {
+      display: block;
+      margin-top: 14px; }
+  .container .c-right-bottom {
+    padding: 28px 60px 20px 74px;
+    background-color: #fafafa;
+    border: 1px solid #f0f0f0;
+    margin-bottom: 14px;
+    width: 144px;
+    font-size: 14px;
+    float: right; }
+    .container .c-right-bottom li {
+      margin-bottom: 30px; }
+      .container .c-right-bottom li img {
+        margin-right: 14px;
+        width: 16px;
+        height: 16px;
+        position: relative;
+        top: 3px; }

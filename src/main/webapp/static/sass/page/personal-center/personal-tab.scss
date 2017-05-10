@@ -1,0 +1,38 @@
+@charset "UTF-8";
+@import '../../common/global-set';
+
+$tab-h: 36px;
+$tab-bg: #f8f8f8;
+$nav-border: #ddd;
+$aside-w: 210px;
+
+.personal-content {
+  width: 936px;
+  margin-left: ($aside-w + 30px);
+  /*float: left;*/
+}
+.personal-content-tab {
+  width: 100%;
+  height: $tab-h;
+  background-color: $tab-bg;
+  border-bottom: 1px solid $nav-border;
+}
+.tab-item {
+  width: 136px;
+  height: $tab-h;
+  line-height: $tab-h;
+  float: left;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid transparent;
+  a {
+    width: 100%;
+    display: block;
+    color: $global-font;
+  }
+}
+.current-tab-item {
+  border-color: $nav-border;
+  border-bottom-color: #fff;
+  background-color: #fff;
+}

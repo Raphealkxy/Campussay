@@ -1,0 +1,204 @@
+@charset "UTF-8";
+$picPath:"/static/img/page/class-detail/";
+.class-info{
+    padding-top: 27px;
+    height: 204px;
+}
+//<!-- 图片展示-->
+.class-pic-show{
+    float: left;
+    width: 320px;
+}
+.current-show-pic{
+    width: 320px;
+    height: 200px;
+}
+.class-pic-show-wrap{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-top: 16px;
+    border: 1px solid #e5e5e5;
+    @at-root {
+       .show-btn{
+           padding-top: 16px;
+           padding-bottom: 16px;
+           float: left;
+           width: 23px;
+           text-align: center;
+           height: 18px;
+           font-size: 0;
+           i{
+               width: 9px;
+               height: 18px;
+               vertical-align: middle;
+           }
+       }
+        .show-left-btn{
+            background: url(#{$picPath}lbtn.png) no-repeat;
+        }
+        .show-right-btn{
+            background: url(#{$picPath}rbtn.png) no-repeat;
+        }
+    }
+}
+.class-pic-show-list{
+    float: left;
+    margin-left: -14px;
+    font-size: 0;
+    @at-root {
+        .class-pic-show-item{
+            margin-left: 14px;
+            position: relative;
+            vertical-align: middle;
+            width: 81px;
+            height: 50px;
+            img{
+                cursor: pointer;
+                width: 81px;
+                height: 50px;
+                &:hover{
+                    @extend .current-show-item;
+                }
+            }
+            .current-show-item{
+                position: absolute;
+                left: -5px;
+                top: -3px;
+                right: 0;
+                width: 90px;
+                height: 55px;
+            }
+        }
+    }
+
+}
+
+//<!-- 文字描述-->
+.class-info-context{
+    float: left;
+    margin-left: 27px;
+    h2{
+        font-size: 24px;
+        line-height: 30px;
+    }
+    @at-root {
+        .class-info-list{
+            margin-top: 12px;
+            width: 542px;
+            border: 1px dashed #dddddd;
+        }
+        .class-info-item+.class-info-item+.class-info-item{
+            border-top: 1px dashed #DDDDDD;
+        }
+        .class-info-item{
+            float: left;
+            padding-left: 20px;
+            width: 251px;
+            height: 32px;
+            line-height: 32px;
+        }
+        .last-info-item{
+            padding-right: 20px;
+            width: 502px;
+        }
+        .info-item-title{
+            color: #969696;
+            display: block;
+            float: left;
+        }
+        .class-price{
+            font-size: 22px;
+            color: #fca825;
+        }
+        .has-join{
+            color: #fca825;
+        }
+        .class-option{
+            margin-top: 20px;
+            div{
+                display: inline-block;
+                -webkit-border-radius: 2px;
+                -moz-border-radius: 2px;
+                border-radius: 2px;
+                height: 39px;
+                width: 113px;
+                background-color: #00caab;
+                color: #fff;
+                font-size: 16px;
+                text-align: center;
+                &:hover{
+                    background-color: #3aead0;
+                }
+            }
+            a{
+                color: #5c5c5c;
+            }
+            .share{
+                &:hover>i{
+                    @extend .has-share;
+                }
+            }
+            i{
+                margin-left: 28px;
+                margin-right: 7px;
+                vertical-align: middle;
+            }
+            .share-to{
+                width: 16px;
+                height: 13px;
+                background: url(#{$picPath}share.png) no-repeat;
+            }
+            .has-share{
+                background: url(#{$picPath}has-share.png) no-repeat;
+            }
+        }
+    }
+}
+//作者
+.class-author{
+    padding-top: 4px;
+    float: right;
+    width: 270px;
+    text-align: center;
+    img{
+        margin-top: 10px;
+        width: 64px;
+        height: 64px;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+    }
+    dt{
+        padding-top: 7px;
+        line-height: 100%;
+        color: #777;
+    }
+    dd{
+        font-size: 0;
+    }
+    span{
+        margin-left: 5px;
+        color: #ffb137;
+        font-size: 14px;
+    }
+}
+.teacher-star {
+    margin-top: 11px;
+    width: 12px;
+    height: 11px;
+}
+.star1 {
+    background: url(#{$picPath}star1.png) no-repeat;
+}
+
+.star2 {
+    background: url(#{$picPath}star2.png) no-repeat;
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,201 @@
+
+@import '../../common/global-set';
+@import 'ht-common-bar';
+@import '../../common/person-info';
+
+$tag-border: #b3b3b3;
+$tag-hover-color: $global-bg;
+$color-f0: #f0f0f0;
+$color-fa: #fafafa;
+$color-777: #777;
+
+.field-center {
+  margin-top: 20px;
+  margin-bottom: 340px;
+}
+
+// main
+.field-center-content {
+  width: 880px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  .breadcrumb {
+    padding-left: 10px;
+    border-left: 6px solid $global-bg;
+    color: $global-bg;
+  }
+  // 已关注的领域标签
+  .field-tag-watch {
+    margin-top: 20px;
+    .item-tag {
+      display: inline-block;
+      padding: 0px 10px;
+      margin: 0px 20px 20px 0px;
+      color: $tag-border;
+      border: 1px solid $tag-border;
+      -webkit-border-radius: 2px;
+      -moz-border-radius: 2px;
+      border-radius: 2px;
+      cursor: pointer;
+      &:hover {
+        color: $tag-hover-color;
+        border: 1px solid $tag-hover-color;
+      }
+    }
+    .active {
+      color: $global-bg;
+      border: 1px solid $global-bg;
+    }
+  }
+  // 未关注的领域标签
+  .field-tag-unwatch {
+    position: relative;
+    .item-field {
+      width: 46%;
+      height: 116px;
+      padding: 18px;
+      margin: 30px 28px 0px 0px;
+      border: 1px solid $color-f0;
+      display: block;
+      float: left;
+      position: relative;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      &:hover {
+        border: 1px solid $global-bg;
+        box-shadow: 5px 5px 5px $color-f0;
+      }
+    }
+    .item-field-logo {
+      float: left;
+      position: relative;
+      .item-field-logo-icon {
+        display: block;
+        width: 86px;
+        height: 81px;
+        margin-right: 10px;
+      }
+    }
+    .item-field-content {
+      color: $color-777;
+      .item-field-title {
+        .item-field-name {
+          color: $global-font;
+        }
+        .item-field-operation {
+          display: block;
+          float: right;
+          color: $global-bg;
+          padding: 4px 10px;
+          background-color: #fff;
+          border: 1px solid $global-bg;
+          -webkit-border-radius: 8px;
+          -moz-border-radius: 8px;
+          border-radius: 8px;
+          &:hover {
+            color: #fff;
+            background-color: $global-bg;
+          }
+        }
+      }
+      .item-field-desc {
+        height: 32px;
+        overflow: hidden;
+        margin-top: 18px;
+      }
+    }
+  }
+}
+// aside-main
+.aside-main {
+  padding: 20px;
+  padding-right: 0px;
+  .personal-info {
+  }
+  .personal-title {
+    float: right;
+    height: 42px;
+    width: 174px;
+    padding: 15px 0px;
+    ul {
+      margin-top: 8px;
+      li {
+        float: left;
+      }
+      li.split-bar {
+        padding: 0px 10px;
+      }
+    }
+  }
+  .personal-field {
+    margin-top: 20px;
+  }
+}
+// aside-sub
+.aside-sub {
+  .personal-about-list{
+    li{
+      padding: 20px 14px;
+      float: left;
+      width: 60px;
+      height: 40px;
+      text-align: center;
+    }
+    dt{
+      font-size: 18px;
+      line-height: 28px;
+    }
+    dd{
+      font-size: 14px;
+      color: #969696;
+    }
+  }
+}
+
+.tag {
+  margin: 4px 4px 14px;
+  display: inline-block;
+  .item-tag {
+    border: 1px solid #969696;
+    margin-right: 12px;
+    color: #969696;
+    border-right: none;
+    padding: 0px 4px;
+    position: relative;
+    display: inline-block;
+    &:after {
+      content:' ';
+      display: inline-block;
+      height: 20px;
+      width: 9px;
+      position: absolute;
+      left: 100%;
+      top: -1px;
+      background: url('/static/img/page/personal-center/tag.png') no-repeat;
+    }
+    .tag-rect {
+      padding: 1px 0px;
+      display: inline-block;
+    }
+  }
+}
+.icon {
+  width: 8px;
+  height: 8px;
+  margin-right: 4px;
+  display: inline-block;
+}
+.icon-plus {
+  background: url('/static/img/page/topic-center/icon-plus.png') no-repeat;
+}
+.icon-false {
+  background: url('/static/img/page/topic-center/icon-false.png') no-repeat;
+}
+.icon-plus.selected {
+  background: url('/static/img/page/topic-center/icon-plus-hover.png') no-repeat;
+}
+.icon-false.selected {
+  background: url('/static/img/page/topic-center/icon-false-hover.png') no-repeat;
+}

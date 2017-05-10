@@ -1,0 +1,124 @@
+.global-center {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1180px; }
+
+.inline-block {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1; }
+
+body {
+  min-width: 1180px; }
+
+.warpper {
+  width: 1180px;
+  margin: 0 auto; }
+
+.clearfix:after {
+  display: block;
+  clear: both; }
+
+.class-recommend-panel {
+  margin-bottom: 42px; }
+
+.class-head {
+  height: 28px;
+  padding: 20px 0 10px 0;
+  position: relative; }
+  .class-head .more {
+    float: right;
+    margin-bottom: 0px;
+    color: #00caab;
+    text-decoration: underline;
+    font-size: 12px; }
+
+.class-title {
+  height: 28px;
+  line-height: 28px;
+  padding-left: 12px;
+  border-left: 4px solid #00caab;
+  font-size: 20px; }
+
+.moudle {
+  margin-right: -20px;
+  position: relative; }
+
+.moudle-img {
+  display: inline-block;
+  height: 210px;
+  width: 220px;
+  margin-right: 20px;
+  color: #000;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  float: left; }
+  .moudle-img img {
+    width: 100%;
+    height: 100%; }
+
+.moudle-item {
+  display: inline-block;
+  height: 210px;
+  width: 220px;
+  margin-right: 20px;
+  color: #000;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  float: left; }
+
+.moudle-item-img {
+  display: inline-block;
+  width: 220px;
+  height: 130px; }
+  .moudle-item-img img {
+    width: 100%;
+    height: 100%; }
+
+.moudle-item-des {
+  width: 198px;
+  padding: 10px;
+  font-size: 12px;
+  color: #777;
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-top: none;
+  margin-top: -2px; }
+  .moudle-item-des p {
+    margin-bottom: 6px;
+    text-overflow: ellipsis;
+    width: 198px;
+    height: 14px;
+    overflow: hidden; }
+  .moudle-item-des .course-itemdes-title {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1; }
+  .moudle-item-des .row-bottom {
+    overflow: hidden;
+    margin-top: 7px; }
+  .moudle-item-des .pirce {
+    font-size: 19px;
+    color: #fca825;
+    float: left;
+    height: 20px;
+    line-height: 20px; }
+    .moudle-item-des .pirce span {
+      font-size: 14px; }
+  .moudle-item-des .part {
+    height: 20px;
+    line-height: 20px;
+    float: right; }
+
+.course-itemdes-title {
+  margin-bottom: 10px; }
+
+.moudle-more {
+  position: absolute;
+  bottom: 7px;
+  right: 0px;
+  font-size: 14px;
+  color: #00caab;
+  z-index: 999; }

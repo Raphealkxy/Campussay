@@ -1,0 +1,31 @@
+.talking-bar{
+  width: 1178px;
+  margin: 0 auto;
+  background: #f8f8f8;
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid #dddddd;
+  li{
+    width: 140px;
+    float: left;
+    text-align: center;
+    cursor: pointer;
+    background: #FFFFFF;
+    border: {
+      top: 1px solid #dddddd;
+      right: 1px solid #dddddd;
+      bottom: hidden;
+      left: 1px solid #dddddd;
+    }
+    //&:hover{
+    //  cursor: pointer;
+    //  background: #FFFFFF;
+    //  border: {
+    //    top: 1px solid #dddddd;
+    //    right: 1px solid #dddddd;
+    //    bottom: hidden;
+    //    left: 1px solid #dddddd;
+    //  }
+    //}
+  }
+}

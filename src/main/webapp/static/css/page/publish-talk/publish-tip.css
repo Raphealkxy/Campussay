@@ -1,0 +1,47 @@
+.publish-tip {
+  float: right;
+  width: 300px; }
+
+.publish-process {
+  line-height: 34px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+  .publish-process:before {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+    content: " ";
+    width: 34px;
+    height: 34px; }
+
+.process1:before {
+  background: url(/static/img/page/publish-talk/process-radius1.png) no-repeat; }
+
+.process2:before {
+  background: url(/static/img/page/publish-talk/process-radius.png) no-repeat; }
+
+.process3:before {
+  background: url(/static/img/page/publish-talk/process-radius3.png) no-repeat; }
+
+.publish-process-txt {
+  vertical-align: middle;
+  font-size: 18px;
+  color: #00caab; }
+
+.process2, .process3 {
+  position: relative;
+  margin-top: 36px; }
+  .process2:after, .process3:after {
+    position: absolute;
+    left: 16px;
+    top: -35px;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    content: " ";
+    height: 35px;
+    border-left: 2px dashed #00caab; }

@@ -1,0 +1,32 @@
+.comment-star {
+  font-size: 18px;
+  width: 980px;
+  margin: 46px auto 30px auto;
+  overflow: hidden;
+  height: 150px; }
+  .comment-star .score {
+    width: 90px;
+    padding: 50px;
+    background: #f8f8f8;
+    margin-right: 10px;
+    float: left; }
+    .comment-star .score span {
+      color: #ffb137;
+      font-size: 50px; }
+  .comment-star .rank {
+    background: #f8f8f8;
+    float: left;
+    height: 150px;
+    width: 780px; }
+    .comment-star .rank .rank-star {
+      margin: 20px 88px 20px 100px; }
+      .comment-star .rank .rank-star li {
+        line-height: 38px; }
+        .comment-star .rank .rank-star li.bi {
+          position: relative;
+          top: -70px;
+          left: 300px;
+          color: #64d6c0;
+          font-size: 14px; }
+
+/*# sourceMappingURL=comment-star.css.map */

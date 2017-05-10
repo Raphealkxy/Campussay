@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.campussay.dao.CampusDao">
+
+    <select id="getAllCampusName" resultType="map">
+        SELECT campus_id, campus_name FROM t_campus where campus_state=10;
+    </select>
+    
+    <select id="getCampusNameByid" parameterType="int" resultType="String">
+    	select campus_name from t_campus where campus_id=#{campus_id} and campus_state=10 limit 1;
+    </select>
+
+    <select id="getStudentCheckCampus" resultType="java.lang.Integer">
+        SELECT user_student_check_result FROM t_user WHERE user_id=#{user_id};
+    </select>
+
+</mapper>

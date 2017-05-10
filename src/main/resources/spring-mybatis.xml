@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:p="http://www.springframework.org/schema/p"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:aop="http://www.springframework.org/schema/aop"
+  xmlns:tx="http://www.springframework.org/schema/tx"
+  xmlns:util="http://www.springframework.org/schema/util"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.2.xsd
+    http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util-3.2.xsd">
+    
+	<!-- 引入配置文件 -->
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location" value="classpath:database.properties" />
+	</bean>
+     
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="${url}" />
+		<property name="username" value="${username}" />
+		<property name="password" value="${password}" />
+		<!-- 初始化连接大小 -->
+		<property name="initialSize" value="${initialSize}"></property>
+		<!-- 连接池最大数量 -->
+		<property name="maxActive" value="${maxActive}"></property>
+		<!-- 连接池最大空闲 -->
+		<property name="maxIdle" value="${maxIdle}"></property>
+		<!-- 连接池最小空闲 -->
+		<property name="minIdle" value="${minIdle}"></property>
+		<!-- 获取连接最大等待时间 -->
+		<property name="maxWait" value="${maxWait}"></property>
+	</bean>
+
+	<!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<!-- 自动扫描mapping.xml文件 -->
+		<property name="mapperLocations" value="classpath:com/campussay/**/*.xml"></property>
+	</bean>
+
+	<!-- DAO接口所在包名，Spring会自动查找其下的类 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.campussay.dao" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
+	</bean>
+
+	<!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<!-- 邮件系统 -->
+	<bean id="javaMailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="protocol" value="smtp"/>
+		<property name="host" value="smtp.163.com"/>
+		<property name="port" value="25" /><!--Gmail的SMTP端口居然是这个，去google网站上了解吧-->
+		<property name="username" value="18623657744@163.com"/>
+		<property name="password" value="123456789wwx"/>
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="test" class="com.campussay.util.MailSender">
+		<property name="javaMailSender" ref="javaMailSender"></property>
+	</bean>
+	
+	
+	 <bean id="DailyTaskQtzJob" class="com.campussay.util.SpringQtz"></bean>  
+	 
+    <bean id="DailyTaskQtzJobMethod" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+	<property name="targetObject">
+		<ref bean="DailyTaskQtzJob"/>
+	</property>
+	<property name="targetMethod">  <!-- 要执行的方法名称   -->
+		<value>execute</value>
+	</property>
+</bean>
+
+	<bean id="DailyTaskQtzJobMethod1" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+			<ref bean="DailyTaskQtzJob"/>
+		</property>
+		<property name="targetMethod">  <!-- 要执行的方法名称   -->
+			<value>executeSource</value>
+		</property>
+	</bean>
+
+	<bean id="DailyTaskQtzJobMethod2" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+			<ref bean="DailyTaskQtzJob"/>
+		</property>
+		<property name="targetMethod">  <!-- 要执行的方法名称   -->
+			<value>executeOrder</value>
+		</property>
+	</bean>
+	
+	<!--  
+	<bean id="DailyTaskQtzJobMethod3" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+			<ref bean="DailyTaskQtzJob"/>
+		</property>
+		<property name="targetMethod">  
+			<value>closeOrder</value>
+		</property>
+	</bean>
+   -->
+   
+   
+<!--     ======================== 调度触发器 ========================   -->
+  <bean id="DailyTaskCronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
+        <property name="jobDetail" ref="DailyTaskQtzJobMethod"></property>  
+       <!--  每天隔1分钟触发,   -->
+        <property name="cronExpression" value="0 0/1 * * * ?"></property>
+    </bean>
+<!--
+ cronExpression 中0 0/20 * * * ? 代表 秒，分，时，天
+-->
+   <bean id="DailyTaskCronTriggerBean1" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+	   <property name="jobDetail" ref="DailyTaskQtzJobMethod1"></property>
+	   <property name="cronExpression" value="0 0 0/1 * * ?"></property>
+   </bean>
+
+	<bean id="DailyTaskCronTriggerBean2" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="DailyTaskQtzJobMethod2"></property>
+		<property name="cronExpression" value="0 0/1 * * * ?"></property>
+	</bean>
+
+<!-- 
+	<bean id="DailyTaskCronTriggerBean3" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="DailyTaskQtzJobMethod3"></property>
+		<property name="cronExpression" value="0 0/1 * * * ?"></property>
+	</bean>
+ -->
+   <!--  ======================== 调度工厂 ========================   -->
+    <bean id="SpringJobSchedulerFactoryBean" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">  
+        <property name="triggers">  
+            <list>   
+                <ref bean="DailyTaskCronTriggerBean"/>
+				<ref bean="DailyTaskCronTriggerBean1"/>
+				<ref bean="DailyTaskCronTriggerBean2"/>
+			<!-- 	
+				<ref bean="DailyTaskCronTriggerBean3"/>
+			-->
+            </list>  
+        </property>  
+    </bean>   
+  <!--   <tx:annotation-driven /> -->
+<!-- transaction support-->
+<!-- PlatformTransactionMnager -->
+<!-- spring事物配置,用于做事物回滚, -->
+<!-- <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <property name="dataSource" ref="dataSource" />
+</bean> -->
+<!-- enable transaction annotation support -->
+<tx:annotation-driven transaction-manager="transactionManager" />
+
+</beans>  

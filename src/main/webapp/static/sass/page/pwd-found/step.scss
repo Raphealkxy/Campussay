@@ -1,0 +1,93 @@
+$family:'Microsoft YaHei';
+$color:#5c5c5c #f8f8f8 #dddddd #bababa  #b3b3b3 #969696 #f06060 #2ce6c9 #12b59c;
+$font:12px 14px;
+$img-path: '/static/img/page/';
+/*
+*边框函数：warp()
+*/
+@mixin warp($padding-top:0,$padding-right:0,$padding-bottom:0,$padding-left:0, $margin-top:0,$margin-right:0,$margin-bottom:0,$margin-left:0,$warp-width:0){
+  border: 1px solid nth($color,3);
+  background-color:nth($color,2);
+  padding: $padding-top $padding-right $padding-bottom $padding-left ;
+  margin: $margin-top $margin-right $margin-bottom $margin-left ;
+  width: $warp-width;
+}
+/*
+*普通样式
+*/
+@mixin font{
+  font-family: $family;
+  font-size: 14px;
+  line-height: 14px;
+  color:nth($color,1);
+}
+/*
+*提示样式
+*/
+@mixin font-notice{
+  font-family: $family;
+  font-size: 14px;
+  line-height: 14px;
+  color:nth($color,6);
+}
+/*
+*链接样式
+*/
+@mixin font-a{
+  font-family: $family;
+  font-size: 12px;
+  line-height: 12px;
+  color:nth($color,7);
+}
+/*
+*邮箱或者手机号码样式
+*/
+@mixin font-emaiorphone($font-size:0){
+  font-family: $family;
+  font-size: $font-size;
+  color:nth($color,9);
+}
+/*
+*标题样式
+*/
+
+@mixin h3{
+  font-family: $family;
+  font-size: 18px;
+  color: nth($color,1);
+}
+/*
+*按钮样式
+*/
+@mixin btn{
+  font-family: $family;
+  font-size: 16px;
+  color: #ffffff;
+  text-align: center;
+  border: none;
+}
+.pwd-found-logo{
+  margin-bottom: 64px;
+  height: 57px;
+}
+.pwd-found-title{
+  font-family: $family;
+  font-size: 20px;
+  color: nth($color,1);
+}
+.progress-bar{
+  overflow: hidden;
+  width: 534px;
+  height: 44px;
+  margin: 0 auto;
+  li{
+    @include font;
+    float:left;
+  }
+  .progress-bar_center{
+    margin: 0 175px 0 161px;
+  }
+}
+.error{
+  border: 1px solid #f06060;
+}

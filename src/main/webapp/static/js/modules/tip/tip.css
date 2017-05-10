@@ -1,0 +1,626 @@
+@charset "UTF-8";
+/**
+ * 提醒消息 的弹窗
+ * author: 王欣瑜
+ * date: 2016/1/28
+ */
+/* 弹窗框框架子 & 遮罩层
+ ------------------------------------------------------------- */
+.popup, #wmHeadertip_container {
+  position: fixed;
+  background: #fff;
+  z-index: 9999;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  margin:auto;
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+   border-radius:25px 0 0 0;
+   -moz-border-radius:25px 0 0 0; /* Old Firefox */
+}
+.popup-header {
+  height: 24px;
+}
+.popup-body {
+  padding: 0px 40px;
+}
+.popup:after{
+  content: ' ';
+  width: 71px;
+  height: 92px;
+  position: relative;
+  top: -94px;
+  left: -34px;
+  background: url("/static/img/page/hot/alert.png") no-repeat left center;
+  display: inline-block;
+}
+/*.popup-body {
+  background: #fff;
+}*/
+.popup-header, .popup-body {
+  width: 100%;  }
+
+.popup-mask-layer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9998;
+  background-color: #000;
+  opacity: 0.8;
+  filter: alpha(opacity=80); }
+
+.popup-close {
+  width: 14px;
+  height: 14px;
+  display: block;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  background: url(/static/img/login-popup/close.png) no-repeat; }
+
+
+/* 错误提示 */
+.form-tip {
+  color: #f06060;
+  font-size: 12px; }
+
+.form-tip-right {
+  float: right; }
+
+.form-tip-left {
+  float: left; }
+
+.err-tip, .forget-psw-tip {
+  padding: 10px 0px 0px 0px; }
+
+.empty-input {
+  border: 1px solid #f06060; }
+
+/* 按钮 */
+.btn-group {
+  position: absolute;
+  right: 16px;
+  top: 70%;
+}
+.btn {
+  width: 82px;
+  height: 34px;
+  border: none;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  line-height: 34px;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: 8px; }
+.btn-dark {
+  color: #fff;
+  border-bottom: 2px solid #12baa0;
+  background-color: #2ce6c9;  }
+  .btn-dark:hover {
+    background-color: #00caab; }
+.btn-light {
+  color: #2ce6c9;
+}
+
+/*话题社提问弹框*/
+/*icon*/
+.ask-tip{
+  float: left;
+  margin-left: 20px;
+  font-size: 12px;
+  height: 30px;
+  line-height: 30px;
+}
+.icon-ask{
+  display: inline-block;
+  vertical-align: middle;
+}
+.icon-green-success-ask {
+  background-image: url(/static/img/common/icon-sprite.png);
+  background-position: -31px 0px;
+  width: 20px;
+  height: 16px;
+  margin-right: 5px;
+}
+.icon-warn-ask {
+  background-image: url(/static/img/common/icon-sprite.png);
+  background-position: 0px -31px;
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+.icon-tagclose{
+  display: inline-block;
+  margin-left: 7px;
+  color: #b3b3b3;
+}
+
+/*icon 结束*/
+.ask .popup:after{
+  background: none;
+}
+.ask .popup-close{
+  background-image: url(/static/img/common/icon-sprite.png);
+  background-position: 0px 0px;
+  width: 31px;
+  height: 31px;
+}
+#icon-bird{
+  width: 114px;
+  height: 106px;
+  position: absolute;
+  top:-34px;
+  left:-18px;
+}
+#icon-bird img{
+  width: 100%;
+  height: 100%;
+}
+
+.askpop-head{
+  height: 60px;
+  width:100%;
+  color:#fff;
+  background: #07bfa2;
+}
+.ask-pop{
+  font-size: 14px;
+}
+.row{
+  margin-bottom:25px; 
+}
+.row.row-title{
+  margin-top: 60px;
+  margin-bottom: 0px;
+}
+.row.row-tag{
+  margin-bottom: 0px;
+  position: absolute;
+  z-index: -1;
+  font-size: 12px;
+  color: 
+}
+.row.row-oversize{
+  height: 38px;
+  margin-bottom: 0px;
+  padding-top: 10px;  
+  font-size: 14px;
+  text-align: right;
+}
+.row-oversize .row-right span{
+  color:#00caab;
+}
+.row-left{
+  float: left;
+  width: 150px;
+  height: 34px;
+  line-height: 34px;
+  font-size: 16px;
+  color:#5c5c5c;
+  text-align: right;
+}
+.icon-required{
+  margin-right: 5px;
+  color:red;
+}
+.colon{
+  margin:7px;
+}
+.row-right{
+  margin-left:152px;
+  width: 540px;
+}
+.ask-title{
+  width:520px;
+  padding:9px;
+  font-size:14px;
+  border:1px solid #b3b3b3;
+}
+
+.ask-detail{
+  width: 520px;
+  height: 120px;
+  padding: 9px 10px;
+  border:1px solid #b3b3b3;
+}
+.ask-tag{
+  width: 520px;
+  height: 50px;
+  padding: 10px;
+  border:1px solid #b3b3b3;
+  background: ＃;
+}
+.ask-filed{
+  width:120px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  position: relative;
+  float: left;
+  margin-right:30px;
+  background: none;
+  border:1px solid #b3b3b3;
+  cursor: pointer;
+
+}
+.ask-second-filed{
+  margin-right: 0px;
+}
+
+
+.filed-select{
+  position: absolute;
+  border:1px solid #b3b3b3;
+  border-top:none;
+  background: #fff;
+  top:31px;
+  left:-1px;
+  z-index: 99;
+  height: 150px;
+  overflow: scroll;
+}
+.filed-select li{
+  width: 120px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+}
+.secound-filed{
+  height: auto;
+}
+.ask-addfiled{
+  color:#00caab;
+}
+.tag{
+  display: inline-block;
+  height: 22px;
+  line-height: 22px;
+  font-size:12px;
+  display: inline-block;
+  padding:0 7px 0 7px;
+  border:1px solid #b3b3b3;
+}
+.ask-button{
+  display: inline-block;
+  float: right;
+  width: 88px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+}
+.ask-button-pub{
+  color:#fff;
+  background: #00caab;
+}
+.ask-button-cancle{
+  color:#00caab;
+  background: #fff;
+}
+.row-button{
+  overflow: hidden;
+}
+
+.tag-wrapper{
+  position: absolute;
+}
+/*.tag{
+    display: inline-block;
+    height: 18px;
+    line-height: 18px;
+    border: 1px solid #b3b3b3;
+    border-right: none; 
+    vertical-align: middle;
+    padding-left: 2px;
+    background: #fff;
+}*/
+
+.icon-start {
+  background-image: url("/static/img/common/sprite.png");
+  background-position: -10px -20px;
+  width: 7px;
+  height: 6px;
+}
+.icon-close {
+  display: inline-block;
+  position: relative;
+  left:-35px;
+  vertical-align: middle;
+  background-image: url("/static/img/common/sprite.png");
+  background-position: 0px 0px;
+  width: 55px;
+  height: 20px;
+}
+.icon-arrowdown{
+  background-image: url("/static/img/common/sprite.png");
+  background-position: 0px -20px;
+  width: 10px;
+  height: 6px;
+}
+
+/*订单的弹框开始*/
+
+/*弹框头部*/
+.order-pop .popup-head{
+  height: 30px;
+  background:#07bea2;
+  border-radius:25px 0 0 0;
+  -moz-border-radius:25px 0 0 0; /* Old Firefox */
+  position: relative;
+
+}
+.order-pop .popup:after{
+  background:none;
+}
+.comment-pop,.switchschool-pop  .popup:after{
+  background:none;
+}
+.comment-pop :after{
+  background:none;
+}
+
+
+.order-pop .pop-icon{
+  display: inline-block;
+  width: 71px;
+  height: 92px;
+  position: relative;
+  top: -30px;
+  left: -18px;
+  background: url("/static/img/page/pop/bird.png") no-repeat left center;
+}
+.comment-pop .pop-icon{
+  display: inline-block;
+  width: 116px;
+  height: 100px;
+  position: relative;
+  top: -30px;
+  left: -18px;
+  background: url("/static/img/page/pop/bigbird.png") no-repeat left center;
+}
+.order-pop .popup-close{
+  top:8px;
+}
+
+.comment-pop .popup-close{
+  
+}
+
+.order-pop-content{
+  padding: 33px 30px 0 30px;
+  position: relative;
+  background: #fff;
+  z-index: -1;
+  font-size:14px;
+}
+.order-msg{
+  color:#b5b5b5;
+  margin-bottom: 25px;
+}
+
+.order-button-row{
+  
+  text-align: right;
+}
+.order-button{
+  color:#6bd9c5;
+  display: inline-block;
+  height: 16px;
+  cursor: pointer;  
+}
+.quit-button{
+  color:#6bd9c5;
+  display: inline-block;
+  height: 16px;
+  cursor: pointer;  
+}
+.order-rebate-textarea{
+  width: 240px;
+  height: 60px;
+  margin-top: 12px;
+  border:1px solid #d2d2d2;
+  padding:10px;
+}
+.order-rebate-msg{
+  margin-bottom: 15px;
+}
+.order-rebate-content{
+  padding-top:20px;
+}
+.rebate-button-cancle{
+  color:#8d8d8d;
+}
+.order-pop .popup-close{
+  background: url("/static/img/page/pop/sX.png") no-repeat;
+}
+.comment-pop .popup-close{
+  width: 30px;
+  height: 30px;
+  background: url("/static/img/page/pop/bigX.png") no-repeat;
+}
+/*订单的弹框结束*/
+
+/*评价的弹框开始*/
+.comment-pop .popup-head{
+  height: 60px;
+  background:#07bea2;
+}
+.comment-pop-content{
+  padding: 60px 60px 0px 60px;
+}
+.tip-msg{
+  margin-bottom: 24px;
+  color:#a5a5a5; 
+  text-align: right;
+}
+.over-number{
+  margin:8px;
+  color:#07bea2;;
+}
+.comment-info textarea{
+  width: 720px;
+  height: 100px;
+  padding:10px 15px;
+  border:1px solid #d2d2d2;
+  margin-bottom: 24px;
+}
+.comment-button-row{
+  overflow: hidden;
+}
+.comment-button{
+  display: inline-block;
+  float: right;
+  width: 100px;
+  height: 40px;
+  background: #07bea2;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  -moz-border-radius: 2px;
+-webkit-border-radius: 2px;
+-o-border-radius: 2px;
+border-radius: 2px; 
+}
+.comment-pop .popup{
+  -moz-border-radius: 6px 6px 6px 6px;
+-webkit-border-radius: 6px 6px 6px 6px;
+-o-border-radius: 6px 6px 6px 6px;
+border-radius:6px 6px 6px 6px;
+}
+.comment-pop .popup-head {
+    position: relative;
+    -moz-border-radius: 30px  6px  0 0;
+-webkit-border-radius:30px  6px  0 0;
+-o-border-radius: 30px  6px  0 0;
+border-radius:30px 6px  0 0;
+}
+
+/*评价的弹框结束*/
+
+
+/*弹窗*/
+.order-pop,.switchschool-pop  .popup{
+   -moz-border-radius: 30px 2px  2px 2px;
+-webkit-border-radius: 30px 2px  2px 2px;
+-o-border-radius: 30px 2px  2px 2px;
+border-radius:30px 2px  2px 2px;
+}
+.order-pop,.switchschool-pop .popup-head {
+    -moz-border-radius: 30px  2px  0 0;
+-webkit-border-radius:30px  2px  0 0;
+-o-border-radius: 30px  2px  0 0;
+border-radius:30px 2px  0 0;
+}
+
+/*切换学校的弹窗开始*/
+
+.switchschool-pop .popup-head{
+    position: relative;
+    height: 44px;
+    line-height: 44px;
+    color:#fff;
+    text-align: center;
+    background:#07bea2;
+}
+
+.switchschool-pop .pop-icon{
+  display: inline-block;
+  background-image: url('/static/img/page/switchschool/sprite.png');
+  background-position: 0px 0px;
+  width: 96px;
+  height: 85px;
+  position: relative;
+  top: -30px;
+  left: -190px;
+}
+
+.switchschool-pop .popup-close{
+  background-image: url('/static/img/page/switchschool/sprite.png');
+
+  background-position: -164px -65px;
+  width: 14px;
+  height: 14px;
+}
+
+.school-pop-content{
+  padding:60px 0 0 32px;
+}
+
+.school-list{
+  overflow: hidden;
+}
+.school-list .school{
+  float: left;
+  height: 104px;
+  width: 90px;
+  text-align: center;
+  margin-right: 12px;
+  position: relative;
+  cursor: pointer;
+}
+
+.s-icon{
+  display: inline-block;
+
+  background-image: url('/static/img/page/switchschool/sprite.png');
+}
+.s-name{
+  text-align: center;
+  margin-top: 20px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}
+
+.icon-CQ {
+  background-position: 0px -85px;
+  width: 67px;
+  height: 67px;
+}
+.icon-CQGS {
+  background-position: -67px -85px;
+  width: 67px;
+  height: 67px;
+}
+.icon-CQUPT {
+  background-position: -164px 0px;
+  width: 65px;
+  height: 65px;
+}
+.icon-another {
+  background-position: -96px 0px;
+  width: 68px;
+  height: 68px;
+}
+
+.switchschool-pop .popup-head {
+    -moz-border-radius: 30px  2px  0 0;
+-webkit-border-radius:30px  2px  0 0;
+-o-border-radius: 30px  2px  0 0;
+border-radius:30px 2px  0 0;
+}
+.switchschool-pop .popup-head span{
+    position: absolute;
+    top: 0;
+}
+.switchschool-pop .popup-head span{
+     position: absolute;
+     left: 100px;
+     font-size: 16px;
+ }
+/*切换学校的弹窗结束*/
+
+
+
+
+
+
+

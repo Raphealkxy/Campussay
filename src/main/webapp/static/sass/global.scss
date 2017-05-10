@@ -1,0 +1,15 @@
+/**
+*  all of global scss
+*/
+//reset
+@import 'lib/reset.css';
+
+// Core variables and mixins
+@import 'common/global-set';
+// @import 'common/mixins';
+
+//Components
+@import 'common/header';
+@import 'common/footer' ;
+//modules
+@import 'modules/indexBanner';

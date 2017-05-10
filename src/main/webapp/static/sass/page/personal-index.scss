@@ -1,0 +1,40 @@
+@charset "UTF-8";
+@import "personal-index/personal-panel";
+@import "personal-index/personal-menu-bar";
+@import "personal-index/personal-content";
+@import "personal-page/personalIfon";
+
+/* 评价开始 */
+.talking-container{
+	border-bottom:1px solid #ddd;
+	min-height:118px;
+
+}
+.selfImg-list{
+  float: left;
+  padding:2px 33px 0 22px;
+  .show-name{
+    margin-top: 9px;
+    font-size: 12px
+  }
+}
+.talking-show{
+  margin-left: 133px;
+  margin-top: 24px;
+  min-height:131px;
+  position:relative;
+  h1{
+    font-size:16px;
+    margin-bottom: 10px;
+  }
+  .talking-comment-content{
+    font-size: 14px;
+  }
+  .comment-time{
+    text-align: right;
+    position:absolute;
+    bottom:10px;
+    right: 0px;
+  }
+}
+/* 评价结束 */

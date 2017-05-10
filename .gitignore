@@ -1,0 +1,16 @@
+.idea
+.settings
+.gradle
+build
+target
+bin
+src/main/webapp/WEB-INF/classes/
+
+.classpath
+.project
+*.class
+*.jar
+*.war
+*.ear
+campussay.iml
+.DS_Store

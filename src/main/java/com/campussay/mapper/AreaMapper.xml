@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.campussay.dao.AreaDao">
+
+	<resultMap id="BaseResultMap" type="com.campussay.model.Area">
+		<id column="area_id" property="areaId" jdbcType="INTEGER" />
+		<result column="area_city" property="areaCity" jdbcType="INTEGER" />
+		<result column="area_name" property="areaName" jdbcType="VARCHAR" />
+		<result column="area_state" property="areaState" jdbcType="INTEGER" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		area_id,area_city,area_name,area_state
+	</sql>
+
+	<select id="getAreaById" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from t_area
+		where area_id = #{id}
+	</select>
+	
+	<insert id="insert" >
+	INSERT INTO t_area(area_id,area_city,area_name,area_state) VALUES(${area_id},${area_city},${area_name},10);
+	</insert>
+</mapper>

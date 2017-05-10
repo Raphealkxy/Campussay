@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAOA,cAAe;EACX,WAAW,EAAE,IAAI;EACjB,YAAY,EAAE,IAAI;EAClB,KAAK,EAVC,MAAM;;AAchB,aAAc;EACV,OAAO,EAAE,YAAY;EACrB,QAAQ,EAAE,MAAM;EAChB,KAAK,EAAE,CAAC;;AAEZ,IAAI;EACA,SAAS,EApBH,MAAM",
+"sources": ["../../sass/common/global-set.scss"],
+"names": [],
+"file": "global-set.css"
+}

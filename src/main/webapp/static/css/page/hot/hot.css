@@ -1,0 +1,380 @@
+.global-center {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1180px; }
+
+.inline-block {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1; }
+
+body {
+  min-width: 1180px; }
+
+.ht-common-bar {
+  border-bottom: 1px solid #f0f0f0;
+  overflow: hidden; }
+
+.ht-bar {
+  height: 76px;
+  line-height: 74px;
+  font-size: 0; }
+
+.logo-to-index {
+  float: left; }
+  .logo-to-index img {
+    width: 149px;
+    height: 58px;
+    vertical-align: middle; }
+
+.ht-bar-title {
+  float: left;
+  margin-left: 20px;
+  font-size: 20px;
+  color: #00caab; }
+  .ht-bar-title:before {
+    margin-right: 20px;
+    display: inline-block;
+    content: " ";
+    height: 40px;
+    width: 1px;
+    background-color: #00caab;
+    vertical-align: middle; }
+  .ht-bar-title a {
+    display: inline-block;
+    color: #00caab; }
+
+.ht-common-switch {
+  margin-left: 80px;
+  float: left; }
+  .ht-common-switch .switch-on {
+    border-bottom: 2px solid #00caab; }
+  .ht-common-switch li {
+    float: left;
+    width: 150px; }
+  .ht-common-switch a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    color: #5c5c5c;
+    vertical-align: middle;
+    text-align: center; }
+
+.action-wrap {
+  float: right; }
+  .action-wrap a {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+    text-align: center; }
+  .action-wrap .ask-question {
+    margin-right: 18px;
+    width: 94px;
+    height: 32px;
+    line-height: 32px;
+    color: #FFFFFF;
+    background-color: #00caab; }
+  .action-wrap .my-ht {
+    width: 100px;
+    height: 28px;
+    line-height: 28px;
+    border: 2px solid #00caab;
+    background-color: #FFFFFF;
+    color: #00caab; }
+
+.person-info {
+  width: 284px;
+  float: right;
+  margin-top: 31px; }
+  .person-info .person-info-content {
+    border: 1px solid #f0f0f0;
+    background-color: #fafafa; }
+    .person-info .person-info-content img {
+      width: 73px;
+      height: 73px;
+      float: left; }
+    .person-info .person-info-content .person-name {
+      margin-left: 25px;
+      margin-top: 20px; }
+      .person-info .person-info-content .person-name h3 a {
+        font-size: 16px;
+        line-height: 16px;
+        color: #5c5c5c;
+        width: 128px;
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; }
+      .person-info .person-info-content .person-name div {
+        margin-top: 16px;
+        margin-left: 16px;
+        float: left; }
+        .person-info .person-info-content .person-name div ul {
+          margin-top: 10px; }
+          .person-info .person-info-content .person-name div ul li {
+            width: 48px;
+            float: left;
+            color: #5c5c5c;
+            font-size: 12px;
+            margin-left: 10px;
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis; }
+          .person-info .person-info-content .person-name div ul :first-child {
+            background: url("../../../../static/img/page/hot/hot-ico.png") no-repeat right -122px;
+            padding-right: 10px;
+            margin-left: 0; }
+    .person-info .person-info-content dl {
+      width: 240px;
+      clear: both;
+      float: left;
+      margin-left: 23px;
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+      .person-info .person-info-content dl dt {
+        float: left;
+        font-size: 14px;
+        color: #5c5c5c;
+        padding-right: 4px; }
+      .person-info .person-info-content dl dd {
+        height: 18px;
+        line-height: 18px;
+        float: left;
+        margin-right: 5px;
+        padding: 0px 10px;
+        border: 1px solid #afafaf;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 2px; }
+    .person-info .person-info-content .good-skill {
+      margin-top: 24px; }
+    .person-info .person-info-content .attention {
+      margin-top: 4px;
+      margin-bottom: 21px; }
+  .person-info .person-num {
+    margin-top: 17px;
+    padding-left: 25px;
+    padding-right: 25px;
+    height: 84px;
+    border: 1px solid #f0f0f0;
+    background-color: #fafafa; }
+    .person-info .person-num li a {
+      float: left;
+      width: 76px;
+      color: #969696;
+      font-size: 14px;
+      text-align: center;
+      margin-top: 22px; }
+      .person-info .person-num li a span {
+        width: 76px;
+        display: block;
+        color: #5c5c5c;
+        font-size: 18px;
+        text-align: center; }
+
+.content {
+  padding-bottom: 200px; }
+  .main-content {
+    width: 856px;
+    margin-top: 31px;
+    float: left; }
+    .content-nav {
+      height: 36px;
+      border-bottom: 1px solid #dddddd;
+      background-color: #f8f8f8; }
+      .content-nav li a {
+        height: 36px;
+        width: 162px;
+        float: left;
+        font-size: 14px;
+        text-align: center;
+        line-height: 36px;
+        color: #5c5c5c; }
+      .content-nav .nav-active {
+        border-left: 1px solid #dddddd;
+        border-top: 1px solid #dddddd;
+        border-right: 1px solid #dddddd;
+        border-bottom: 1px solid #ffffff;
+        background-color: #ffffff;
+        -moz-border-radius: 4px 4px 0 0;
+        /* Gecko browsers */
+        -webkit-border-radius: 4px 4px 0 0;
+        /* Webkit browsers */
+        border-radius: 4px 4px 0 0; }
+    .hot-li {
+      padding-top: 28px;
+      padding-bottom: 6px;
+      border-top: 1px solid #dddddd; }
+      .hot-li .like {
+        float: left; }
+        .hot-li .like .head-ico {
+          display: block;
+          height: 48px;
+          width: 53px;
+          -moz-border-radius: 4px;
+          /* Gecko browsers */
+          -webkit-border-radius: 4px;
+          /* Webkit browsers */
+          border-radius: 4px; }
+        .islike {
+          display: block;
+          width: 53px;
+          height: 26px;
+          font-size: 12px;
+          text-indent: 22px;
+          line-height: 26px;
+          color: #c2c2c2;
+          background: #f1f1f1;
+          -moz-border-radius: 4px;
+          /* Gecko browsers */
+          -webkit-border-radius: 4px;
+          /* Webkit browsers */
+          border-radius: 4px;
+          /* W3C syntax */ }
+          .islike span {
+            margin-top: 5px;
+            display: block;
+            width: 53px;
+            height: 26px;
+            background: url("../../../../static/img/page/hot/hot-ico.png") no-repeat 7px 8px; }
+      .hot-li .dot-like a span {
+        color: #00caab;
+        background: url("../../../../static/img/page/hot/hot-ico.png") no-repeat 7px -12px; }
+    .hot-li-first {
+      border: none; }
+    .li-info {
+      width: 792px;
+      float: right; }
+      .li-info h3 a {
+        font-size: 16px;
+        color: #777777; }
+        .li-info h3 a:hover {
+          text-decoration: underline; }
+      .li-info .li-tag {
+        margin-top: 8px;
+        line-height: 14px; }
+        .li-info .li-tag a {
+          font-size: 12px;
+          color: #777777;
+          padding-left: 8px;
+          padding-right: 5px;
+          background: url("../../../../static/img/page/hot/hot-ico.png") no-repeat left -105px; }
+        .li-info .li-tag :first-child {
+          background: none;
+          padding-left: 0; }
+      .li-info p {
+        margin-top: 8px;
+        font-size: 14px;
+        height: 38px;
+        line-height: 18px;
+        width: 792px;
+        color: #777777;
+        text-overflow: -o-ellipsis-lastline;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vergittical; }
+      .li-info .li-num {
+        margin-top: 16px; }
+        .li-info .li-num div {
+          float: left;
+          color: #b3b3b3;
+          font-size: 12px;
+          margin-right: 36px; }
+        .li-info .li-num .prosecute-share {
+          float: right;
+          margin-right: 0; }
+          .li-info .li-num .prosecute-share a {
+            display: inline-block;
+            color: #b3b3b3;
+            font-size: 12px;
+            line-height: 12px;
+            height: 12px;
+            width: 60px;
+            margin-left: 10px;
+            text-indent: 19px; }
+          .li-info .li-num .prosecute-share .prosecute {
+            background: url("../../../../static/img/page/hot/hot-ico.png") no-repeat 5px -37px; }
+            .li-info .li-num .prosecute-share .prosecute:hover {
+              background: url("../../../../static/img/page/hot/hot-ico.png") no-repeat 5px -74px;
+              color: #777777; }
+          .li-info .li-num .prosecute-share :last-child {
+            background: url("../../../../static/img/page/hot/hot-ico.png") no-repeat 0 -49px; }
+            .li-info .li-num .prosecute-share :last-child:hover {
+              background: url("../../../../static/img/page/hot/hot-ico.png") no-repeat 0 -62px;
+              color: #777777; }
+          .li-info .li-num .prosecute-share .prosecuted {
+            background: url("../../../../static/img/page/hot/hot-ico.png") no-repeat 5px -74px;
+            color: #777777; }
+
+.top-box {
+  display: none;
+  position: fixed;
+  _position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  filter: Alpha(opacity=50);
+  z-index: 9999; }
+
+.alert {
+  display: none;
+  position: fixed;
+  background-color: #ffffff;
+  top: 40%;
+  left: 50%;
+  width: 250px;
+  height: 110px;
+  margin-left: -125px;
+  margin-top: -55px;
+  color: #777777;
+  font-size: 16px;
+  padding-top: 20px;
+  z-index: 10000;
+  opacity: 1;
+  filter: Alpha(opacity=100); }
+  .alert img {
+    position: absolute;
+    z-index: 1;
+    top: -70px;
+    left: -33px; }
+  .alert p {
+    width: 250px;
+    text-align: center; }
+  .alert a span {
+    display: inline-block;
+    margin-top: 22px;
+    height: 24px;
+    width: 48px;
+    border: 1px solid #777777;
+    text-align: center;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    color: #777777; }
+    .alert a span:hover {
+      color: #00caad;
+      border: 1px solid #00caad; }
+  .alert .close {
+    margin-left: 80px; }
+  .alert .report {
+    margin-left: 36px; }
+
+.MsgBack {
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.4;
+  filter: Alpha(opacity=40);
+  z-index: 10000; }

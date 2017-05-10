@@ -1,0 +1,420 @@
+@charset "UTF-8";
+.global-center {
+  overflow: hidden;
+  input{
+    text-indent: 8px;
+    border:1px solid #bfbfbf;
+  }
+  input[type=button]{
+    border: none;
+  }
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+  }
+  .error-text{
+    border: 1px solid #f06060;
+    display: block;
+  }
+  .error-info{
+    color: #f06060;
+  }
+  .error-box{
+    display: block;
+    width:324px;
+    height: 34px;
+    line-height:34px;
+    text-indent: 10px;
+    position: absolute;
+    top: 37px;
+    background-color: #ffffff;
+    margin-left: 1px;
+  }
+  @at-root .sign-in-header {
+    height: 52px;
+    margin-top: 10px;
+    overflow: hidden;
+    a {
+      float: left;
+      img {
+        width: 136px;
+        height: 52px;
+      }
+    }
+
+    @at-root .address {
+      height: 52px;
+      float: left;
+      //background: url("/static/img/page/sign-in/address-background.png") no-repeat 19px 6px;
+      h2 {
+        //font-family: "Microsoft YaHei";
+        font-size: 14px;
+        line-height: 14px;
+        color: #5c5c5c;
+        //margin-left: 38px;
+        margin-top: 5px;
+      }
+      button{
+        margin-top: 6px;
+        //margin-left: 38px;
+        border: 1px solid #e2e2e2;
+        padding: 2px;
+        background-color: #ffffff;
+        color: #777777;
+        font-size: 12px;
+        &:hover{
+          color: #00caab;
+        }
+      }
+
+      .get-validate{
+        height: 22px;
+        width: 58px;
+        text-align: center;
+        line-height: 20px;
+        font-size: 12px;
+        border: 1px solid #e2e2e2;
+        margin-top: 6px;
+        margin-left: 38px;
+        background-color: #ffffff;
+        &:hover {
+          color: #00caab;
+        }
+      }
+    }
+  }
+  @at-root .sign-in-warp {
+    margin-top: 23px;
+    overflow: hidden;
+    img {
+      float: left;
+      margin-top: 79px;
+      margin-left: 100px;
+    }
+
+    @at-root .id-pwd {
+      .error{
+          position:relative;
+          display: block;
+          text-indent: 5px;
+          width: 250px;
+          top:-10px;
+          height: 12px;
+          line-height: 12px;
+          font-size: 12px;
+          color: #f06060;
+      }
+      #sign-in-id {
+        width: 324px;
+        height: 32px;
+        margin-top: 38px;
+        &:focus{
+          position: relative;
+          z-index: 2;
+        }
+      }
+      #sign-in-pwd {
+        position: relative;
+        top: -1px;
+        width: 324px;
+        height: 32px;
+      }
+
+      span {
+        display: block;
+        width: 324px;
+        height: 16px;
+        a {
+          font-size: 12px;
+          line-height: 12px;
+          color: #f06060;
+          margin-top: 4px;
+          float: right;
+        }
+      }
+
+      @at-root .validate {
+        position: relative;
+        margin-top: 24px;
+        height: 32px;
+        width: 328px;
+        input {
+          width: 156px;
+          height: 32px;
+          float: left;
+        }
+
+        img {
+          width: 121px;
+          height: 34px;
+          float: left;
+          margin-left: 11px;
+          margin-top: 0px;
+        }
+
+        i img {
+          display: block;
+          width: 19px;
+          height: 16px;
+          float: left;
+          margin-right: 8px;
+          margin-top: 9px;
+          margin-bottom: 9px;
+        }
+        .validate-error{
+          position: absolute;
+          top: 35px;
+          left: 4px;
+          font-size: 12px;
+          color: #f06060;
+        }
+      }
+      @at-root .auto-sign-in {
+        margin-top: 25px;
+        font-size: 12px;
+        color: #777777;
+
+      }
+      @at-root .sign-in-btn {
+        height: 42px;
+        width: 326px;
+        margin-top: 28px;
+        font-size: 16px;
+        color: #ffffff;
+        background: url("/static/img/page/sign-in/sign-in-btn-bg.png");
+        &:hover {
+          background: url("/static/img/page/sign-in/sign-in-btn-bg2.png");
+        }
+      }
+    }
+    @at-root .sign-register {
+      float: right;
+      margin-right: 20px;
+      margin-top: 40px;
+      margin-bottom: 50px;
+      width: 326px;
+      padding: 36px 40px 40px;
+      border: 2px solid #d6d6d6;
+      border-top: 3px solid #00caab;
+      border-left: 2px solid #d6d6d6;
+      border-bottom: 2px solid #d6d6d6;
+      border-right: 2px solid #d6d6d6;
+      border-style: solid;
+      h3 {
+        width: 163px;
+        padding-bottom: 10px;
+        height: 28px;
+        text-align: center;
+        font-size: 16px;
+        color: #777777;
+        background: url("/static/img/page/sign-in/sign-in-backgroundbar.png") no-repeat 0 26px;
+        float: left;
+        &:hover {
+          background: url("/static/img/page/sign-in/sign-in-backgroundbar-hover.png") no-repeat 0 22px;
+        }
+      }
+
+      .h3-onfocus {
+        background: url("/static/img/page/sign-in/sign-in-backgroundbar-hover.png") no-repeat 0 22px;
+      }
+
+      input {
+        outline: none;
+        border-top:1px solid #bfbfbf ;
+        &:focus {
+          border: 1px solid #35e3c8;
+        }
+      }
+    }
+    @at-root #register {
+      overflow: hidden;
+      ul {
+        float: left;
+        margin-top: 50px;
+        margin-bottom: 44px;
+        overflow: hidden;
+        li {
+          float: left;
+          width: 108px;
+          height: 84px;
+          a {
+            text-align: center;
+            display: block;
+            margin-left: 24px;
+            font-size: 14px;
+            color: #5c5c5c;
+            height: 14px;
+            line-height: 14px;
+            padding-top: 68px;
+            &:hover {
+              text-decoration: underline;
+              color: #f06060;
+            }
+          }
+        }
+      }
+
+      .sign-in-QQ a {
+        background: url("/static/img/page/sign-in/sign-in-ico.png") 18px 0 no-repeat;
+        &:hover {
+          background: url("/static/img/page/sign-in/sign-in-ico.png") -54px 0 no-repeat;
+        }
+      }
+
+      .sign-in-phone {
+        margin-left: 40px;
+        a {
+          background: url("/static/img/page/sign-in/sign-in-ico.png") 18px -84px no-repeat;
+          &:hover {
+            background: url("/static/img/page/sign-in/sign-in-ico.png") -54px -84px no-repeat;
+          }
+      }
+      }
+
+      .sign-in-mail a {
+        background: url("/static/img/page/sign-in/sign-in-ico.png") 18px -168px no-repeat;
+        &:hover {
+          background: url("/static/img/page/sign-in/sign-in-ico.png") -54px -168px no-repeat;
+        }
+
+      }
+    }
+    @at-root  #register-form-phone{
+      a{
+        color: #f06060;
+        margin-left: -3px;
+      }
+      @at-root .change-mail , .change-phone{
+        color: #f06060;
+        font-size: 12px;
+        line-height: 12px;
+        margin-top: 13px;
+        display: block;
+        margin-left: 242px;
+
+      }
+      .register-validate{
+        position: relative;
+        .sign-phone{
+          margin-top: 4px;
+          width: 324px;
+          height: 34px;
+          clear: both;
+          &:focus{
+            position: relative;
+            z-index: 2;
+          }
+        }
+        .phone-validate{
+          width: 202px;
+          height: 34px;
+          position: relative;
+          top: -1px;
+        }
+        button{
+          position: absolute;
+          bottom: 1px;
+          width: 122px;
+          height: 36px;
+          float: right;
+          color: #5c5c5c;
+          border: 1px,solid,#000;
+        }
+      }
+      .register-pwd{
+        position: relative;
+        width: 326px;
+        margin-top: 29px;
+
+        .register-pwd-1{
+          width: 326px;
+          height: 34px;
+          &:focus{
+            position: relative;
+            z-index: 2;
+          }
+        }
+        .register-pwd-2{
+          width: 326px;
+          height: 34px;
+          position: relative;
+          top:-1px;
+        }
+        .pwd_error{
+          position: absolute;
+          top:-29px;
+          left: 4px;
+          font-size: 12px;
+          color: #f06060;
+        }
+        .pwd_error_info{
+           position: absolute;
+           bottom: -16px;
+           left: 4px;
+           color: #f06060;
+         }
+      }
+      .change-qq{
+        display: block;
+        margin-top: 6px;
+      }
+    }
+    @at-root  #register-form-mail{
+    a{
+      color: #f06060;
+    }
+    .change-mail{
+      color: #f06060;
+      font-size: 12px;
+      line-height: 12px;
+      margin-top: 13px;
+      float: right;
+    }
+    .register-validate{
+      .sign-phone{
+        margin-top: 4px;
+        width: 326px;
+        height: 34px;
+        &:focus{
+          position: relative;
+          z-index: 2;
+        }
+      }
+      .phone-validate{
+        width: 204px;
+        height: 34px;
+      }
+      button{
+        width: 122px;
+        height: 36px;
+        float: right;
+        border: 1px,solid,#000;
+      }
+      a{
+        display: none;
+        float: right;
+        color: #bababa;
+        font-size: 12px;
+        &:hover{
+          color: #00caab;
+        }
+      }
+    }
+    .register-pwd{
+      width: 326px;
+      margin-top: 29px;
+      .register-pwd-1{
+        width: 326px;
+        height: 34px;
+      }
+      .register-pwd-2{
+        width: 326px;
+        height: 34px;
+      }
+    }
+    .change-qq{
+      display: block;
+      margin-top: 6px;
+    }
+  }
+  }
+}

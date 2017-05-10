@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/WEB-INF/decorators">
+	<excludes>
+		<pattern>/*.ajax</pattern>
+	</excludes>
+	<!--用户端 -->
+	<decorator name="campusSay" page="common.ftl">
+		<pattern>/*</pattern>
+	</decorator>
+
+	<decorator name="campusSayh5" page="commonH5.ftl">
+		<pattern>/h5/*</pattern>
+	</decorator>
+
+
+</decorators>

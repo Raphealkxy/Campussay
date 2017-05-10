@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.campussay.dao.EducationDao">
+
+    <insert id="userSettingEducation" parameterType="com.campussay.model.Education">
+        insert into t_education (education_user, education_time, education_campus_name,education_academe, education_major, education_degree, education_ranking)
+        values (#{educationUser},#{educationTime},#{educationCampusName},#{educationAcademe},#{educationMajor},#{educationDegree},#{educationRanking},10);
+    </insert>
+
+    <select id="getUserSettingEducation"  resultType="java.util.HashMap">
+        SELECT education_id,education_time,education_campus_name,education_academe,education_major,education_degree,education_ranking
+         FROM t_education WHERE education_user=#{0} AND education_state=#{1}
+    </select>
+
+    <select id="getUserEducation" resultType="java.util.HashMap">
+        SELECT education_time,education_campus_name,education_academe,education_major,education_degree,education_ranking
+        FROM t_education WHERE education_user=#{0} AND education_state=#{1}
+    </select>
+
+    <select id="getAllAcademy" parameterType="String" resultType="java.util.HashMap">
+        <bind name="pattern" value="'%' + _parameter + '%'" />
+        select academy_name
+        from t_academy
+        where academy_name LIKE #{academy};
+    </select>
+
+    <select id="getAllMajor" parameterType="String" resultType="String">
+        SELECT major_name FROM t_major where major_name like #{major};
+    </select>
+
+    <!--pzy insert Student authentication-->
+    <insert id="insStudInform" parameterType="com.campussay.model.StudentCheck">
+        INSERT INTO t_student_check(student_check_user,student_check_picture,student_check_state)
+        VALUES(#{studentCheckUer},#{studentCheckPicture},0)
+    </insert>
+
+    <update id="updateUserState" parameterType="int">
+        UPDATE `t_user` SET `user_student_check_result`=#{1} WHERE (`user_id`=#{0})
+    </update>
+
+    <update id="updateEducation">
+        UPDATE t_education SET education_time=#{education_time},education_campus_name=#{education_campus_name},education_academe=#{education_academe},
+        education_major=#{education_major},education_degree=#{education_degree},education_ranking=#{education_ranking} WHERE education_id=#{education_id} AND education_user=#{user_id}
+    </update>
+
+    <insert id="addEducation">
+        INSERT INTO t_education VALUES (null,#{user_id},#{education_time},#{education_campus_name},#{education_academe},#{education_major},#{education_degree},#{education_ranking},10)
+    </insert>
+
+    <delete id="delEducation">
+        DELETE FROM t_education WHERE education_user=#{1} AND education_id IN
+        <foreach collection="del" item="id"  open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <select id="studentPicture" parameterType="int" resultType="Map">
+       SELECT tu.user_photo,tu.user_student_check_result,ts.student_check_picture,ts.student_check_id FROM t_user tu,t_student_check ts WHERE tu.user_id=#{0} AND tu.user_id=ts.student_check_user ORDER BY ts.student_check_id desc
+    </select>
+</mapper>

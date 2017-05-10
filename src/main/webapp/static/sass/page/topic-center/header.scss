@@ -1,0 +1,68 @@
+
+@import '../../common/global-set';
+
+.main-nav{
+  margin: 10px 0px 20px 0px;
+  line-height: 60px;
+  vertical-align: middle;
+  border-bottom: 1px solid #f0f0f0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.nav-list{
+  width: 360px;
+  float:left;
+  overflow: hidden;
+  li{
+    float:left;
+  }
+  a{
+    display: block;
+    height: 58px;
+    line-height:58px;
+    text-align: center;
+    padding:0 60px;
+    font-size: 16px;
+    color:$global-font;
+    &:hover{
+      color:$global-bg;
+    }
+  }
+  .nav-active{
+    color:$global-bg;
+    border-bottom: 2px solid $global-bg;
+  }
+}
+.link-index {
+  float: left;
+}
+.sub-link-index {
+  height: 46px;
+  width: 136px;
+  display: block;
+  float: left;
+  margin-left: 12px;
+  padding-left: 12px;
+  border-left: 1px solid #dddddd;
+  color: $global-bg;
+  font-size: 20px;
+  line-height: 40px;
+  vertical-align: middle;
+}
+.nav-operation {
+  float: right;
+  button {
+    border: 2px solid $global-bg;
+    padding: 6px 18px;
+    margin-right: 18px;
+    &:first-child {
+      background-color: $global-bg;
+      color: #fff;
+    }
+    &:last-child {
+      background-color: #fff;
+      color: $global-bg;
+    }
+  }
+}

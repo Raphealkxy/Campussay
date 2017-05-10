@@ -1,0 +1,5 @@
+.nav-list {
+  overflow: hidden;
+  float: right; }
+  .nav-list li {
+    float: left; }

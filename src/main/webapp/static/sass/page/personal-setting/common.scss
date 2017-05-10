@@ -1,0 +1,168 @@
+@charset "UTF-8";
+@import '../../common/global-set';
+@import "../../modules/datepicker";
+$font-color: #2ce6c9;
+
+// 显示在 select-content 里面的 tag 标签
+.tag {
+  margin: 4px 4px 14px;
+  display: inline-block;
+  .item-tag {
+    border: 1px solid #b7b7b7;
+    margin: 4px 8px;
+    color: #777;
+    /*border-right: none;*/
+    padding-left: 4px;
+    position: relative;
+    display: inline-block;
+    .delete-tag {
+      display: inline-block;
+      height: 9px;
+      width: 9px;
+      margin: auto 4px;
+      background: url('/static/img/page/personal-center/delete.png') no-repeat;
+      &:hover {
+        background: url('/static/img/page/personal-center/delete-hover.png') no-repeat;
+      }
+    }
+    /*&:after {
+      content:' ';
+      display: inline-block;
+      height: 20px;
+      width: 9px;
+      position: absolute;
+      left: 100%;
+      top: -1px;
+      background: url('/static/img/page/personal-center/tag.png') no-repeat;
+    }*/
+  }
+}
+
+
+// 按钮操作
+.item-operation {
+  a {
+    display: inline-block;
+    line-height: 28px;
+    vertical-align: middle;
+    padding: 2px 26px;
+    font-size: 16px;
+    color:#fff;
+  }
+  .operation {
+    background-color: $global-bg;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;;
+    &:hover {
+      background-color: $font-color;
+    }
+  }
+  .cancel-binding {
+    color: $global-bg;
+  }
+}
+// input[type='text']
+.item-input {
+  height: 30px;
+  border: 1px solid #bababa;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  color: #777;
+  text-indent: 8px;
+  &:focus {
+    border: 1px solid $global-bg;
+  }
+}
+.item-text-input {
+  width: 252px;
+  & + span {
+    display: inline-block;
+    margin: 0px 10px;
+    color: #909090;
+  }
+}
+.item-select-input {
+  width: 120px;
+  background: url('/static/img/page/personal-center/dropdown.png') no-repeat 90% center;
+}
+
+// 模拟 select
+.select {
+  display: inline-block;
+  margin-right: 10px;
+  position: relative;
+  .select-content {
+    display: none;
+    min-width: 120px;
+    min-height: 30px;
+    max-height: 200px;
+    position: absolute;
+    margin-right: 10px;
+    border: 1px solid #bababa;
+    overflow: auto;
+    background-color: #fff;
+    z-index: 999;
+    li {
+      height: 30px;
+      min-width: 100%;
+      line-height: 30px;
+      text-indent: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      &:hover {
+        background-color: #f8f8f8;
+      }
+    }
+  }
+}
+
+// 模拟 radio
+.radio {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 30px;
+  color: #777;
+  margin: 0px 28px;
+  span {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;;
+    display: block;
+    cursor: pointer;
+  }
+  input[type="radio"] {
+    display: none;
+  }
+  .checked + span > .radio-inner {
+    width: 6px;
+    height: 6px;
+    margin: 2px;
+    background-color: #33d5bc;
+  }
+  input[checked] + span > .radio-inner {
+    width: 6px;
+    height: 6px;
+    margin: 2px;
+    background-color: #33d5bc;
+  }
+}
+.radio-outer {
+  width: 10px;
+  height: 10px;
+  border: 1px solid #b3b3b3;
+  margin: 9px 3px;
+  position: relative;
+  float: left;
+}
+
+textarea.select-result{
+  width: 500px;
+  color: $global-font;
+  padding: 0px 6px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.campussay.dao.StudentCheckDao">
+
+    <select id="getStudentCheck" resultType="java.util.HashMap">
+        SELECT ca.campus_name,ch.student_check_academe,ch.student_check_picture
+        FROM t_student_check ch
+        LEFT JOIN t_campus ca on ch.student_check_campus = ca.campus_id
+        WHERE ch.student_check_user=#{userId};
+    </select>
+
+</mapper>

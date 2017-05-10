@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.campussay.dao.BannerDao">
+	<!-- 找出Banner顺序-->
+	<select id="Bannerindex" parameterType="String" resultType="java.util.Map">
+	select banner_id,banner_picture,banner_desc,banner_url,banner_type,banner_type_id,banner_background from t_banner where banner_state=50 
+	<if test="campus_name!= null">
+	and banner_campus_name=#{campus_name}
+	</if>
+	limit 0,5;
+	</select>
+	
+	<!-- 增加Banner图片 -->
+	<insert id="addBanner">
+	insert into t_banner(banner_picture,banner_url,banner_desc) value
+	(#{bannerPicture},#{bannerUrl},#{bannerDesc});
+	</insert>
+</mapper>

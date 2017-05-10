@@ -1,0 +1,58 @@
+.talking-container{
+  width: 1110px;
+  margin: 0 auto;
+  padding: 0 40px 0px 0;
+  .talking-list{
+    overflow: hidden;
+    border-bottom: 1px solid #dddddd;
+    margin-top: 30px;
+    i{
+      display: block;
+      float: left;
+      width: 80px;
+      height: 80px;
+    }
+    span.personal-name{
+      position: relative;
+      left: -62px;
+      bottom: -76px;
+    }
+    .talking-menu{
+      margin-left: 100px;
+      position: relative;
+      top: -26px;
+      h1{
+        line-height: 38px;
+        font-size: 18px;
+      }
+      p{
+        margin-top: 10px;
+        line-height: 18px;
+      }
+      div.dd {
+        float: right;
+        margin-top: 20px;
+        //margin-bottom: 20px;
+      }
+      .data {
+        margin-top: 20px;
+        float: right;
+        li{
+          float: left;
+          width: 80px;
+          text-align: center;
+          &.dd:after{
+            content: '';
+            background: #dddddd;
+            width: 1px;
+            height: 18px;
+            display: block;
+            position: relative;
+            left: 94px;
+            top: -16px;
+          }
+        }
+      }
+    }
+  }
+}

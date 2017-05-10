@@ -1,0 +1,85 @@
+@charset "UTF-8";
+/*
+*边框函数：warp()
+*/
+/*
+*普通样式
+*/
+/*
+*提示样式
+*/
+/*
+*链接样式
+*/
+/*
+*邮箱或者手机号码样式
+*/
+/*
+*标题样式
+*/
+/*
+*按钮样式
+*/
+.pwd-found-logo {
+  margin-bottom: 64px;
+  height: 57px; }
+
+.pwd-found-title {
+  font-family: "Microsoft YaHei";
+  font-size: 20px;
+  color: #5c5c5c; }
+
+.progress-bar {
+  overflow: hidden;
+  width: 534px;
+  height: 44px;
+  margin: 0 auto; }
+  .progress-bar li {
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
+    line-height: 14px;
+    color: #5c5c5c;
+    float: left; }
+  .progress-bar .progress-bar_center {
+    margin: 0 175px 0 161px; }
+
+.error {
+  border: 1px solid #f06060; }
+
+.pwd_found {
+  border: 1px solid #dddddd;
+  background-color: #f8f8f8;
+  padding: 42px 0 110px 0;
+  margin: 16px 0 240px 0;
+  width: 1178px; }
+  .pwd_found .progress-bar {
+    background: url("/static/img/page/pwd_found/progressbar_4.png") no-repeat 32px 20px; }
+  .pwd_found form {
+    display: block;
+    margin-top: 30px; }
+    .pwd_found form h3 {
+      font-family: "Microsoft YaHei";
+      font-size: 18px;
+      color: #5c5c5c;
+      margin-bottom: 17px;
+      margin-left: 500px; }
+    .pwd_found form p {
+      font-family: "Microsoft YaHei";
+      font-size: 14px;
+      line-height: 14px;
+      color: #969696;
+      margin-left: 500px;
+      margin-bottom: 27px; }
+    .pwd_found form #pwd-found-finish {
+      font-family: "Microsoft YaHei";
+      font-size: 16px;
+      color: #ffffff;
+      text-align: center;
+      border: none;
+      width: 142px;
+      height: 35px;
+      margin-left: 517px;
+      text-indent: -3px;
+      background: url("/static/img/page/pwd_found/next-step-bg.png") no-repeat 0 1px; }
+      .pwd_found form #pwd-found-finish:hover {
+        background: url("/static/img/page/pwd_found/next-step-hover-bg.png"); }

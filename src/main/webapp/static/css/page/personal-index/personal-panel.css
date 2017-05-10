@@ -1,0 +1,108 @@
+.personal-panel {
+  padding: 6px 10px;
+  border: 2px dashed #f8f8f8;
+  width: 1156px; }
+  .personal-panel-aside-big {
+    padding-left: 31px;
+    padding-top: 36px;
+    padding-bottom: 36px;
+    float: left;
+    width: 912px;
+    height: 98px;
+    background-color: #f8f8f8; }
+    .personal-panel-item {
+      float: left;
+      font-size: 14px; }
+      .personal-panel-item img {
+        width: 98px;
+        height: 98px;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%; }
+    .person-panel-info {
+      margin-top: 8px;
+      margin-bottom: 8px;
+      margin-left: 27px;
+      width: 319px;
+      height: 86px;
+      border-right: 1px dashed #e6e6e6; }
+      .person-panel-info p {
+        line-height: 100%; }
+      .personal-panel-title {
+        margin-bottom: 28px;
+        font-size: 0; }
+      .personal-panel-name {
+        font-size: 20px;
+        line-height: 100%;
+        vertical-align: top; }
+      .personal-panel-tip {
+        margin-left: 9px;
+        padding-left: 6px;
+        padding-right: 6px;
+        font-size: 14px;
+        height: 20px;
+        line-height: 20px;
+        vertical-align: top;
+        background-color: #ffde17;
+        color: #fff; }
+      .personal-panel-student {
+        margin-bottom: 9px; }
+    .personal-panel-dec {
+      padding-left: 41px;
+      margin-top: 8px;
+      margin-bottom: 8px;
+      width: 336px;
+      height: 86px; }
+      .personal-panel-dec P {
+        line-height: 21px;
+        height: 84px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical; }
+  .personal-panel-aside-small {
+    float: right;
+    position: relative;
+    height: 170px;
+    width: 205px;
+    background-color: #f8f8f8; }
+    .care {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 56px;
+      height: 24px;
+      background-color: #00caab;
+      color: #fff;
+      -webkit-border-radius: 2px;
+      -moz-border-radius: 2px;
+      border-radius: 2px; }
+      .care:hover {
+        background-color: #3aead0; }
+    .edit-self {
+      color: #FFFFFF;
+      display: inline-block;
+      width: inherit;
+      height: inherit;
+      text-align: center;
+      line-height: 24px; }
+    .cancel-care {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 96px;
+      height: 24px;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+      background-color: #00caab;
+      color: #fff; }
+      .cancel-care:hover {
+        background-color: #3aead0; }

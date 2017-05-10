@@ -1,0 +1,185 @@
+.nav-header {
+  padding-top: 39px;
+  padding-bottom: 39px;
+  height: 20px; }
+
+.nav-header h1 {
+  float: left;
+  font-size: 18px;
+  line-height: 20px;
+  color: #5c5c5c; }
+
+.nav-header h1:before {
+  margin-right: 15px;
+  content: " ";
+  display: inline-block;
+  vertical-align: middle;
+  width: 6px;
+  height: 20px;
+  background-color: #00caab; }
+
+#filter-wrap {
+  float: right; }
+
+#filter-wrap li {
+  margin-left: 10px;
+  float: left;
+  font-size: 12px;
+  line-height: 20px;
+  color: #777777; }
+
+#filter-wrap button {
+  height: 20px;
+  color: #777777;
+  background-color: #FFFFFF; }
+
+#filter-wrap button:hover {
+  color: #00caab; }
+
+.has-line:before {
+  margin-right: 10px;
+  content: " ";
+  display: inline-block;
+  font-size: 0;
+  width: 1px;
+  height: 10px;
+  vertical-align: middle;
+  background-color: #DDDDDD; }
+
+#message-list li {
+  height: 53px;
+  line-height: 53px;
+  font-size: 14px; }
+
+#message-list strong {
+  font-weight: bold;
+  color: #5c5c5c; }
+
+#message-list span {
+  color: #777777; }
+
+#message-list li:before {
+  margin-left: 20px;
+  content: " ";
+  display: inline-block;
+  vertical-align: middle; }
+
+#message-list li a {
+  color: #5c5c5c;
+  margin: 0 8px;
+  font-weight: bold; }
+  #message-list li a:hover {
+    text-decoration: underline; }
+
+#message-list li span {
+  float: right;
+  width: 100px;
+  text-align: center;
+  font-size: 12px;
+  color: #5c5c5c; }
+
+#message-list li button {
+  display: none;
+  float: right;
+  height: 53px;
+  background: none;
+  font-size: 12px;
+  margin-left: 8px;
+  color: #5c5c5c; }
+
+#message-list li:hover button {
+  display: block; }
+  #message-list li:hover button:hover {
+    color: #00caab; }
+
+#page {
+  padding-top: 110px;
+  padding-bottom: 190px; }
+
+.odd {
+  background-color: #fafafa; }
+
+.checked:before {
+  margin-right: 13px;
+  width: 17px;
+  height: 20px;
+  background: url("/static/img/page/message/checked.png") no-repeat; }
+
+.checkedD:before {
+  margin-right: 13px;
+  width: 17px;
+  height: 20px;
+  background: url("/static/img/page/message/checkedD.png") no-repeat; }
+
+.ht:before {
+  margin-right: 13px;
+  width: 17px;
+  height: 20px;
+  background: url("/static/img/page/message/ht.png") no-repeat; }
+
+.htD:before {
+  margin-right: 13px;
+  width: 17px;
+  height: 20px;
+  background: url("/static/img/page/message/htD.png") no-repeat; }
+
+.love:before {
+  margin-right: 14px;
+  width: 16px;
+  height: 14px;
+  background: url("/static/img/page/message/ht.png") no-repeat; }
+
+.loveD:before {
+  margin-right: 14px;
+  width: 16px;
+  height: 14px;
+  background: url("/static/img/page/message/htD.png") no-repeat; }
+
+.message:before {
+  margin-right: 14px;
+  width: 16px;
+  height: 15px;
+  background: url("/static/img/page/message/message.png") no-repeat; }
+
+.messageD:before {
+  margin-right: 14px;
+  width: 16px;
+  height: 15px;
+  background: url("/static/img/page/message/messageD.png") no-repeat; }
+
+.option-wrap {
+  float: right; }
+
+.option-item {
+  float: left; }
+
+.option-wrap button:before {
+  margin-right: 6px;
+  content: " ";
+  display: inline-block;
+  vertical-align: -2px; }
+
+.chooseD:before {
+  width: 15px;
+  height: 15px;
+  background: url("/static/img/page/message/chooseD.png") no-repeat; }
+
+.delD:before {
+  width: 13px;
+  height: 15px;
+  background: url("/static/img/page/message/delD.png") no-repeat; }
+
+.option-wrap button {
+  margin-left: 15px;
+  height: 48px;
+  font-size: 14px;
+  background-color: #FFFFFF; }
+
+.option-wrap button:hover {
+  color: #00caab; }
+
+.option-wrap button:hover.delD:before {
+  background: url("/static/img/page/message/del.png") no-repeat; }
+
+.option-wrap button:hover.chooseD:before {
+  background: url("/static/img/page/message/choose.png") no-repeat; }

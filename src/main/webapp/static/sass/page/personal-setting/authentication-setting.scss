@@ -1,0 +1,105 @@
+@charset "UTF-8";
+@import '../../common/global-set';
+@import '../personal-center/personal-header';
+@import '../personal-center/personal-aside';
+@import '../personal-center/personal-tab';
+@import '../personal-setting/common';
+@import '../personal-setting/icon';
+
+$item-h: 90px;
+$item-title-h: 48px;
+$icon-mg: 18px;
+$font-color: #2ce6c9;
+
+// authentication-setting main
+.authentication-setting {
+  overflow: hidden;
+  zoom: 1;
+  margin-bottom: 340px;
+}
+
+.authentication-setting-content-list {
+
+  .authentication-setting-list-item {
+    /*height: $item-h;*/
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  .item-content {
+    margin-top: 26px;
+    .item-title {
+      width: 474px + $item-title-h + $icon-mg * 2;
+      font-size: 16px;
+      height: $item-title-h;
+      span {
+        display: inline-block;
+        line-height: $item-title-h;
+        vertical-align: top;
+        padding-right: 34px;
+      }
+    }
+    .item-body {
+      width: 474px;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      border: 1px dashed #d2d2d2;
+      margin-left: $item-title-h + $icon-mg * 2;
+      padding: 20px 40px 20px 80px;
+    }
+
+    .binding-done {
+      .item-title {
+        span:last-child {
+          padding-left: 18px;
+          a {
+            font-size: 14px;
+            color: $font-color;
+          }
+        }
+      }
+      .item-body { }
+    }
+    .binding-todo {
+      .item-title {
+        .item-title-sub {
+          color: #777;
+          font-size: 14px;
+        }
+        .item-modify-binding {
+          padding: 0;
+          float: right;
+          font-size: 14px;
+          a {
+            color: $global-font;
+            &:hover {
+              color: $global-bg;
+            }
+          }
+        }
+      }
+      .item-body {
+        .item-upload-img {
+          margin-bottom: 18px;
+          & > * {
+            display: inline-block;
+          }
+          span {
+            line-height: 16px;
+            vertical-align: top;
+          }
+        }
+        .select-img-btn {
+          width: 148px;
+          height: 94px;
+          line-height: 94px;
+          vertical-align: bottom;
+          background: url('/static/img/page/personal-center/add.png') no-repeat;
+        }
+      }
+    }
+
+  }
+}

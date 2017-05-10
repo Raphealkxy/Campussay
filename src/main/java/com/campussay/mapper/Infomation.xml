@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.campussay.dao.InformationDao">
+<insert id="insertSystemInfomationToInformation">
+     INSERT INTO t_information(information_id,information_content,information_type,information_isread,information_crate_time,information_read_time,information_is_delete,information_user) 
+     SELECT information_id,information_content,information_type,information_isread,information_crate_time,information_read_time,information_is_delete,#{0}
+     FROM
+     t_information_system 
+     where 
+     information_is_delete = 0 and 
+     information_id not in (select information_id from t_information);
+</insert>
+
+<!-- 增加用户消息 -->
+<insert id="insertInformation" parameterType="com.campussay.model.Information">
+     INSERT INTO t_information
+     
+       (information_id,information_content,information_type,information_isread,information_crate_time,information_user)
+     
+     values
+      (#{informationId},#{informationContent},#{informationType},#{informationIsread},#{informationCrateTime},#{informationUser})
+      
+</insert>
+
+<!-- 查询用户消息 -->
+<select id="selectInformation" resultType="Map">
+     
+      select  information_id,information_content,information_type,information_isread,information_crate_time , information_read_time 
+     from
+     t_information where information_user=#{informationUser}
+     <if test="informationType != null">
+      and information_type = #{informationType} 
+      </if>
+        <if test="informationStatus != null">
+      and information_isread = #{informationStatus} 
+      </if>
+      and information_is_delete = 0  ORDER BY information_crate_time  DESC  limit #{start},#{pageSize}
+</select>
+
+<select id="selectInformationCount" resultType="int">
+     
+      select  count(1)
+     
+     from
+     
+     t_information where information_user=#{informationUser}
+     <if test="informationType != null">
+      and information_type = #{informationType} 
+      </if>
+         <if test="informationStatus != null">
+      and information_isread = #{informationStatus} 
+      </if>
+      and information_is_delete = 0 
+</select>
+
+
+
+     <update id="batchSetInformationRead" parameterType="java.util.List">
+      
+       <foreach collection="list" item="item" index="index" open="" close=";" separator=";" >
+               update t_information 
+               
+               set
+                
+                  information_read_time = #{item.informationReadtime},information_isread = #{item.informationIsread}
+               
+                
+                where information_id = #{item.informationId} and information_user = #{item.informationUser}
+       </foreach>
+          
+    </update>
+
+<!--将所有用户消息标记为已读 information_isread ＝ 0 表示未读 information_isread＝1 表示已读  -->
+ <update id="setAllUserInformationRead" parameterType="com.campussay.model.Information">
+      
+       
+               update t_information 
+               
+               set
+                
+               information_read_time = #{informationReadtime},information_isread = #{informationIsread}
+               
+                
+                where  information_user = #{informationUser} and information_isread = 0
+
+          
+    </update>
+     <update id="batchDeleteInformation" parameterType="java.util.List">
+      
+       <foreach collection="list" item="item" index="index" open="" close=";" separator=";" >
+               update t_information 
+               
+               set
+                
+                  information_is_delete = -1
+               
+                
+                where information_id = #{item.informationId} and information_user = #{item.informationUser}
+       </foreach>
+          
+    </update>
+
+</mapper>

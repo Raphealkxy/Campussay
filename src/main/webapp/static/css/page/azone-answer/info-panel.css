@@ -1,0 +1,53 @@
+.wrap-info {
+  float: right;
+  width: 280px; }
+  .wrap-info .wrap-info-head {
+    background: #fafafa;
+    border: 1px solid #fafafa;
+    padding: 20px; }
+    .wrap-info .wrap-info-head .info-title {
+      overflow: hidden;
+      margin-bottom: 20px; }
+      .wrap-info .wrap-info-head .info-title .info-head {
+        float: left;
+        width: 77px;
+        height: 77px;
+        background: url("/static/img/page/azone-answer/dog-head.PNG") no-repeat; }
+      .wrap-info .wrap-info-head .info-title .info-detail {
+        position: relative;
+        top: 18px;
+        float: left; }
+        .wrap-info .wrap-info-head .info-title .info-detail h2 {
+          padding-left: 10px;
+          font-size: 16px; }
+        .wrap-info .wrap-info-head .info-title .info-detail .info-list {
+          float: left; }
+          .wrap-info .wrap-info-head .info-title .info-detail .info-list li {
+            float: left;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-size: 12px; }
+            .wrap-info .wrap-info-head .info-title .info-detail .info-list li.xian {
+              border-right: 1px solid #555555; }
+  .wrap-info .wrap-info-bottom {
+    margin-top: 16px;
+    background: #fafafa;
+    border: 1px solid #fafafa;
+    padding: 20px;
+    overflow: hidden; }
+    .wrap-info .wrap-info-bottom .number {
+      overflow: hidden; }
+      .wrap-info .wrap-info-bottom .number li {
+        float: left;
+        width: 78px;
+        text-align: center;
+        line-height: 22px; }
+    .wrap-info .wrap-info-bottom .fans {
+      overflow: hidden; }
+      .wrap-info .wrap-info-bottom .fans li {
+        float: left;
+        width: 78px;
+        text-align: center;
+        line-height: 22px;
+        font-size: 14px;
+        color: #b2b2b2; }

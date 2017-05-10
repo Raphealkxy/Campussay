@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.campussay.dao.PrizeDao">
+
+
+    <insert id="userSettingPrize" parameterType="com.campussay.model.Prize">
+        INSERT INTO t_prize
+        (prize_user,prize_time, prize_title, prize_descript, prize_state)
+        VALUES (#{prizeUser},#{prizeTime},#{prizeTitle},#{prizeDescript},10)
+    </insert>
+
+    <select id="getUserSettingPrize" resultType="java.util.HashMap">
+        SELECT prize_id, prize_time, prize_title, prize_descript FROM t_prize WHERE prize_user=#{0} AND prize_state=#{1}
+    </select>
+
+    <select id="getUserPrize" resultType="java.util.HashMap">
+        SELECT prize_time,prize_title,prize_descript FROM t_prize WHERE prize_user=#{0} AND prize_state=#{1}
+    </select>
+
+    <update id="updatePrize">
+        UPDATE t_prize SET prize_time=#{prize_time},prize_title=#{prize_title},prize_descript=#{prize_descript}
+        WHERE prize_id=#{prize_id} AND prize_user=#{user_id}
+    </update>
+
+    <insert id="addPrize">
+        INSERT INTO t_prize VALUES (null,#{user_id},#{prize_time},#{prize_title},#{prize_descript},10)
+    </insert>
+
+    <delete id="delPrize">
+        DELETE FROM t_prize WHERE prize_user=#{1} AND prize_id IN
+        <foreach collection="del" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>
